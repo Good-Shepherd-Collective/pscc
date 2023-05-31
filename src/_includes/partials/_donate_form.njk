@@ -1,0 +1,104 @@
+<div class="container monthly__donation">
+  <form id="payment-form">
+    <h2>Material support</h2>
+    <p>Our ability to stay active on the ground in the face of ongoing oppression and violence is reliant on your material support. Please consider investing a small amount each month into grassroots organizing in Palestine.</p>
+    <label for="monthly-amount">Custom monthly amount:</label>
+    <input type="number" id="monthly-amount" name="monthly-amount" placeholder="Choose your monthly amount" required>
+    <button id="checkout-button">Donate</button>
+  </form>
+</div>
+
+ 
+<style>
+ 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.monthly__donation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
+  box-shadow: 0 0 0 100vmax var(--black);
+  clip-path: inset(0 -100vmax);
+  color: var(--white);
+  padding: 2rem;
+  min-height: 90vh;
+}
+
+.monthly__donation h2,
+.monthly__donation p {
+  margin-bottom: 1rem;
+}
+
+.monthly__donation input {
+  width: 100%;
+  max-width: 20rem;
+  height: 2.3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.monthly__donation input:focus {
+  background-color: lightblue;
+}
+
+.monthly__donation label {
+  visibility: hidden;
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+}
+
+#payment-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.monthly__donation button {
+  margin-top: 1rem;
+}
+  
+</style>
+
+
+<script>
+  const checkoutButton = document.querySelector('#checkout-button');
+
+  function attachClickListener() {
+    checkoutButton.addEventListener('click', async (event) => {
+      event.preventDefault();
+      const monthlyAmount = document.querySelector('#monthly-amount').value;
+      const response = await fetch('/.netlify/functions/createCheckout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: 'Monthly subscription',
+          description: `Monthly subscription for $${monthlyAmount}`,
+          amount: parseFloat(monthlyAmount) * 100, // Convert to cents
+          image: 'https://res.cloudinary.com/abualex/image/upload/c_scale,w_100/v1674652841/GSC-LOGO.png',
+        }),
+      });
+      const session = await response.json();
+      const stripe = Stripe(session.publishableKey);
+      stripe.redirectToCheckout({
+        sessionId: session.sessionId,
+      });
+    });
+  }
+
+  if (checkoutButton !== null) {
+    attachClickListener();
+  } else {
+    console.error('#checkout-button element not found');
+  }
+</script>
+

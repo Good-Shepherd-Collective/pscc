@@ -1,0 +1,197 @@
+<div class="hero__header">
+  <div class="hero__center">
+    <img src="https://res.cloudinary.com/abualex/image/upload/v1682728654/gsc-logo-white-clear-background-no-mountain.svg" alt="Good Shepherd Collective logo">
+    <h1 class="big__heading">PSCC</h1>
+    <p class="second__hero__title">The <span class="underline">Popular Struggle Coordination Committee</span> is a grassroots formation coordinating nonviolent resistance across Palestine.</p>
+  </div>
+  <div class="pscc_history">
+    <h3>A History of the PSCC</h3>
+    <p>How generations of grassroots organizers have kept the Palestinian dream alive.</p>
+  </div>
+</div>
+
+
+<style>
+
+  .hero__small{
+    font-size: var(--font-h3);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+  
+  .second__hero__title {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+
+  .hero__header {
+    display: grid;
+    grid-template-areas: "hero__center hero__center hero__center pscc_history";
+    grid-template-columns: 25% 25% 25% 25%;
+    color: var(--black);
+    background-color: var(--white);
+    border-top: .5px dotted var(--black);
+    border-bottom: .5px dotted var(--black);
+    align-items: end;
+    width: 100%;
+    box-sizing: border-box;
+    height: 95vh;
+  }
+
+   .hero__center {
+    grid-area: hero__center;
+    border-right: .5px dotted var(--white);
+    padding: 8rem 4rem 2rem 4rem;
+    align-self: end;
+    height: 100%;
+    display: grid;
+    align-items: end;
+  }
+
+  .hero__center h1 {
+    font-size: clamp(5.5rem, 18vw + 1rem; 9); 
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+
+  .hero__center img {
+    width: 4.5rem;
+    aspect-ratio: 1/1;
+    height: auto;
+    margin-left: auto;
+    margin-bottom: 3rem;
+  }
+
+  .big__heading {
+  font-size: calc(4.5rem + 6.5vw); 
+  display: block !important;
+  }
+
+  .pscc_history {
+    grid-area: pscc_history;
+    padding: 2rem;
+    max-width: 400px;
+    background-image: url("https://res.cloudinary.com/abualex/image/upload/v1682847300/dot.png");
+      background-repeat: repeat;
+
+  }
+
+  .pscc_history img {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+  }
+  .stats {
+    grid-area: stats;
+    border-right: .5px dotted var(--white);
+    height: 100%;
+    width: 100%;
+    
+  } 
+  .underline {
+    text-decoration: underline;
+    text-decoration-color: var(--red);
+    font-weight: 700;
+    text-underline-offset: 3px;
+  }
+
+  .nowrap {
+    white-space: nowrap;
+  }
+
+    /* Small devices */
+  @media (max-width: 767.98px) {
+    .hero__header {
+      grid-template-areas:"hero__center hero__center"
+                            "pscc_history pscc_history";
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 0 !important;
+    }
+
+    .hero__center {
+      text-align: left;
+      outline: .5px dotted var(--white);
+    }
+
+    .hero__center h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .hero__center img {
+      margin-left: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .big__heading {
+      font-size: 6rem;
+      text-align: left;
+    }
+
+    .pscc_history{
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      padding: auto;
+      margin: 0;
+      width: 100%;
+    }
+    .stats{
+      width: 100%;
+    }
+    .pscc_history h3 {
+      text-align: center;
+      margin: 0;
+    }
+
+    .pscc_history p {
+      text-align: center;
+    }
+
+    .second__hero__title{
+      text-align: left !important;
+    }
+  }
+
+   @media (max-width: 601px) {
+    .hero__header {
+      grid-template-areas:"hero__center"
+                          "pscc_history";
+      grid-row-gap: 0;
+      grid-template-columns: 1fr;
+      text-align: left;
+      grid-column-gap: 0 !important;
+    }
+    .hero__center {
+      text-align: left;
+      padding: 2rem 1rem;
+    }
+
+    
+
+    .pscc_history{
+      border-bottom: 1px dotted var(--white);
+      width: 100% !important;
+      max-width: 100%;
+      border-top: 1px dotted var(--white);
+      text-align: left !important;
+      justify-items: start;
+      padding: 2rem 1rem;
+
+    }
+
+    .pscc_history h3, p{
+      text-align: left !important;
+      margin: 0;
+    }
+
+    .pscc_history img {
+      margin-right: auto;
+      text-align: left;
+    }
+  }
+</style>
+

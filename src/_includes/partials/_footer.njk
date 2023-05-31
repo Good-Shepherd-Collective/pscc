@@ -1,0 +1,222 @@
+<div class="main-footer">
+ 
+  <div class="main-footer-one">
+    <h4 id="donation__footer">Join us</h4>
+    <p>Come to Palestine and be in solidarity on the ground.</p>
+ 
+
+  </div>
+  
+  <div class="main-footer-two">
+    <p><span class="footer-header">Connect</span>
+      <br>info@popular-struggle.org
+      <br>Ramallah, Palestine<br>
+      <br><span class="footer-header">Socials</span><br>
+      <a href="https://www.facebook.com/goodshepherdcollective" target="_blank" rel="noopener noreferrer">Facebook</a>&nbsp;&nbsp;&nbsp;
+      <a href="https://www.instagram.com/goodshepherdcollective/" target="_blank" rel="noopener noreferrer">Instagram</a>&nbsp;&nbsp;&nbsp;
+      <a href="https://twitter.com/shepherds4good" target="_blank" rel="noopener noreferrer">Twitter </a><br></p>
+  </div>
+  
+  <div class="main-footer-three">
+    <p><span class="footer-header">Projects</span>
+      <br><a href="/faz3a">Faz3a</a>
+      <br>Summer camp
+      <br>Technology Development
+      <br>Local Communities 
+      <br>#DefundRacism</p>
+  </div>
+  
+  <div class="main-footer-four"><p>
+    <span class="footer-header">Voices from the Land</span>
+    <br>Communities
+    <br>Maps
+    <br>Videos</p>
+  </div>
+  
+  <div class="main-footer-bottom">
+    <img class="footer__logo" src="https://res.cloudinary.com/abualex/image/upload/v1682728654/gsc-logo-white-clear-background-no-mountain.svg" alt="The Good Shepherd Collective Logo">
+    <p><span class="copyright" id="copyright">Copyright ©   &nbsp;|&nbsp;  All Rights Reserved | The Popular Struggle Coordination Committee | Powered by <a href="https://goodshepherdcollective.org/">The Collective</a></span> </p>
+
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const currentYear = new Date().getFullYear();
+    const copyrightElement = document.getElementById('copyright');
+    copyrightElement.innerHTML = `Copyright © 2018 - ${currentYear}  &nbsp;|&nbsp;  Rights Reserved | The Popular Struggle Coordination Committee | <a href="https://goodshepherdcollective.org/">Powered by The Collective</a>`;
+  });
+</script>
+
+
+
+<style>
+#donation__footer{
+  text-align: left;
+}
+  .footer__logo{
+    text-align: center;
+    display: inline;
+    margin-bottom: .5rem !important;
+  }
+
+  .main-footer {
+    box-sizing: border-box;
+    background-color: var(--white);
+    color: var(--black);
+    text-align: left;
+    width: 100% !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "one two three four"
+                         "bottom bottom bottom bottom";
+    border-top: 1px dotted var(--black);
+    margin-top: 3rem;
+  }
+  .main-footer p{
+    font-size: var(--font-h5);
+  }
+
+  .main-footer a{
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  .main-footer p, .main-footer h4 {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .main-footer div{
+    box-sizing: border-box;
+    padding: .8rem;
+  }
+
+  .main-footer-one {
+    grid-area: one;
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+    
+  }
+
+  .main-footer-two {
+    grid-area: two;
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+  }
+
+  .main-footer-three {
+    grid-area: three;
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+  }
+
+  .main-footer-four {
+    grid-area: four;
+    border-bottom: 1px dotted var(--black);
+  }
+
+  .main-footer-bottom {
+    grid-area: bottom;
+    text-align: center;
+    align-items: center
+    display: grid;
+  }
+
+  .main-footer-bottom img{
+    width: 1.2rem;
+    aspect-ratio: 1/1;
+    margin: 0 .7rem;
+    vertical-align: middle;
+   
+  }
+
+  .copyright {
+    font-size: .75rem;
+    color: var(--black);
+  }
+
+  .footer-header {
+    font-size: var(--font-size-small);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  
+
+  button:focus {
+    outline: red dotted 2px;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  input {
+    border: #bebebe solid 1.5px;
+    border-radius: 5px;
+    padding: .25rem .85rem;
+    font-size: .65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: .5rem;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Works for Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+/* medium devices */
+  @media (max-width: 767.98px) {
+    .main-footer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "one two" 
+                          "three four"
+                         "bottom bottom";
+  }
+  .main-footer-one {
+    grid-area: one;
+    border-right: 1px dotted var(--white);
+    border-bottom: 1px dotted var(--white);
+    
+  }
+
+  .main-footer-two {
+    grid-area: two;
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+  }
+
+  .main-footer-three {
+    grid-area: three;
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+  }
+
+  .main-footer-four {
+    grid-area: four;
+    border-bottom: 1px dotted var(--black);
+  }
+  }
+
+  /* small devices */
+  @media (max-width: 601px) {
+    .main-footer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "one two" 
+                          "three four"
+                         "bottom bottom";
+                          
+  }
+
+  }
+</style>

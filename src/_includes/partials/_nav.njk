@@ -1,0 +1,130 @@
+<nav>
+  <img src="https://scontent.fjrs23-1.fna.fbcdn.net/v/t39.30808-6/270461170_289334506553894_5768208327671852558_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=D71_yrBk8S0AX8Zi9hc&_nc_ht=scontent.fjrs23-1.fna&oh=00_AfAjnECMYmkxjF_urmZFd_t-H-k3Mmq0rhE3f-QFEk1GJw&oe=645BECA0" alt="PSCC Logo" class="logo">
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/actions/">Actions</a></li>
+    <li><a href="/voices_from_the_land/">Voices from the Land</a></li>
+    <li><a href="/reports/">Reports</a></li>
+    <li><a href="/get_involved/">Get Involved</a></li>
+  </ul>
+</nav>
+
+<style>
+  .logo {
+    height: 3.25em;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--black);
+    border-bottom: 1px dotted var(--black);
+    margin-bottom: 3rem;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  nav ul li {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    border-left: 1px dotted var(--black);
+    padding: 1rem 2rem;
+    
+    
+  }
+
+  nav ul li a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: 600;
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    background-color: var(--white);
+    height: 3px;
+    width: 25px;
+    margin: 5px;
+  }
+
+  @media (max-width: 768px) {
+    nav img{
+      display: none;
+    }
+  }
+
+  @media (max-width: 601px) {
+    
+
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--black);
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 2rem;
+      z-index: 1000;
+    }
+
+    .nav-links li {
+      text-align: left;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links li a {
+      display: block;
+    }
+
+    .hamburger {
+      display: block;
+      position: absolute;
+      right: 2rem;
+    }
+  }
+
+    .nav-links.active {
+    display: flex;
+  }
+
+</style>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('nav-links').classList.toggle('active');
+  });
+
+  document.getElementById('nav-links').addEventListener('click', function() {
+    if (window.innerWidth <= 601) {
+      document.getElementById('nav-links').classList.toggle('active');
+    }
+  });
+</script>

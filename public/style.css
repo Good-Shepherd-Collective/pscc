@@ -1,0 +1,642 @@
+
+
+/* Andy Bell css reset
+ https://andy-bell.co.uk/a-modern-css-reset/
+*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+   width: 100%;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* fonts */
+
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-thin.eot'); /* IE9 Compat Modes */
+  src: url('overpass-thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('overpass-thin.woff2') format('woff2'), /* Super Modern Browsers */
+       url('overpass-thin.woff') format('woff'), /* Pretty Modern Browsers */
+       url('overpass-thin.ttf')  format('truetype'); /* Safari, Android, iOS */
+       font-weight: 200;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-thin-italic.eot');
+  src: url('overpass-thin-italic.eot?#iefix') format('embedded-opentype'),
+       url('overpass-thin-italic.woff2') format('woff2'),
+       url('overpass-thin-italic.woff') format('woff'),
+       url('overpass-thin-italic.ttf')  format('truetype');
+       font-weight: 200;
+       font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-extralight.eot');
+  src: url('overpass-extralight.eot?#iefix') format('embedded-opentype'),
+       url('overpass-extralight.woff2') format('woff2'),
+       url('overpass-extralight.woff') format('woff'),
+       url('overpass-extralight.ttf')  format('truetype');
+       font-weight: 300;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-extralight-italic.eot');
+  src: url('overpass-extralight-italic.eot?#iefix') format('embedded-opentype'),
+       url('overpass-extralight-italic.woff2') format('woff2'),
+       url('overpass-extralight-italic.woff') format('woff'),
+       url('overpass-extralight-italic.ttf')  format('truetype');
+       font-weight: 300;
+       font-style: italic;
+}
+
+
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-light.eot');
+  src: url('overpass-light.eot?#iefix') format('embedded-opentype'),
+       url('overpass-light.woff2') format('woff2'),
+       url('overpass-light.woff') format('woff'),
+       url('overpass-light.ttf')  format('truetype');
+       font-weight: 400;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-light-italic.eot');
+  src: url('overpass-light-italic.eot?#iefix') format('embedded-opentype'),
+       url('overpass-light-italic.woff2') format('woff2'),
+       url('overpass-light-italic.woff') format('woff'),
+       url('overpass-light-italic.ttf')  format('truetype');
+       font-weight: 400;
+       font-style: italic;
+}
+
+
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-regular.eot');
+  src: url('overpass-regular.eot?#iefix') format('embedded-opentype'),
+       url('overpass-regular.woff2') format('woff2'),
+       url('overpass-regular.woff') format('woff'),
+       url('overpass-regular.ttf')  format('truetype');
+       font-weight: 500;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-italic.eot');
+  src: url('overpass-italic.eot?#iefix') format('embedded-opentype'),
+       url('overpass-italic.woff2') format('woff2'),
+       url('overpass-italic.woff') format('woff'),
+       url('overpass-italic.ttf')  format('truetype');
+       font-weight: 500;
+       font-style: italic;
+}
+
+
+
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-semibold.eot');
+  src: url('overpass-semibold.eot?#iefix') format('embedded-opentype'),
+       url('overpass-semibold.woff2') format('woff2'),
+       url('overpass-semibold.woff') format('woff'),
+       url('overpass-semibold.ttf')  format('truetype');
+       font-weight: 600;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-semibold-italic.eot');
+  src: url('overpass-semibold-italic.eot?#iefix') format('embedded-opentype'),
+       url('overpass-semibold-italic.woff2') format('woff2'),
+       url('overpass-semibold-italic.woff') format('woff'),
+       url('overpass-semibold-italic.ttf')  format('truetype');
+       font-weight: 600;
+       font-style: italic;
+}
+
+
+
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-bold.eot');
+  src: url('overpass-bold.eot?#iefix') format('embedded-opentype'),
+       url('overpass-bold.woff2') format('woff2'),
+       url('overpass-bold.woff') format('woff'),
+       url('overpass-bold.ttf')  format('truetype');
+       font-weight: 700;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-bold-italic.eot');
+  src: url('overpass-bold-italic.eot?#iefix') format('embedded-opentype'),
+       url('overpass-bold-italic.woff2') format('woff2'),
+       url('overpass-bold-italic.woff') format('woff'),
+       url('overpass-bold-italic.ttf')  format('truetype');
+       font-weight: 700;
+       font-style: italic;
+}
+
+
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-extrabold.eot');
+  src: url('overpass-extrabold.eot?#iefix') format('embedded-opentype'),
+       url('overpass-extrabold.woff2') format('woff2'),
+       url('overpass-extrabold.woff') format('woff'),
+       url('overpass-extrabold.ttf')  format('truetype');
+       font-weight: 800;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-extrabold-italic.eot');
+  src: url('overpass-extrabold-italic.eot?#iefix') format('embedded-opentype'),
+       url('overpass-extrabold-italic.woff2') format('woff2'),
+       url('overpass-extrabold-italic.woff') format('woff'),
+       url('overpass-extrabold-italic.ttf')  format('truetype');
+       font-weight: 800;
+       font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-heavy.eot');
+  src: url('overpass-heavy.eot?#iefix') format('embedded-opentype'),
+       url('overpass-heavy.woff2') format('woff2'),
+       url('overpass-heavy.woff') format('woff'),
+       url('overpass-heavy.ttf')  format('truetype');
+       font-weight: 900;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'overpass';
+  src: url('overpass-heavy-italic.eot');
+  src: url('overpass-heavy-italic.eot?#iefix') format('embedded-opentype'),
+       url('overpass-heavy-italic.woff2') format('woff2'),
+       url('overpass-heavy-italic.woff') format('woff'),
+       url('overpass-heavy-italic.ttf')  format('truetype');
+       font-weight: 900;
+       font-style: italic;
+}
+/* Beginning custom CSS */
+
+:root {
+  --black: #101010;
+  --white: #f0f0f0e2;
+  --red: #A7002D;
+  --blue: #00435d;
+  --green: #00573F;
+  --dark-grey: #272626;
+
+--font-h6: clamp(0.64rem, -0.25vw + 0.7rem, 0.5rem);
+--font-h5: clamp(0.8rem, -0.17vw + 0.84rem, 0.71rem);
+--font-base: clamp(1rem, 0vw + 1rem, 1rem);
+--font-h4: clamp(1.1rem, 0.3vw + 1.1rem, 1.3rem);
+--font-h3: clamp(1.56rem, 0.79vw + 1.36rem, 2rem);
+--font-h2: clamp(1.95rem, 1.59vw + 1.56rem, 2.83rem);
+--font-h1: clamp(2.44rem, 2.83vw + 1.73rem, 4rem);
+
+}
+
+
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  grid-template-rows: auto 1fr auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  text-rendering: optimizeSpeed;
+  max-width: 100vw !important;
+  width: width;
+  background-color: var(--white);
+
+  
+}
+
+h1{
+  font-size: var(--font-h1);
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  font-size: var(--font-h2);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+ font-family: 'overpass';
+
+}
+
+h3 {
+  font-family: 'overpass';
+  font-size: clamp(1.26rem, 1vw + 1.11rem, 2.11rem);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+h4 {
+  font-size: var(--font-h4);
+  font-family: 'overpass';
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: var(--font-base);
+  line-height: 1.5;
+  padding-left: 0 !important;
+  font-family: 'Numans', sans-serif;
+  overflow-wrap: break-word;
+}
+
+h5{
+  font-size: var(--font-h5);
+  font-family: 'montserrat', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+  padding-left: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 42rem;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.button__white {
+  background-color: inherit;
+  color: var(--white);
+  border: #bebebe solid 1px;
+  border-radius: 10px;
+  padding: .5rem .85rem;
+  font-size: .65rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.gsc__icon{
+  width: 5rem;
+}
+
+button{
+  width:fit-content;
+  text-decoration: none !important;
+}
+
+.btn-black{
+  margin-top: 2rem;
+  /* background-color: var(--black); */
+  background: linear-gradient(315deg, #0c0c0c, #0f0f0f);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  grid-area: button;
+  align-self: end;
+  border-radius: 5px;
+  border: 0.75px solid #000;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  width: fit-content;
+  outline: 1.5px solid #4a4a4abb;
+  box-shadow: 3px 3px 5px #1b1a1a, -3px -3px 5px #2b2b2b;
+}
+
+.btn-black:hover {
+  box-shadow: inset 3px 3px 15px #1b1a1a, inset -3px -3px 15px #2b2b2b;
+  transform: scale(0.98);
+  background: linear-gradient(180deg, #1b1a1a 0%, #2b2b2b 100%);
+}
+
+button {
+  background-color: #e7e7e7;
+  color: #020202;
+  border: #bebebe solid 1px;
+  border-radius: 5px;
+  padding: .25rem .85rem;
+  font-size: .65rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: .5rem;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  margin-bottom:1.5em
+}
+.sidenote {
+  display: inline;
+}
+
+/* * */
+.sidenote__button::after {
+  content: "\002a";
+  display: inline-block;
+}
+
+
+.sidenote__checkbox {
+  display: none;
+}
+
+/* Hidden, but accessible to browsers that don't do CSS (e.g. screenreaders, Pocket) */
+.sidenote__content-parenthesis {
+  position: absolute;
+  left: -99999px;
+  top: auto;
+}
+
+/* For narrow viewports, the sidenote is hidden by default and shown when the checkbox is checked. */
+@media screen and (max-width: 1079px) {
+
+  .sidenote__checkbox~.sidenote__content {
+    /* Hidden, but accessible to browsers that don't do CSS (e.g. screenreaders, Pocket) */
+    position: absolute;
+    left: -99999px;
+    top: auto;
+  }
+
+  .sidenote__checkbox:checked~.sidenote__content {
+    /* override hidden-but-accessible */
+    position: relative;
+    left: auto;
+
+    /* Don't break up line containing the sidenote */
+    float: left;
+    min-width: 100%;
+
+    display: block;
+    margin: 0.8rem 0;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .sidenote__button {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    cursor: pointer;
+  }
+
+  .sidenote__button:not(:hover):focus::after {
+    display: inline;
+    /* display:inline-block causes misalignment between focus ring and background. */
+  }
+
+  .sidenote__checkbox:checked~.sidenote__button::after {
+    content: none;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .sidenote {
+    --sidenote-width: 12rem;
+    --sidenote-margin: 4.8rem;
+    cursor: default;
+  }
+
+  .sidenote:hover .sidenote__button::after,
+  .sidenote:hover .sidenote__content::before {
+    color: var(--link-color);
+  }
+
+  .sidenote__content::before {
+    /* * */
+    content: "\002a";
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -4rem;
+
+    /* to align different types of asterisks we need a fixed width */
+    width: 3rem;
+  }
+
+  .sidenote__content {
+    display: block;
+    position: absolute;
+    left: -50%;
+
+    /* Align sidenote top with main text */
+    margin-top: calc(-1.5*var(--text-size));
+
+    margin-right: calc(-1*var(--sidenote-width) - 1*var(--sidenote-margin));
+    width: var(--sidenote-width);
+    font-size: .85rem;
+    color: var(--text-color);
+  }
+
+}
+
+.sidenote__checkbox {
+  display: none;
+}
+
+/* Hidden, but accessible to browsers that don't do CSS (e.g. screenreaders, Pocket) */
+.sidenote__content-parenthesis {
+  position: absolute;
+  left: -99999px;
+  top: auto;
+}
+
+/* For narrow viewports, the sidenote is hidden by default and shown when the checkbox is checked. */
+@media screen and (max-width: 1079px) {
+
+  .sidenote__checkbox~.sidenote__content {
+    /* Hidden, but accessible to browsers that don't do CSS (e.g. screenreaders, Pocket) */
+    position: absolute;
+    left: -99999px;
+    top: auto;
+  }
+
+  .sidenote__checkbox:checked~.sidenote__content {
+    /* override hidden-but-accessible */
+    position: relative;
+    left: auto;
+
+    /* Don't break up line containing the sidenote */
+    float: left;
+    min-width: 100%;
+
+    display: block;
+    margin: 0.8rem 0;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .sidenote__button {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    cursor: pointer;
+  }
+
+  .sidenote__button:not(:hover):focus::after {
+    display: inline;
+    /* display:inline-block causes misalignment between focus ring and background. */
+  }
+
+  .sidenote__checkbox:checked~.sidenote__button::after {
+    content: none;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .sidenote {
+    --sidenote-width: 12rem;
+    --sidenote-margin: 4.8rem;
+    cursor: default;
+  }
+
+  .sidenote:hover .sidenote__button::after,
+  .sidenote:hover .sidenote__content::before {
+    color: var(--link-color);
+  }
+
+  .sidenote__content::before {
+    /* * */
+    content: "\002a";
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -4rem;
+
+    /* to align different types of asterisks we need a fixed width */
+    width: 3rem;
+  }
+
+  .sidenote__content {
+    display: block;
+    position: absolute;
+    left: -50%;
+
+    /* Align sidenote top with main text */
+    margin-top: calc(-1.5*var(--text-size));
+
+    margin-right: calc(-1*var(--sidenote-width) - 1*var(--sidenote-margin));
+    width: var(--sidenote-width);
+    font-size: .85rem;
+    color: var(--text-color);
+  }
+
+}
+
+.full-bleed{
+  box-shadow: 0 0 0 100vmax var(--dark-grey);
+  clip-path: inset( 0 -100vmax);
+}

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .body{
+  --text-size: 1.2rem;
+  --text-color: #4d4773;
+  --link-color: #2100ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-color);
+  background: #f5f5f5;
+}
+.article{
+  position: relative;
+  max-width: 500px;
+}
+h1, p{
+  font-family: sans-serif;
+}
+h1{
+  margin-top: 3rem;
+  font-size: 2.4rem;
+}
+p{
+  font-size: var(--text-size);
+  line-height: 1.6em;
+}
+
+.sidenote {
+  display: inline;
+}
+
+/* * */
+.sidenote__button::after {
+  content: "\002a";
+  display: inline-block;
+}
+
+/* ⁑ */
+.sidenote__button--number-2::after {
+  content: "\2051";
+}
+
+/* ⁂ */
+.sidenote__button--number-3::after {
+  content: "\2042";
+}
+
+/* ✝ */
+.sidenote__button--number-4::after {
+  content: "\2020";
+}
+
+/* ‡ */
+.sidenote__button--number-5::after {
+  content: "\2021";
+}
+
+/* ⁑⁑ */
+.sidenote__button--number-6::after {
+  content: "\2051\2051";
+}
+
+/* ‡‡ */
+.sidenote__button--number-7::after {
+  content: "\2021\2021";
+}
+
+.sidenote__checkbox {
+  display: none;
+}
+
+/* Hidden, but accessible to browsers that don't do CSS (e.g. screenreaders, Pocket) */
+.sidenote__content-parenthesis {
+  position: absolute;
+  left: -99999px;
+  top: auto;
+}
+
+/* For narrow viewports, the sidenote is hidden by default and shown when the checkbox is checked. */
+@media screen and (max-width: 1079px) {
+
+  .sidenote__checkbox~.sidenote__content {
+    /* Hidden, but accessible to browsers that don't do CSS (e.g. screenreaders, Pocket) */
+    position: absolute;
+    left: -99999px;
+    top: auto;
+  }
+
+  .sidenote__checkbox:checked~.sidenote__content {
+    /* override hidden-but-accessible */
+    position: relative;
+    left: auto;
+
+    /* Don't break up line containing the sidenote */
+    float: left;
+    min-width: 100%;
+
+    display: block;
+    margin: 0.8rem 0;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .sidenote__button {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    cursor: pointer;
+  }
+
+  .sidenote__button:not(:hover):focus::after {
+    display: inline;
+    /* display:inline-block causes misalignment between focus ring and background. */
+  }
+
+  .sidenote__checkbox:checked~.sidenote__button::after {
+    content: none;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .sidenote {
+    --sidenote-width: 12rem;
+    --sidenote-margin: 4.8rem;
+    cursor: default;
+  }
+
+  .sidenote:hover .sidenote__button::after,
+  .sidenote:hover .sidenote__content::before {
+    color: var(--link-color);
+  }
+
+  .sidenote__content::before {
+    /* * */
+    content: "\002a";
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -4rem;
+
+    /* to align different types of asterisks we need a fixed width */
+    width: 3rem;
+  }
+
+  .sidenote__content {
+    display: block;
+    position: absolute;
+    left: -50%;
+
+    /* Align sidenote top with main text */
+    margin-top: calc(-1.5*var(--text-size));
+
+    margin-right: calc(-1*var(--sidenote-width) - 1*var(--sidenote-margin));
+    width: var(--sidenote-width);
+    font-size: .85rem;
+    color: var(--text-color);
+  }
+
+  /* ⁑ */
+  .sidenote__content--number-2::before {
+    content: "\2051";
+  }
+
+  /* ⁂ */
+  .sidenote__content--number-3::before {
+    content: "\2042";
+  }
+
+  /* ✝ */
+  .sidenote__content--number-4::before {
+    content: "\2020";
+  }
+
+  /* ‡ */
+  .sidenote__content--number-5::before {
+    content: "\2021";
+  }
+
+  /* ⁑⁑ */
+  .sidenote__content--number-6::before {
+    content: "\2051\2051";
+  }
+
+  /* ‡‡ */
+  .sidenote__content--number-7::before {
+    content: "\2021\2021";
+  }
+}
+    </style>
+  </head>
+  <body class="body">
+  <main>
+    <article class="article">
+      <h1>Semantic sidenotes for the web—Demo</h1>
+      <p>The <span class="sidenote">
+        <input
+          aria-label="Show sidenote"
+          type="checkbox"
+          id="sidenote__checkbox--1"
+          class="sidenote__checkbox">
+        <label
+          tabindex="0"
+          title="{{ include.content }}"
+          aria-describedby="sidenote-1"
+          for="sidenote__checkbox--1"
+          class="sidenote__button sidenote__button--number-1
+        ">sidenote label</label>
+        <small
+          id="sidenote-1"
+          class="sidenote__content sidenote__content--number-1">
+          <span class="sidenote__content-parenthesis
+          "> (sidenote: </span>
+          This is the sidenote.
+          <span class="sidenote__content-parenthesis">)</span>
+        </small>
+      </span> collapses inside the text on viewports narrower than 1080 pixels. There the underlined text is clickable and toggles the visibility of the sidenote's content.</p>
+  		<p>Lorem ipsum dolor sit amet,
+        <span class="sidenote">
+          <input
+            aria-label="Show sidenote"
+            type="checkbox"
+            id="sidenote__checkbox--2"
+            class="sidenote__checkbox">
+          <label
+            tabindex="0"
+            title="{{ include.content }}"
+            aria-describedby="sidenote-2"
+            for="sidenote__checkbox--2"
+            class="sidenote__button sidenote__button--number-2
+          ">consectetur</label>
+          <small
+            id="sidenote-2"
+            class="sidenote__content sidenote__content--number-2">
+            <span class="sidenote__content-parenthesis
+            "> (sidenote: </span>
+            Here's another sidenote start jtere.
+            <span class="sidenote__content-parenthesis">)</span>
+          </small>
+        </span> adipiscing elit. Morbi orci purus, venenatis a lorem non, rutrum condimentum nibh. Nam tempor, est a laoreet accumsan, nunc elit elementum nunc, sed congue ex massa ut velit. .</p>
+      <p>Mauris vehicula, orci tincidunt luctus feugiat, augue ex finibus libero, id convallis leo turpis at sapien. Nunc sit amet convallis lacus. Integer vitae tortor lorem. Duis scelerisque pretised sapien eget eleifend. Vivamus sollicitudin mauris non mattis blandit. Etiam sollicitudin <span class="sidenote">
+        <input
+          aria-label="Show sidenote"
+          type="checkbox"
+          id="sidenote__checkbox--3"
+          class="sidenote__checkbox">
+        <label
+          tabindex="0"
+          title="{{ include.content }}"
+          aria-describedby="sidenote-3"
+          for="sidenote__checkbox--3"
+          class="sidenote__button sidenote__button--number-3
+        ">orci</label>
+        <small
+          id="sidenote-3"
+          class="sidenote__content sidenote__content--number-3">
+          <span class="sidenote__content-parenthesis
+          "> (sidenote: </span>
+          And another one.
+          <span class="sidenote__content-parenthesis">)
+        </small>
+      </span> vel feugiat commodo. Etiam ut eros eget nibh egestas lobortis in vitae tellus. Nullam est enim, bibendum ut interdum eu, interdum eu tellus.</p>
+  		<p>Cras <span class="sidenote">
+        <input
+          aria-label="Show sidenote"
+          type="checkbox"
+          id="sidenote__checkbox--4"
+          class="sidenote__checkbox">
+        <label
+          tabindex="0"
+          title="{{ include.content }}"
+          aria-describedby="sidenote-4"
+          for="sidenote__checkbox--4"
+          class="sidenote__button sidenote__button--number-4
+        ">sollicitudin</label>
+        <small
+          id="sidenote-4"
+          class="sidenote__content sidenote__content--number-4">
+          <span class="sidenote__content-parenthesis
+          "> (sidenote: </span>
+          And yet another one.
+          <span class="sidenote__content-parenthesis">)
+        </small> sit amet ex ut accumsan. Ut id vehicula turpis. In sem turpis, vulputate eget laoreet et, cursus eu est. Donec tincidunt ornare lorem et pharetra. Sed tempor fermentum lacus rutrum ultrices. Proin at enim aliquam, tempus magna vel, cursus justo. Pellentesque iaculis vestibulum mi gravida facilisis. In hac habitasse platea dictumst. Vivamus faucibus sagittis dolor, at feugiat tortor accumsan ut. Vivamus fringilla sollicitudin tempus. Vestibulum cursus, ex eu egestas pharetra, eros nibh fringilla turpis, consectetur <span class="sidenote">
+          <input
+            aria-label="Show sidenote"
+            type="checkbox"
+            id="sidenote__checkbox--5"
+            class="sidenote__checkbox">
+          <label
+            tabindex="0"
+            title="{{ include.content }}"
+            aria-describedby="sidenote-5"
+            for="sidenote__checkbox--5"
+            class="sidenote__button sidenote__button--number-5
+          ">fermentum</label>
+          <small
+            id="sidenote-5"
+            class="sidenote__content sidenote__content--number-5">
+            <span class="sidenote__content-parenthesis
+            "> (sidenote: </span>
+            Make sure to keep enough space between them, so they don't overlap.
+            <span class="sidenote__content-parenthesis">)
+          </small> erat turpis id tellus.</p>
+  		<p>Donec ligula nisi, fermentum nec eros vitae, fermentum pharetra ipsum. Phasellus dui eros, lobortis vel hendrerit imperdiet, tempor ut justo. Phasellus vehicula odio nunc, a tempus urna venenatis sed. Vestibulum <span class="sidenote">
+        <input
+          aria-label="Show sidenote"
+          type="checkbox"
+          id="sidenote__checkbox--6"
+          class="sidenote__checkbox">
+        <label
+          tabindex="0"
+          title="{{ include.content }}"
+          aria-describedby="sidenote-6"
+          for="sidenote__checkbox--6"
+          class="sidenote__button sidenote__button--number-6
+        ">nec enim non ligula</label>
+        <small
+          id="sidenote-6"
+          class="sidenote__content sidenote__content--number-6">
+          <span class="sidenote__content-parenthesis
+          "> (sidenote: </span>
+          Here's number six.
+          <span class="sidenote__content-parenthesis">)
+        </small> rutrum rutrum eget ac odio. Aenean non metus et orci accumsan ullamcorper. In nec leo at ante rutrum facilisis ut at erat. Donec quis libero eget lorem placerat pellentesque et ac quam. Sed non cursus eros. Pellentesque sit amet pharetra erat. Maecenas volutpat aliquet quam, non cursus turpis efficitur in. Aenean ut euismod ipsum.</p>
+    </article>
+  </main>
+  side
+  </body>
+</html>

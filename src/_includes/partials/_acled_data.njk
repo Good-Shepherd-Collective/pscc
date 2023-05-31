@@ -1,0 +1,99 @@
+
+<div class="map-container">
+  <div id="map"></div>
+  <div id="text">
+    <h1 class="map__title">About this map</h1>
+    <p class="event__data">Click on the red dot to zoom and view the data.<br><br>This map is inherently incomplete. Israeli settler-colonial violence isn't reported 100% of the time. A lot of the violence goes undocumentated and unreported. So it's critical to understand this map as only a tiny subsection of Israeli state violence.</p>
+    <div class="map__info">
+    <span class="tooltip-wrapper" title="This data is automatically aggregated from numerous reputable NGO's and governmental offices. This specific data set is managed by Armed Conflict Location & Event Data Project (ACLED).  Sign up to our email list to chose to have this data emailed to you monthly or daily.">
+      <img src="https://res.cloudinary.com/abualex/image/upload/v1683027185/MdiInformationVariantCircle_1.svg" alt="info on data." >
+      </span>
+      </div>
+  </div>
+  
+</div>
+
+
+
+<style>
+
+  .map__info{
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+
+  .event__date{
+    color: var(--black);
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .map__title{
+    font-size: var(--font-h2);
+    color: var(--black);
+    font-weight: 700;
+    line-height: 1.2;
+   margin-bottom: 2rem;
+    margin-top: 1rem;
+    }
+
+   .map-container{
+    width: 100%;
+    display: grid;
+    grid-template-areas: "map map text";
+    grid-template-columns: 1fr 1fr 1fr;
+   
+   }
+
+   .map-container img{
+    width: 20px;
+    margin-left: auto;
+    margin-top: auto;
+   }
+
+    #map{
+      grid-area: map;
+      width: 100%;
+      height: 100vh;
+    }
+
+    #text{
+      display: grid;
+      height: 100%;
+      position: relative;
+      grid-area: text;
+      color: black;
+      padding: 2rem;
+      background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23b0b0b0' fill-opacity='0.28' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+     
+    .popup-header{
+      grid-area: text;
+    }
+
+    .popup-header h3{
+      color: pink;
+    }
+
+  .mapboxgl-ctrl-attrib-inner{
+    display: none;
+  }
+
+  .mapboxgl-ctrl-logo{
+    display: none !important;
+  }
+
+  @media (max-width: 900px){
+    .map-container{
+      grid-template-areas: "map map" "text text";
+      grid-template-columns: 1fr 1fr;
+    }
+    #map{
+      grid-area: map;
+      width: 100%;
+      height: 50vh;
+    }
+  }
+</style>

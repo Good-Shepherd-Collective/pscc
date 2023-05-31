@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Good Shepherd Collective</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Numans&display=swap" rel="stylesheet">
+  <script defer src="https://js.stripe.com/v3/"></script>
+  <script defer>
+    window.STRIPE_PUBLISHABLE_KEY = 'pk_live_w80g0PV7UkWhTDrxlatCJXXt';
+  </script>
+  <script defer src="/js/checkout.js"></script>
+  <script defer src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+  <script defer src="/js/map.js"></script>
+</head>
+<body>
+  <nav>
+  <img src="https://scontent.fjrs23-1.fna.fbcdn.net/v/t39.30808-6/270461170_289334506553894_5768208327671852558_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=D71_yrBk8S0AX8Zi9hc&_nc_ht=scontent.fjrs23-1.fna&oh=00_AfAjnECMYmkxjF_urmZFd_t-H-k3Mmq0rhE3f-QFEk1GJw&oe=645BECA0" alt="PSCC Logo" class="logo">
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/actions/">Actions</a></li>
+    <li><a href="/voices_from_the_land/">Voices from the Land</a></li>
+    <li><a href="/reports/">Reports</a></li>
+    <li><a href="/get_involved/">Get Involved</a></li>
+  </ul>
+</nav>
+
+<style>
+  .logo {
+    height: 3.25em;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--black);
+    border-bottom: 1px dotted var(--black);
+    margin-bottom: 3rem;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  nav ul li {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    border-left: 1px dotted var(--black);
+    padding: 1rem 2rem;
+    
+    
+  }
+
+  nav ul li a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: 600;
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    background-color: var(--white);
+    height: 3px;
+    width: 25px;
+    margin: 5px;
+  }
+
+  @media (max-width: 768px) {
+    nav img{
+      display: none;
+    }
+  }
+
+  @media (max-width: 601px) {
+    
+
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--black);
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 2rem;
+      z-index: 1000;
+    }
+
+    .nav-links li {
+      text-align: left;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links li a {
+      display: block;
+    }
+
+    .hamburger {
+      display: block;
+      position: absolute;
+      right: 2rem;
+    }
+  }
+
+    .nav-links.active {
+    display: flex;
+  }
+
+</style>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('nav-links').classList.toggle('active');
+  });
+
+  document.getElementById('nav-links').addEventListener('click', function() {
+    if (window.innerWidth <= 601) {
+      document.getElementById('nav-links').classList.toggle('active');
+    }
+  });
+</script>
+
+  
+
+<div class="map-container">
+  <div id="map"></div>
+  <div id="text">
+    <h1 class="map__title">About this map</h1>
+    <p class="event__data">Click on the red dot to zoom and view the data.<br><br>This map is inherently incomplete. Israeli settler-colonial violence isn't reported 100% of the time. A lot of the violence goes undocumentated and unreported. So it's critical to understand this map as only a tiny subsection of Israeli state violence.</p>
+    <div class="map__info">
+    <span class="tooltip-wrapper" title="This data is automatically aggregated from numerous reputable NGO's and governmental offices. This specific data set is managed by Armed Conflict Location & Event Data Project (ACLED).  Sign up to our email list to chose to have this data emailed to you monthly or daily.">
+      <img src="https://res.cloudinary.com/abualex/image/upload/v1683027185/MdiInformationVariantCircle_1.svg" alt="info on data." >
+      </span>
+      </div>
+  </div>
+  
+</div>
+
+
+
+<style>
+
+  .map__info{
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+
+  .event__date{
+    color: var(--black);
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .map__title{
+    font-size: var(--font-h2);
+    color: var(--black);
+    font-weight: 700;
+    line-height: 1.2;
+   margin-bottom: 2rem;
+    margin-top: 1rem;
+    }
+
+   .map-container{
+    width: 100%;
+    display: grid;
+    grid-template-areas: "map map text";
+    grid-template-columns: 1fr 1fr 1fr;
+   
+   }
+
+   .map-container img{
+    width: 20px;
+    margin-left: auto;
+    margin-top: auto;
+   }
+
+    #map{
+      grid-area: map;
+      width: 100%;
+      height: 100vh;
+    }
+
+    #text{
+      display: grid;
+      height: 100%;
+      position: relative;
+      grid-area: text;
+      color: black;
+      padding: 2rem;
+      background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23b0b0b0' fill-opacity='0.28' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+     
+    .popup-header{
+      grid-area: text;
+    }
+
+    .popup-header h3{
+      color: pink;
+    }
+
+  .mapboxgl-ctrl-attrib-inner{
+    display: none;
+  }
+
+  .mapboxgl-ctrl-logo{
+    display: none !important;
+  }
+
+  @media (max-width: 900px){
+    .map-container{
+      grid-template-areas: "map map" "text text";
+      grid-template-columns: 1fr 1fr;
+    }
+    #map{
+      grid-area: map;
+      width: 100%;
+      height: 50vh;
+    }
+  }
+</style>
+ 
+
+
+
+
+  <div class="main-footer">
+ 
+  <div class="main-footer-one">
+    <h4 id="donation__footer">Join us</h4>
+    <p>Come to Palestine and be in solidarity on the ground.</p>
+ 
+
+  </div>
+  
+  <div class="main-footer-two">
+    <p><span class="footer-header">Connect</span>
+      <br>info@popular-struggle.org
+      <br>Ramallah, Palestine<br>
+      <br><span class="footer-header">Socials</span><br>
+      <a href="https://www.facebook.com/goodshepherdcollective" target="_blank" rel="noopener noreferrer">Facebook</a>&nbsp;&nbsp;&nbsp;
+      <a href="https://www.instagram.com/goodshepherdcollective/" target="_blank" rel="noopener noreferrer">Instagram</a>&nbsp;&nbsp;&nbsp;
+      <a href="https://twitter.com/shepherds4good" target="_blank" rel="noopener noreferrer">Twitter </a><br></p>
+  </div>
+  
+  <div class="main-footer-three">
+    <p><span class="footer-header">Projects</span>
+      <br><a href="/faz3a">Faz3a</a>
+      <br>Summer camp
+      <br>Technology Development
+      <br>Local Communities 
+      <br>#DefundRacism</p>
+  </div>
+  
+  <div class="main-footer-four"><p>
+    <span class="footer-header">Voices from the Land</span>
+    <br>Communities
+    <br>Maps
+    <br>Videos</p>
+  </div>
+  
+  <div class="main-footer-bottom">
+    <img class="footer__logo" src="https://res.cloudinary.com/abualex/image/upload/v1682728654/gsc-logo-white-clear-background-no-mountain.svg" alt="The Good Shepherd Collective Logo">
+    <p><span class="copyright" id="copyright">Copyright ©   &nbsp;|&nbsp;  All Rights Reserved | The Popular Struggle Coordination Committee | Powered by <a href="https://goodshepherdcollective.org/">The Collective</a></span> </p>
+
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const currentYear = new Date().getFullYear();
+    const copyrightElement = document.getElementById('copyright');
+    copyrightElement.innerHTML = `Copyright © 2018 - ${currentYear}  &nbsp;|&nbsp;  Rights Reserved | The Popular Struggle Coordination Committee | <a href="https://goodshepherdcollective.org/">Powered by The Collective</a>`;
+  });
+</script>
+
+
+
+<style>
+#donation__footer{
+  text-align: left;
+}
+  .footer__logo{
+    text-align: center;
+    display: inline;
+    margin-bottom: .5rem !important;
+  }
+
+  .main-footer {
+    box-sizing: border-box;
+    background-color: var(--white);
+    color: var(--black);
+    text-align: left;
+    width: 100% !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "one two three four"
+                         "bottom bottom bottom bottom";
+    border-top: 1px dotted var(--black);
+    margin-top: 3rem;
+  }
+  .main-footer p{
+    font-size: var(--font-h5);
+  }
+
+  .main-footer a{
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  .main-footer p, .main-footer h4 {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .main-footer div{
+    box-sizing: border-box;
+    padding: .8rem;
+  }
+
+  .main-footer-one {
+    grid-area: one;
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+    
+  }
+
+  .main-footer-two {
+    grid-area: two;
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+  }
+
+  .main-footer-three {
+    grid-area: three;
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+  }
+
+  .main-footer-four {
+    grid-area: four;
+    border-bottom: 1px dotted var(--black);
+  }
+
+  .main-footer-bottom {
+    grid-area: bottom;
+    text-align: center;
+    align-items: center
+    display: grid;
+  }
+
+  .main-footer-bottom img{
+    width: 1.2rem;
+    aspect-ratio: 1/1;
+    margin: 0 .7rem;
+    vertical-align: middle;
+   
+  }
+
+  .copyright {
+    font-size: .75rem;
+    color: var(--black);
+  }
+
+  .footer-header {
+    font-size: var(--font-size-small);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  
+
+  button:focus {
+    outline: red dotted 2px;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  input {
+    border: #bebebe solid 1.5px;
+    border-radius: 5px;
+    padding: .25rem .85rem;
+    font-size: .65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: .5rem;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Works for Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+/* medium devices */
+  @media (max-width: 767.98px) {
+    .main-footer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "one two" 
+                          "three four"
+                         "bottom bottom";
+  }
+  .main-footer-one {
+    grid-area: one;
+    border-right: 1px dotted var(--white);
+    border-bottom: 1px dotted var(--white);
+    
+  }
+
+  .main-footer-two {
+    grid-area: two;
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+  }
+
+  .main-footer-three {
+    grid-area: three;
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+  }
+
+  .main-footer-four {
+    grid-area: four;
+    border-bottom: 1px dotted var(--black);
+  }
+  }
+
+  /* small devices */
+  @media (max-width: 601px) {
+    .main-footer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "one two" 
+                          "three four"
+                         "bottom bottom";
+                          
+  }
+
+  }
+</style>
+</body>
+</html>
