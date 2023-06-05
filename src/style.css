@@ -443,101 +443,34 @@ p {
   display: inline-block;
 }
 
-
-.sidenote__checkbox {
-  display: none;
+/* ⁑ */
+.sidenote__button--number-2::after {
+  content: "\2051";
 }
 
-/* Hidden, but accessible to browsers that don't do CSS (e.g. screenreaders, Pocket) */
-.sidenote__content-parenthesis {
-  position: absolute;
-  left: -99999px;
-  top: auto;
+/* ⁂ */
+.sidenote__button--number-3::after {
+  content: "\2042";
 }
 
-/* For narrow viewports, the sidenote is hidden by default and shown when the checkbox is checked. */
-@media screen and (max-width: 1079px) {
-
-  .sidenote__checkbox~.sidenote__content {
-    /* Hidden, but accessible to browsers that don't do CSS (e.g. screenreaders, Pocket) */
-    position: absolute;
-    left: -99999px;
-    top: auto;
-  }
-
-  .sidenote__checkbox:checked~.sidenote__content {
-    /* override hidden-but-accessible */
-    position: relative;
-    left: auto;
-
-    /* Don't break up line containing the sidenote */
-    float: left;
-    min-width: 100%;
-
-    display: block;
-    margin: 0.8rem 0;
-    padding: 0.8rem 1.6rem;
-  }
-
-  .sidenote__button {
-    color: var(--link-color);
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    cursor: pointer;
-  }
-
-  .sidenote__button:not(:hover):focus::after {
-    display: inline;
-    /* display:inline-block causes misalignment between focus ring and background. */
-  }
-
-  .sidenote__checkbox:checked~.sidenote__button::after {
-    content: none;
-  }
+/* ✝ */
+.sidenote__button--number-4::after {
+  content: "\2020";
 }
 
-@media screen and (min-width: 1080px) {
-  .sidenote {
-    --sidenote-width: 12rem;
-    --sidenote-margin: 4.8rem;
-    cursor: default;
-  }
+/* ‡ */
+.sidenote__button--number-5::after {
+  content: "\2021";
+}
 
-  .sidenote:hover .sidenote__button::after,
-  .sidenote:hover .sidenote__content::before {
-    color: var(--link-color);
-  }
+/* ⁑⁑ */
+.sidenote__button--number-6::after {
+  content: "\2051\2051";
+}
 
-  .sidenote__content::before {
-    /* * */
-    content: "\002a";
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -4rem;
-
-    /* to align different types of asterisks we need a fixed width */
-    width: 3rem;
-  }
-
-  .sidenote__content {
-    display: block;
-    position: absolute;
-    left: -50%;
-
-    /* Align sidenote top with main text */
-    margin-top: calc(-1.5*var(--text-size));
-
-    margin-right: calc(-1*var(--sidenote-width) - 1*var(--sidenote-margin));
-    width: var(--sidenote-width);
-    font-size: .85rem;
-    color: var(--text-color);
-  }
-
+/* ‡‡ */
+.sidenote__button--number-7::after {
+  content: "\2021\2021";
 }
 
 .sidenote__checkbox {
@@ -594,8 +527,8 @@ p {
 
 @media screen and (min-width: 1080px) {
   .sidenote {
-    --sidenote-width: 12rem;
-    --sidenote-margin: 4.8rem;
+    --sidenote-width: 10rem;
+    --sidenote-margin: 1.8rem;
     cursor: default;
   }
 
@@ -606,24 +539,29 @@ p {
 
   .sidenote__content::before {
     /* * */
-    content: "\002a";
+    content: "1";
 
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
     position: absolute;
-    top: 0;
+    top: 15px;
     bottom: 0;
     left: -4rem;
 
     /* to align different types of asterisks we need a fixed width */
     width: 3rem;
+    color: var(--red);
   }
 
   .sidenote__content {
     display: block;
     position: absolute;
-    left: -50%;
+    right: 0;
+    border-top: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+    padding: 15px 0;
+    
 
     /* Align sidenote top with main text */
     margin-top: calc(-1.5*var(--text-size));
@@ -631,9 +569,37 @@ p {
     margin-right: calc(-1*var(--sidenote-width) - 1*var(--sidenote-margin));
     width: var(--sidenote-width);
     font-size: .85rem;
-    color: var(--text-color);
   }
 
+  /* ⁑ */
+  .sidenote__content--number-2::before {
+    content: "\2051";
+  }
+
+  /* ⁂ */
+  .sidenote__content--number-3::before {
+    content: "\2042";
+  }
+
+  /* ✝ */
+  .sidenote__content--number-4::before {
+    content: "\2020";
+  }
+
+  /* ‡ */
+  .sidenote__content--number-5::before {
+    content: "\2021";
+  }
+
+  /* ⁑⁑ */
+  .sidenote__content--number-6::before {
+    content: "\2051\2051";
+  }
+
+  /* ‡‡ */
+  .sidenote__content--number-7::before {
+    content: "\2021\2021";
+  }
 }
 
 .full-bleed{
