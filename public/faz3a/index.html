@@ -12,7 +12,7 @@
 </head>
 <body>
   <nav>
-  <img src="https://scontent.fjrs23-1.fna.fbcdn.net/v/t39.30808-6/270461170_289334506553894_5768208327671852558_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=D71_yrBk8S0AX8Zi9hc&_nc_ht=scontent.fjrs23-1.fna&oh=00_AfAjnECMYmkxjF_urmZFd_t-H-k3Mmq0rhE3f-QFEk1GJw&oe=645BECA0" alt="PSCC Logo" class="logo">
+  <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1685965296/pscc/pscc.avif" alt="PSCC Logo" class="logo">
   <div class="hamburger" id="hamburger">
     <span></span>
     <span></span>
@@ -30,7 +30,7 @@
 <style>
   .logo {
     height: 3.25em;
-    margin: 0;
+    margin: 0 1rem;
     padding: 0;
   }
 
@@ -44,7 +44,6 @@
     box-sizing: border-box;
     color: var(--black);
     border-bottom: 1px dotted var(--black);
-    margin-bottom: 3rem;
   }
 
   nav ul {
@@ -53,6 +52,7 @@
     margin: 0;
     padding: 0;
     height: 100%;
+    align-items: center;
   }
 
   nav ul li {
@@ -60,7 +60,9 @@
     font-family: 'Montserrat', sans-serif;
     border-left: 1px dotted var(--black);
     padding: 1rem 2rem;
-    
+    display: flex;
+    align-items: center;
+    height: 100%;
     
   }
 
@@ -207,9 +209,9 @@ accompanying the harvesters in the fields threatened by settler violence and res
 <div class="news__block">
   <h3>Faz3a in the news</h3>
   <ul>
-    <li>Haaretz: Palestinian volunteers help olive harvesters in ways the Palestinian Authority can’t, by Amira Hass, 23 October 2020, available here: </li>
-    <li>New Arab: Fazaa: Protecting Palestine’s olive harvest from Israeli settler violence, by Sally Ibrahim, 18 October 2021, available here: </li>
-    <li>Mondoweiss: ‘It’s my land’: Beita farmers struggle to harvest olives near settler outpost, by Yumna Patel, 12 November 2021, available here: </li>
+    <li><strong>Haaretz:</strong> Palestinian volunteers help olive harvesters in ways the Palestinian Authority can’t, by Amira Hass, 23 October 2020, available here: </li>
+    <li><strong>New Arab:</strong> Fazaa: Protecting Palestine’s olive harvest from Israeli settler violence, by Sally Ibrahim, 18 October 2021, available here: </li>
+    <li><strong>Mondoweiss:</strong> ‘It’s my land’: Beita farmers struggle to harvest olives near settler outpost, by Yumna Patel, 12 November 2021, available here: </li>
   </ul>
 </div>
 <div class="container">
@@ -218,12 +220,26 @@ accompanying the harvesters in the fields threatened by settler violence and res
 <p>Whether you would be available for some weekends or for the whole olive harvest period from October to November, you are welcome to join our activities of land defense by accompanying Palestinian farmers to their fields.</p> 
 
 <p>PSCC can support if you are coming from outside Palestine and need help for accommodation during your stay as a Faz3a volunteer.</p>
-<form>
-  <input type="text" id="first_name" name="first_name" placeholder="First Name">
-  <input type="text" id="last_name" name="last_name" placeholder="Last Name">
-  <input type="text" id="email" name="email" placeholder="Email">
-  <input type="text" id="phone" name="phone" placeholder="Your phone number">
-  <input type="submit" value="Submit">
+<form id="stepForm">
+  <div class="step active" id="step1">
+    <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+    <button type="button" onclick="nextStep(2)">Next</button>
+  </div>
+  
+  <div class="step" id="step2">
+    <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+    <button type="button" onclick="nextStep(3)">Next</button>
+  </div>
+  
+  <div class="step" id="step3">
+    <input type="email" id="email" name="email" placeholder="Email" required>
+    <button type="button" onclick="nextStep(4)">Next</button>
+  </div>
+  
+  <div class="step" id="step4">
+    <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+    <input type="submit" value="Submit">
+  </div>
 </form>
 </div>
 </div>
@@ -249,9 +265,7 @@ accompanying the harvesters in the fields threatened by settler violence and res
     font-size: 0.85rem;
   }
 
-  img {
-    border-radius: 0.65vw;
-  }
+ 
 
   .featured_image {
     margin-bottom: 4.5rem;
@@ -266,26 +280,48 @@ accompanying the harvesters in the fields threatened by settler violence and res
   }
 
 .news__block {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 4rem !important;
+  margin-bottom: 4rem !important;
   background-color: var(--dark-grey);
   max-width: 40rem;
   color: var(--white);
   font-family: 'Montserrat', sans-serif;
-  padding: 2rem 1.5rem;
+  padding: 2rem .25rem;
   margin: 0 auto;
   box-shadow: 0 0 0 100vmax var(--dark-grey);
   clip-path: inset( 0 -100vmax);
 
 }
 
+.news__block li{
+  margin-bottom: 1rem;
+}
+
+.step {
+    display: none;
+  }
+
+  .step.active {
+    display: block;
+  }
 
 
 
 </style>
 
 <script>
-
+function nextStep(step) {
+    var currentStep = document.getElementById("step" + (step - 1));
+    var nextStep = document.getElementById("step" + step);
+    
+    // simple validation
+    if (currentStep.querySelector('input').checkValidity()) {
+      currentStep.classList.remove("active");
+      nextStep.classList.add("active");
+    } else {
+      alert("Please fill out this field.");
+    }
+  }
 </script>
 
 
@@ -313,7 +349,8 @@ accompanying the harvesters in the fields threatened by settler violence and res
       <br><a href="/faz3a">Faz3a</a>
       <br>Summer camp
       <br>Technology Development
-      <br>Local Communities 
+      <br>Local Communities
+      <br><a href="/reports">Reports</a>
       <br>#DefundRacism</p>
   </div>
   
