@@ -120,7 +120,6 @@ body {
   font-synthesis: none;
   text-rendering: optimizeSpeed;
   max-width: 100vw !important;
-  width: width;
   background-color: var(--white);
   counter-reset: inline-sidenote-counter sidenote-counter;
 }
