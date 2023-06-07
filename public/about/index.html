@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Popular Struggle Coordination Committee</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Numans&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+  <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1685965296/pscc/pscc.avif" alt="PSCC Logo" class="logo">
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/actions/">Actions</a></li>
+    <li><a href="/voices_from_the_land/">Voices from the Land</a></li>
+    <li><a href="/reports/">Reports</a></li>
+    <li><a href="/get_involved/">Get Involved</a></li>
+  </ul>
+</nav>
+
+<style>
+  .logo {
+    height: 3.25em;
+    margin: 0 1rem;
+    padding: 0;
+  }
+
+  nav {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--black);
+    border-bottom: 1px dotted var(--black);
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    border-left: 1px dotted var(--black);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    
+  }
+
+  nav ul li a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: 600;
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    background-color: var(--white);
+    height: 3px;
+    width: 25px;
+    margin: 5px;
+  }
+
+  @media (max-width: 768px) {
+    nav img{
+      display: none;
+    }
+  }
+
+  @media (max-width: 601px) {
+    
+
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--black);
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 2rem;
+      z-index: 1000;
+    }
+
+    .nav-links li {
+      text-align: left;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links li a {
+      display: block;
+    }
+
+    .hamburger {
+      display: block;
+      position: absolute;
+      right: 2rem;
+    }
+  }
+
+    .nav-links.active {
+    display: flex;
+  }
+
+</style>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('nav-links').classList.toggle('active');
+  });
+
+  document.getElementById('nav-links').addEventListener('click', function() {
+    if (window.innerWidth <= 601) {
+      document.getElementById('nav-links').classList.toggle('active');
+    }
+  });
+</script>
+
+  <div class="base__grid">
+<div class="side-bar">
+  <ul>
+      <li id="side__nav__header">On this page</li>
+      <li><a href="#who_we_are">Who We Are</a></li>
+      <li><a href="#what_we_do">What We Do</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#mission">Mission</a></li>
+  </ul>
+</div>
+<main class="container">
+  
+  <h1>Who we are</h1>
+  <h3>The Mission and Vission of the PSCC</h2>
+  <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1685024239/pscc/faz3a_olive_harvest.avif" alt="Palestinian farmers harvesting olives">
+
+  <h4 id="who_we_are">Who we are</h4>
+
+  <p>The Popular Struggle Coordination Committee (PSCC) presents community-based resistance rooted in a belief in the power of popular struggle, taking various forms, such as strikes, protests, various types of collective actions and legal campaigns, as well as supporting the call to Boycott, Divestment and Sanctions. The Coordination Committee facilitates communication between various villages involved in struggles against the Wall, ethnic cleansing, and various aspects of the Israeli occupation. From the villages of Bil'in, Ni'ilin, Kufr Qaddoum, Nabi Saleh and al-Ma’asara, through the many villages of the Jordan Valley and South Hebron Hills to Tulkarem, Nablus, Qalqilya and West Ramallah. Success relies heavily on the support of the international community through BDS initiatives, financial aid, increased visibility, and direct solidarity. </p>
+
+  <p>After a decade long history of popular struggle, the PSCC has recently undertaken a generational transition through the election of a new youth-led board in January 2023. While activists from the previous generation of popular struggle are still involved in providing resources and strategic advices, the direction of the PSCC is now entirely formed of young Palestinians from Masafer Yatta, al Ma’asara, Bil’in and Nabi Saleh. With this generational shift in the decision-making power, Palestinian youth is put at the center of the popular struggle. </p>
+
+  <h4 id="what_we_do">What we do</h4>
+
+  <p>The PSCC facilitates communication between the different popular committees and grassroots groups, and provides them a base for strategic thinking. The Committee provides legal aid, communication and advocacy support to the activists and strives to encourage the mergence of new committees and initiatives.</p>
+
+  <p>It also helps strengthening the sumud (steadfastness) of Palestinian communities particularly targeted by Zionist land grab, capture and denial of access to agricultural fields, grazing areas and natural resources, settler violence – all Zionist measures, practices and policies seeking to impose a coercive environment on Palestinian communities living in so called ‘Area C’ to forcibly displace them from their ancestral lands. It does so through empowering local grassroots groups’ initiatives and collective actions on the ground by helping them in obtaining the necessary funds, providing capacity building activities and fostering mobilization.</p>
+
+  <h4 id="vision">Vision of the PSCC for Palestine</h4>
+
+  <p>We strive for a free, civil, and democratic state of Palestine, that is open to the world and free of foreign occupation. The relations between Palestinians are shaped by Human Rights and the rule of law. They are active in grassroots resistance and solidarity among the people and with other movements. Palestinians realize their rights of freedom (including freedom of thought, religion, and assembly), social justice, and a just, non-capitalistic economic system. </p>
+
+  <h4>Vision of the PSCC for popular struggle </h4>
+
+  <p>As a grassroots movement, popular struggle is rooted in all parts of the Palestinian society as one body. Popular Struggle is active, independent, and transparent. It is united, diverse, including different types of struggles as well as women and men of different religious or other backgrounds. 
+  </p>
+
+  <h4 id="mission">Mission Statement of the PSCC</h4>
+
+  <p>The PSCC empowers the popular struggle movement and contributes to promoting/spreading popular struggle in the whole of Palestine. It does so through coordinating between the popular struggle committees, actions, campaigns, and mobilization, strategy- and capacity-building, media and advocacy, as well as legal, financial and protection-seeking support structures.</p>
+
+</main>
+</div>
+<style>
+
+.button__nav{
+  position: sticky;
+}
+img{
+  margin-bottom: 3rem;
+}
+h4{
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 1.75px;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+
+.base__grid{
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  grid-template-areas: "nav main";
+}
+
+.container {
+  grid-area: main;
+}
+
+
+  .side-bar {
+    grid-area: nav;
+    position: sticky;
+    top: 50%;
+    margin-left: 4rem;
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    
+    font-family: 'montserrat', sans-serif;
+    color: var(--black);
+    
+    position: sticky;
+    z-index: 9999;
+    
+    max-width: 42rem;
+}
+
+.side-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    
+}
+
+.side-bar li a {
+    display: inline-block;
+    padding: 3px 12px;
+    text-decoration: none;
+    border: .5px dotted var(--black);
+    width: fit-content;
+    background-color: var(--mid-grey);
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
+    margin-bottom: .25rem;
+    font-size: .75rem;
+}
+
+/* Change the link color when hovered */
+.side-bar li a:hover {
+    font-weight: 500;
+    color: var(--black);
+    background-color: var(--white);
+}
+
+#side__nav__header{
+  color: var(--red);
+  display: inline-block;
+    padding: 3px 12px;
+    text-decoration: none;
+    border: .5px dotted var(--black);
+    width: fit-content;
+    background-color: var(--mid-grey);
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-bottom: .25rem;
+    font-size: .85rem;
+    font-weight: 600;
+    
+}
+
+/* Responsive layout - makes the menu and the content stack on top of each other */
+@media (max-width: 1300px) {
+  .base__grid{
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "nav"
+      "main";
+  }
+
+  .side-bar {
+    grid-area: nav;
+    position: sticky;
+    top: 0;
+    margin: 1.5rem auto;
+    width: 100%;
+    padding: 1rem;
+    display: block;
+}
+.side-bar ul {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+  }
+
+.side-bar ul li{
+  margin-right: .75rem;
+}
+
+#side__nav__header{
+  font-size: .75rem;
+}
+
+
+}
+    
+
+</style>
+
+<script>
+
+window.addEventListener("DOMContentLoaded", () => {
+    const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+  
+    smoothScrollLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            let hashVal = link.getAttribute('href');
+            let target = document.querySelector(hashVal);
+            let yCoordinate = target.getBoundingClientRect().top + window.pageYOffset;
+            let yOffset = window.innerHeight / 1;
+            window.scrollTo({ top: yCoordinate - yOffset, behavior: 'smooth' });
+            history.pushState(null, null, hashVal);
+        });
+    });
+});
+
+
+</script>
+  <div class="main-footer">
+ 
+  <div class="main-footer-one">
+    <h4 id="donation__footer">Join us</h4>
+    <p>Come to Palestine and be in solidarity on the ground.</p>
+ 
+
+  </div>
+  
+  <div class="main-footer-two">
+    <p><span class="footer-header">Connect</span>
+      <br>info@popular-struggle.org
+      <br>Ramallah, Palestine<br>
+      <br><span class="footer-header">Socials</span><br>
+      <a href="https://www.facebook.com/goodshepherdcollective" target="_blank" rel="noopener noreferrer">Facebook</a>&nbsp;&nbsp;&nbsp;
+      <a href="https://www.instagram.com/goodshepherdcollective/" target="_blank" rel="noopener noreferrer">Instagram</a>&nbsp;&nbsp;&nbsp;
+      <a href="https://twitter.com/shepherds4good" target="_blank" rel="noopener noreferrer">Twitter </a><br></p>
+  </div>
+  
+  <div class="main-footer-three">
+    <p><span class="footer-header">Projects</span>
+      <br><a href="/faz3a">Faz3a</a>
+      <br>Summer camp
+      <br>Technology Development
+      <br>Local Communities
+      <br><a href="/reports">Reports</a>
+      <br>#DefundRacism</p>
+  </div>
+  
+  <div class="main-footer-four"><p>
+    <span class="footer-header">Voices from the Land</span>
+    <br>Communities
+    <br>Maps
+    <br>Videos</p>
+  </div>
+  
+  <div class="main-footer-bottom">
+    <img class="footer__logo" src="https://res.cloudinary.com/abualex/image/upload/v1682728654/gsc-logo-white-clear-background-no-mountain.svg" alt="The Good Shepherd Collective Logo">
+    <p><span class="copyright" id="copyright">Copyright ©   &nbsp;|&nbsp;  All Rights Reserved | The Popular Struggle Coordination Committee | Powered by <a href="https://goodshepherdcollective.org/">The Collective</a></span> </p>
+
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const currentYear = new Date().getFullYear();
+    const copyrightElement = document.getElementById('copyright');
+    copyrightElement.innerHTML = `Copyright © 2018 - ${currentYear}  &nbsp;|&nbsp;  Rights Reserved | The Popular Struggle Coordination Committee | <a href="https://goodshepherdcollective.org/">Powered by The Collective</a>`;
+  });
+</script>
+
+
+
+<style>
+#donation__footer{
+  text-align: left;
+}
+  .footer__logo{
+    text-align: center;
+    display: inline;
+    margin-bottom: .5rem !important;
+  }
+
+  .main-footer {
+    box-sizing: border-box;
+    background-color: var(--white);
+    color: var(--black);
+    text-align: left;
+    width: 100% !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "one two three four"
+                         "bottom bottom bottom bottom";
+    border-top: 1px dotted var(--black);
+    margin-top: 3rem;
+  }
+  .main-footer p{
+    font-size: var(--font-h5);
+  }
+
+  .main-footer a{
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  .main-footer p, .main-footer h4 {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .main-footer div{
+    box-sizing: border-box;
+    padding: .8rem;
+  }
+
+  .main-footer-one {
+    grid-area: one;
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+    
+  }
+
+  .main-footer-two {
+    grid-area: two;
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+  }
+
+  .main-footer-three {
+    grid-area: three;
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+  }
+
+  .main-footer-four {
+    grid-area: four;
+    border-bottom: 1px dotted var(--black);
+  }
+
+  .main-footer-bottom {
+    grid-area: bottom;
+    text-align: center;
+    align-items: center
+    display: grid;
+  }
+
+  .main-footer-bottom img{
+    width: 1.2rem;
+    aspect-ratio: 1/1;
+    margin: 0 .7rem;
+    vertical-align: middle;
+   
+  }
+
+  .copyright {
+    font-size: .75rem;
+    color: var(--black);
+  }
+
+  .footer-header {
+    font-size: var(--font-size-small);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  
+
+  button:focus {
+    outline: red dotted 2px;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  input {
+    border: #bebebe solid 1.5px;
+    border-radius: 5px;
+    padding: .25rem .85rem;
+    font-size: .65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: .5rem;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Works for Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+/* medium devices */
+  @media (max-width: 767.98px) {
+    .main-footer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "one two" 
+                          "three four"
+                         "bottom bottom";
+  }
+  .main-footer-one {
+    grid-area: one;
+    border-right: 1px dotted var(--white);
+    border-bottom: 1px dotted var(--white);
+    
+  }
+
+  .main-footer-two {
+    grid-area: two;
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+  }
+
+  .main-footer-three {
+    grid-area: three;
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
+  }
+
+  .main-footer-four {
+    grid-area: four;
+    border-bottom: 1px dotted var(--black);
+  }
+  }
+
+  /* small devices */
+  @media (max-width: 601px) {
+    .main-footer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "one two" 
+                          "three four"
+                         "bottom bottom";
+                          
+  }
+
+  }
+</style>
+</body>
+</html>
