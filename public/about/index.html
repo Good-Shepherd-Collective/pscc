@@ -213,7 +213,6 @@ h4{
   grid-area: main;
 }
 
-
   .side-bar {
     grid-area: nav;
     position: sticky;
@@ -293,15 +292,20 @@ h4{
     width: 100%;
     padding: 1rem;
     display: block;
+    backdrop-filter: blur(3px);
+    flex-direction: row;
+    
 }
 .side-bar ul {
     display: flex;
     justify-content: start;
+    flex-wrap: wrap;
     width: 100%;
   }
 
 .side-bar ul li{
   margin-right: .75rem;
+  margin-top: .25rem;
   white-space: nowrap;
 }
 
