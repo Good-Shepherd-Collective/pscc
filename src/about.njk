@@ -117,6 +117,33 @@ h4{
     background-color: var(--white);
 }
 
+.side-bar li a.active::before {
+    content: '→';  /* you can replace this with any character or image */
+    position: absolute;
+    left: -20px; /* adjust as needed */
+    /* additional styling as needed */
+}
+
+h4 {
+    position: relative;
+}
+
+
+h4:target::before {
+    content: '→';  /* you can replace this with any character or image */
+    position: absolute;
+    left: -20px; /* adjust as needed */
+    /* additional styling as needed */
+}
+
+h4.active::before {
+    content: '→';  /* you can replace this with any character or image */
+    position: absolute;
+    left: -20px; /* adjust as needed */
+    /* additional styling as needed */
+}
+
+
 #side__nav__header{
   color: var(--red);
   display: inline-block;
@@ -177,23 +204,54 @@ h4{
 
 </style>
 
-<script>
 
+<script>
 window.addEventListener("DOMContentLoaded", () => {
     const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
   
     smoothScrollLinks.forEach((link) => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            let hashVal = link.getAttribute('href');
-            let target = document.querySelector(hashVal);
-            let yCoordinate = target.getBoundingClientRect().top + window.pageYOffset;
-            let yOffset = window.innerHeight / 1;
-            window.scrollTo({ top: yCoordinate - yOffset, behavior: 'smooth' });
+
+            // Remove active class from all other links and corresponding h4 elements
+            smoothScrollLinks.forEach((link) => {
+                link.classList.remove('active');
+                const hashVal = link.getAttribute('href');
+                const target = document.querySelector(hashVal);
+                if (target) {
+                    target.classList.remove('active');
+                }
+            });
+
+            // Add active class to clicked link and corresponding h4 element
+            link.classList.add('active');
+
+            const hashVal = link.getAttribute('href');
+            const target = document.querySelector(hashVal);
+            if (target) {
+                target.classList.add('active');
+                let yCoordinate = target.getBoundingClientRect().top + window.pageYOffset;
+                let yOffset = (window.innerHeight - target.offsetHeight) / 2;
+                window.scrollTo({ top: yCoordinate - yOffset, behavior: 'smooth' });
+            }
+
             history.pushState(null, null, hashVal);
         });
     });
+
+    if (location.hash) {
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+            const target = document.querySelector(location.hash);
+            if (target) {
+                target.classList.add('active');
+            }
+            window.location.href = location.hash;
+        }, 1);
+    }
 });
 
 
-</script>
+  
+  </script>
+  
