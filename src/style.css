@@ -384,3 +384,12 @@ p {
 img {
   border-radius: 0.65vw;
 }
+
+h4{
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 1.25px;
+  text-decoration-style: line;
+  text-underline-offset: 3px;
+}
+
