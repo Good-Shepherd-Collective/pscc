@@ -400,7 +400,6 @@ function nextStep(step) {
     grid-template-areas: "one two three four"
                          "bottom bottom bottom bottom";
     border-top: 1px dotted var(--black);
-    margin-top: 3rem;
   }
   .main-footer p{
     font-size: var(--font-h5);
@@ -514,26 +513,24 @@ function nextStep(step) {
   }
   .main-footer-one {
     grid-area: one;
-    border-right: 1px dotted var(--white);
-    border-bottom: 1px dotted var(--white);
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
     
   }
 
   .main-footer-two {
     grid-area: two;
-    border-right: 1px dotted var(--black);
     border-bottom: 1px dotted var(--black);
+    border-right: none;
   }
 
   .main-footer-three {
     grid-area: three;
-    border-right: 1px dotted var(--black);
-    border-bottom: 1px dotted var(--black);
+    
   }
 
   .main-footer-four {
     grid-area: four;
-    border-bottom: 1px dotted var(--black);
   }
   }
 

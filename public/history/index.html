@@ -150,8 +150,8 @@
     <h1>A history of the PSCC</h1>
     <h4>How local committees have coordinated indigenous resistance</h4>
     <img
-      src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1685024239/pscc/faz3a_olive_harvest.avif"
-      alt="Palestinian farmers harvesting olives"
+      src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1686571416/pscc/pscc__map.avif"
+      alt="Map of the PSCC locations"
     />
 
     <h4 id="Intro">Intro</h4>
@@ -180,14 +180,14 @@
     <img
       data-id="Bilin"
       id="Bilin"
-      src="https://res.cloudinary.com/abualex/image/upload/v1686214327/pscc/Bilin.webp"
+      src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1686571600/pscc/Nilin_Bilin.avif"
       alt="Bilin"
       class="map__image"
     />
     <img
       data-id="AlMaasara"
       id="AlMaasara"
-      src="https://res.cloudinary.com/abualex/image/upload/v1686214327/pscc/almaasara.webp"
+      src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1686571733/pscc/almaasra.avif"
       alt="Al-Ma'asara"
       class="map__image hide"
     />
@@ -203,7 +203,7 @@
     <img
       data-id="Nilin"
       id="Nilin"
-      src="https://res.cloudinary.com/abualex/image/upload/v1686225501/Nilin.jpg"
+      src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1686571600/pscc/Nilin_Bilin.avif"
       alt="Nilin"
       class="map__image hide"
     />
@@ -211,7 +211,7 @@
     <img
       data-id="AlWalaja"
       id="AlWalaja"
-      src="https://res.cloudinary.com/abualex/image/upload/v1686216269/pscc/masafer_yatta.webp"
+      src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1686572037/pscc/al_walaja.avif"
       alt="AlWalaja"
       class="map__image hide"
     />
@@ -219,7 +219,7 @@
     <img
       data-id="KuferQaddum"
       id="KuferQaddum"
-      src="https://res.cloudinary.com/abualex/image/upload/v1686216269/pscc/masafer_yatta.webp"
+      src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1686571982/pscc/kafr__qaddum.avif"
       alt="KuferQaddum"
       class="map__image hide"
     />
@@ -227,7 +227,7 @@
     <img
       data-id="JordanValley"
       id="JordanValley"
-      src="https://res.cloudinary.com/abualex/image/upload/v1686216269/pscc/masafer_yatta.webp"
+      src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1686571910/pscc/jordan__valley.avif"
       alt="JordanValley"
       class="map__image hide"
     />
@@ -235,7 +235,7 @@
     <img
       data-id="MasaferYatta"
       id="MasaferYatta"
-      src="https://res.cloudinary.com/abualex/image/upload/v1686216269/pscc/masafer_yatta.webp"
+      src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1686571849/pscc/masafer__yatta.avif"
       alt="Masafer Yatta"
       class="map__image hide"
     />
@@ -261,6 +261,7 @@
         <li><a href="#" class="map__nav__button" data-id="MasaferYatta" id="MasaferYatta">Masafer Yatta</a></li>
       </ul>
     </div>
+    <div class="village__text">
     <div id="Bilin">
       <h4>Bil'in</h4>
 
@@ -418,6 +419,7 @@
         policies of annexation and Apartheid.
       </p>
     </div>
+    </div>
     <img id="iconImage" src="https://res.cloudinary.com/abualex/image/upload/v1686241526/question__mark__red.svg">
   </div>
 </div>
@@ -425,6 +427,13 @@
 <style>
   .map__text{
     position: relative;
+    display: grid;
+    grid-template-areas: "map__nav" "village__text" "icon__image";
+    grid-template-columns: 1fr;
+  }
+
+  .village__text{
+    grid-area: village__text;
   }
   .map__grid {
     display: grid;
@@ -441,10 +450,7 @@
   }
 
   #iconImage{
-    position: absolute;
-    top: 95%;
-    right: 90%;
-    transform: translate(-50%, -50%);
+    grid-area: icon__image;
     height: 1.5rem;
     width: 1.5rem;
     z-index: 9;
@@ -483,6 +489,9 @@
   cursor: pointer;
 }
 
+#Intro{
+  margin-top: 2rem;
+}
   p a {
     text-decoration: underline;
     text-decoration-color: var(--red);
@@ -494,6 +503,7 @@
   }
   .map__nav{
     display: block !important;
+    grid-area: map__nav;
   }
   .map__nav ul {
     display: flex;
@@ -547,7 +557,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   var mapButtons = document.querySelectorAll('.map__nav__button');
   var mapImages = document.querySelectorAll('.map__image');
-  var mapTexts = document.querySelectorAll('.map__text > div');
+  var mapTexts = document.querySelectorAll('.village__text > div');
+
 
   mapButtons.forEach(function(button) {
     button.addEventListener('click', function(e) {
@@ -675,7 +686,6 @@ document.addEventListener('DOMContentLoaded', function() {
     grid-template-areas: "one two three four"
                          "bottom bottom bottom bottom";
     border-top: 1px dotted var(--black);
-    margin-top: 3rem;
   }
   .main-footer p{
     font-size: var(--font-h5);
@@ -789,26 +799,24 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   .main-footer-one {
     grid-area: one;
-    border-right: 1px dotted var(--white);
-    border-bottom: 1px dotted var(--white);
+    border-right: 1px dotted var(--black);
+    border-bottom: 1px dotted var(--black);
     
   }
 
   .main-footer-two {
     grid-area: two;
-    border-right: 1px dotted var(--black);
     border-bottom: 1px dotted var(--black);
+    border-right: none;
   }
 
   .main-footer-three {
     grid-area: three;
-    border-right: 1px dotted var(--black);
-    border-bottom: 1px dotted var(--black);
+    
   }
 
   .main-footer-four {
     grid-area: four;
-    border-bottom: 1px dotted var(--black);
   }
   }
 
