@@ -25,7 +25,7 @@ exports.handler = async (event, context) => {
       return {
         statusCode: 302,
         headers: {
-          Location: '/success.html'
+          Location: '/confirmation'
         }
       };
     } else {
