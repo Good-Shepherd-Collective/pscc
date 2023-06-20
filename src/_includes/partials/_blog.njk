@@ -1,0 +1,168 @@
+<div class="blog__flex">
+  <div class="inner__blog__card">
+    <h5 class="organization__name">ISM | Partner Updates</h5>
+    <img src="https://res.cloudinary.com/abualex/image/upload/c_scale,w_50/v1678977354/ism-logo.avif"/>
+    {% for post in ISM %}
+    <h5>{{ post.title.rendered }}</h5>
+    <p>
+      <a href="{{ post.link }}">
+        <span class="external__link">{{ post.excerpt.rendered | striptags | safe | truncate(100)}}</span></a>
+    </p>
+    {% endfor %}
+  </div>
+
+  <div class="inner__blog__card">
+    <h5 class="organization__name">Youth of Sumud | Partner Updates</h5>
+    <img src="https://res.cloudinary.com/abualex/image/upload/v1676121710/yos-all-black.svg"/>
+    {% for post in YOS %}
+    <h5>{{ post.title.rendered }}</h5>
+    <p>
+      <a href="{{ post.link }}">
+        <span class="external__link">{{ post.excerpt.rendered | striptags | safe | truncate(100)}}</span>
+      </a>
+    </p>
+    {% endfor %}
+  </div>
+  <div class="inner__blog__card">
+    <h5 class="organization__name">Good Shepherd Collective | Partner Updates</h5>
+    <img src="https://res.cloudinary.com/abualex/image/upload/v1674652841/GSC-LOGO.svg"/>
+    {% for post in GSC %}
+    <h5>{{ post.title.rendered }}</h5>
+    <p>
+      <a href="{{ post.link }}">
+        <span class="external__link">{{ post.excerpt.rendered | striptags | safe | truncate(100)}}</span>
+      </a>
+    </p>
+    {% endfor %}
+  </div>
+  <div class="inner__blog__card">
+    <h5 class="organization__name">Assopace Palestina | Partner Updates</h5>
+    <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687251307/assopace.avif"/>
+    {% for post in ASO %}
+    <h5>{{ post.title.rendered }}</h5>
+    <p>
+      <a href="{{ post.link }}">
+        <span class="external__link">{{ post.excerpt.rendered | striptags | safe | truncate(100)}}</span>
+      </a>
+    </p>
+    {% endfor %}
+  </div>
+  <div class="inner__blog__card">
+    <h5 class="organization__name">AFPS | Partner Updates</h5>
+    <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687253479/Logo-AFPS.avif"/>
+    {% if AFPS.length > 0 %}
+    <h5>{{ AFPS[0].title }}</h5>
+    <p>
+      <a href="{{ AFPS[0].link }}">
+        <span class="external__link">{{ AFPS[0].contentSnippet | striptags | safe | truncate(100) }}</span>
+      </a>
+    </p>
+    {% else %}
+    <p>No posts found</p>
+    {% endif %}
+</div>
+<div class="inner__blog__card">
+  <h5 class="organization__name">Jordan Valley Solidarity | Partner Updates</h5>
+  <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687255564/jordan_valley_solidarity.avif"/>
+  {% for post in JVS %}
+  <h5><a href="{{ post.link }}">{{ post.title.rendered }}</a></h5>
+  <p>
+    <a href="{{ post.link }}">
+      <span class="external__link">{{ post.excerpt.rendered | striptags | safe | truncate(100)}}</span>
+    </a>
+  </p>
+  {% endfor %}
+</div>
+
+ 
+</div>
+
+<style>
+
+.blog__flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1.5rem 1rem;
+  }
+
+  .blog__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    margin: 1.5rem 1rem;
+    
+  }
+
+  .organization__name{
+    text-decoration: none !important;
+    font-weight: 500;
+  }
+
+  .inner__blog__card {
+    flex: 0 1 calc(33.333% - 1rem); /* deduct margins */
+    margin: 0.5rem; /* half of the gap */
+    border: 0.5px dotted var(--black);
+    padding: 1.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.69);
+    box-sizing: border-box; /* include padding and border in element's total width and height */
+  }
+
+  .inner__blog__card:hover {
+    background-color: rgba(255, 255, 255, 0.981);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  .inner__blog__card h5 {
+    font-size: var(--font-h5);
+    margin-bottom: 1.15rem;
+    text-decoration: dotted underline var(--red);
+  }
+
+  .inner__blog__card p {
+    font-size: 0.8rem;
+  }
+
+  .inner__blog__card a {
+    text-decoration: none;
+  }
+
+  .external__link::after {
+    content: "";
+    display: inline-block;
+    background: url("https://res.cloudinary.com/abualex/image/upload/v1687187904/TablerExternalLink.svg")
+      no-repeat center center;
+    background-size: cover;
+    height: 1.2rem;
+    width: 1.2rem;
+    position: relative;
+    top: 0.2rem;
+  }
+
+  .inner__blog__card img {
+    width: 3rem;
+    border-radius: 0;
+    margin-bottom: 1rem;
+  }
+
+  .circle__outline {
+    border-radius: 50% !important;
+    border: .5px solid var(--black);
+  }
+
+  @media screen and (max-width: 1024px) {
+    .inner__blog__card {
+      flex: 0 1 calc(50% - 1rem); /* deduct margins */
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .inner__blog__card {
+      flex: 0 1 calc(100% - 1rem); /* deduct margins */
+    }
+  }
+
+</style>

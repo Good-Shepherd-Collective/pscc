@@ -260,8 +260,9 @@ background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0
   <div class="main-footer">
  
   <div class="main-footer-one">
-    <h4 id="donation__footer">Join us</h4>
-    <p>Come to Palestine and be in solidarity on the ground.</p>
+    <p><span class="footer-header">Volunteer</span><br>
+    Come to Palestine and be in solidarity on the ground.</p>
+    <button class="button__footer" onclick="window.location.href='/volunteer'">Join Us</button>
  
 
   </div>
@@ -270,27 +271,21 @@ background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0
     <p><span class="footer-header">Connect</span>
       <br>info@popular-struggle.org
       <br>Ramallah, Palestine<br>
-      <br><span class="footer-header">Socials</span><br>
-      <a href="https://www.facebook.com/goodshepherdcollective" target="_blank" rel="noopener noreferrer">Facebook</a>&nbsp;&nbsp;&nbsp;
-      <a href="https://www.instagram.com/goodshepherdcollective/" target="_blank" rel="noopener noreferrer">Instagram</a>&nbsp;&nbsp;&nbsp;
-      <a href="https://twitter.com/shepherds4good" target="_blank" rel="noopener noreferrer">Twitter </a><br></p>
+     
   </div>
   
   <div class="main-footer-three">
     <p><span class="footer-header">Projects</span>
       <br><a href="/faz3a">Faz3a</a>
-      <br>Summer camp
-      <br>Technology Development
-      <br>Local Communities
-      <br><a href="/reports">Reports</a>
-      <br>#DefundRacism</p>
+      <br><a href="/reports">Reports & Analysis</a>
+      <br><a href="https://defundracism.org">#DefundRacism</a></p>
   </div>
   
   <div class="main-footer-four"><p>
-    <span class="footer-header">Voices from the Land</span>
-    <br>Communities
-    <br>Maps
-    <br>Videos</p>
+    <span class="footer-header">Socials</span><br>
+    <a href="https://www.facebook.com/goodshepherdcollective" target="_blank" rel="noopener noreferrer">Facebook</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://www.instagram.com/goodshepherdcollective/" target="_blank" rel="noopener noreferrer">Instagram</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://twitter.com/shepherds4good" target="_blank" rel="noopener noreferrer">Twitter </a><br></p>
   </div>
   
   <div class="main-footer-bottom">
@@ -304,7 +299,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0
   document.addEventListener('DOMContentLoaded', () => {
     const currentYear = new Date().getFullYear();
     const copyrightElement = document.getElementById('copyright');
-    copyrightElement.innerHTML = `Copyright © 2018 - ${currentYear}  &nbsp;|&nbsp;  Rights Reserved | The Popular Struggle Coordination Committee | <a href="https://goodshepherdcollective.org/">Powered by The Collective</a>`;
+    copyrightElement.innerHTML = `Copyright © 2018 - ${currentYear}  &nbsp;|&nbsp; All Rights Reserved | The Popular Struggle Coordination Committee | <a href="https://goodshepherdcollective.org/">Powered by The Collective</a>`;
   });
 </script>
 
@@ -391,7 +386,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0
   }
 
   .copyright {
-    font-size: .75rem;
+    font-size: .65rem;
     color: var(--black);
   }
 

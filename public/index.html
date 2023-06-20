@@ -151,8 +151,8 @@
     <p class="second__hero__title">The <span class="underline">Popular Struggle Coordination Committee</span> is a grassroots formation coordinating nonviolent resistance across Palestine.</p>
   </div>
   <div class="pscc_history">
-    <h3>A History of the PSCC</h3>
-    <p>How generations of grassroots organizers have kept the Palestinian dream alive.</p>
+    <h3><a href="/history">A History of the PSCC</a></h3>
+    <p><a href="/history">How generations of grassroots organizers have kept the Palestinian dream alive.</a></p>
   </div>
 </div>
 
@@ -182,7 +182,6 @@
     align-items: end;
     width: 100%;
     box-sizing: border-box;
-    height: 95vh;
   }
 
    .hero__center {
@@ -344,7 +343,7 @@
 
 <div class="three__part__grid">
   <div class="grid__one"><h4>Reports</h4></div>
-  <div class="grid__two"><h4>Photo Gallery</h4></div>
+  <div class="grid__two"><h4>Images of resistance</h4></div>
   <div class="grid__three"><h4>Video Gallery</h4></div>
 </div>
 
@@ -357,27 +356,273 @@
     background-color: var(--white);
   }
 
+  .three__part__grid h4 {
+    backdrop-filter: blur(2px);
+    padding: 4px 18px;
+    display: inline-block;
+  }
+
   .three__part__grid div{
+    aspect-ratio: 5/4;
     padding: 2.5rem 1.5rem;
   }
+
 
   .grid__one {
     grid-area: one;
     border-right: .5px dotted var(--black);
-    
+    background-image: url(https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687174533/pscc/background-1.avif);
+    background-repeat: no-repeat;
+    background-size: cover; 
   }
 
   .grid__two {
     grid-area: two;
     border-right: .5px dotted var(--black);
+    background-image: url(https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687173323/pscc/background.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
     
   }
 
   .grid__three {
     grid-area: three;
+    background-image: url(https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687174886/pscc/background-3.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
     
   }
+
+  @media (max-width: 767.98px) {
+    .three__part__grid {
+    grid-template-areas: "one" "two" "three";
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
 </style>
+
+  
+ <div class="marquee__parent">
+    <div class="marquee-text-small">
+      <span>"The Palestinian cause is not a cause for Palestinians only, but a cause for every revolutionary, wherever he is, as a cause of the exploited and oppressed masses in our era." - Ghassan Kanafani</span>
+      <span>"The Palestinian cause is not a cause for Palestinians only, but a cause for every revolutionary, wherever he is, as a cause of the exploited and oppressed masses in our era." - Ghassan Kanafani</span>
+    </div>
+  </div>
+<style>
+
+.marquee__parent{
+  height: 2.5rem;
+  overflow: hidden;
+  background-color: var(--red);
+}
+ .marquee-text-small {
+  display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--white);
+    background-color: var(--red);
+    padding: .5rem;
+    text-transform: uppercase;
+    animation: marquee-small 312s linear infinite;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    
+  }
+
+  
+  .marquee-text-small span {
+    padding-right: 50px;
+  }
+
+   @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes marquee-small {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+
+<div class="blog__flex">
+  <div class="inner__blog__card">
+    <h5 class="organization__name">ISM | Partner Updates</h5>
+    <img src="https://res.cloudinary.com/abualex/image/upload/c_scale,w_50/v1678977354/ism-logo.avif"/>
+    
+    <h5>Israeli Occupation forces Shoot Children in the Head and Then Arrests Them in Nabi Salah</h5>
+    <p>
+      <a href="https://palsolidarity.org/2023/06/israeli-occupation-forces-shoot-children-in-the-head-and-then-arrests-them-in-nabi-salah/">
+        <span class="external__link">6/9/2023 Nabi Salah, Occupied Palestine, In the Aftermath of the Killing of infant Mohammad Tamimi...</span></a>
+    </p>
+    
+  </div>
+
+  <div class="inner__blog__card">
+    <h5 class="organization__name">Youth of Sumud | Partner Updates</h5>
+    <img src="https://res.cloudinary.com/abualex/image/upload/v1676121710/yos-all-black.svg"/>
+    
+    <h5>Demolishing our community center won’t destroy our resistance</h5>
+    <p>
+      <a href="https://login.youthofsumud.org/demolishing-our-community-center-wont-destroy-our-resistance/">
+        <span class="external__link">In early June, Palestinian residents of villages in the South Hebron Hills, where I was born and...</span>
+      </a>
+    </p>
+    
+  </div>
+  <div class="inner__blog__card">
+    <h5 class="organization__name">Good Shepherd Collective | Partner Updates</h5>
+    <img src="https://res.cloudinary.com/abualex/image/upload/v1674652841/GSC-LOGO.svg"/>
+    
+    <h5>GSC sets up tech dev programs</h5>
+    <p>
+      <a href="https://goodshepherdcollective.org/2023/04/gsc-sets-up-tech-dev-programs/">
+        <span class="external__link">The Good Shepherd Collective continues to evolve to meet the needs of the movement for Palestinian...</span>
+      </a>
+    </p>
+    
+  </div>
+  <div class="inner__blog__card">
+    <h5 class="organization__name">Assopace Palestina | Partner Updates</h5>
+    <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687251307/assopace.avif"/>
+    
+    <h5>Israele, i crimini di guerra degli attacchi di maggio contro Gaza</h5>
+    <p>
+      <a href="https://www.assopacepalestina.org/2023/06/19/israele-i-crimini-di-guerra-degli-attacchi-di-maggio-contro-gaza/">
+        <span class="external__link">di Riccardo Noury, Il Fatto Quotidiano, 19 giugno 2023.&nbsp; Amnesty International&nbsp;ha reso...</span>
+      </a>
+    </p>
+    
+  </div>
+  <div class="inner__blog__card">
+    <h5 class="organization__name">AFPS | Partner Updates</h5>
+    <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687253479/Logo-AFPS.avif"/>
+    
+    <h5>En colère contre de nouveaux projets de colonisation, les États-Unis informent Israël que le Forum du Néguev est reporté</h5>
+    <p>
+      <a href="https://www.france-palestine.org/En-colere-contre-de-nouveaux-projets-de-colonisation-les-Etats-Unis-informent">
+        <span class="external__link">Le Forum du Néguev, une rencontre annuelle pour renforcer et normaliser les liens arabo-israéliens,...</span>
+      </a>
+    </p>
+    
+</div>
+<div class="inner__blog__card">
+  <h5 class="organization__name">Jordan Valley Solidarity | Partner Updates</h5>
+  <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687255564/jordan_valley_solidarity.avif"/>
+  
+  <h5><a href="https://jordanvalleysolidarity.org/news/may-2023-human-rights-violations-in-the-jordan-valley/">May 2023: Human rights violations in the Jordan Valley</a></h5>
+  <p>
+    <a href="https://jordanvalleysolidarity.org/news/may-2023-human-rights-violations-in-the-jordan-valley/">
+      <span class="external__link">1st May: Occupation Forces raided Aqbat Jaber refugee camp in the early morning. 17-year-old Jibril...</span>
+    </a>
+  </p>
+  
+</div>
+
+ 
+</div>
+
+<style>
+
+.blog__flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1.5rem 1rem;
+  }
+
+  .blog__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    margin: 1.5rem 1rem;
+    
+  }
+
+  .organization__name{
+    text-decoration: none !important;
+    font-weight: 500;
+  }
+
+  .inner__blog__card {
+    flex: 0 1 calc(33.333% - 1rem); /* deduct margins */
+    margin: 0.5rem; /* half of the gap */
+    border: 0.5px dotted var(--black);
+    padding: 1.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.69);
+    box-sizing: border-box; /* include padding and border in element's total width and height */
+  }
+
+  .inner__blog__card:hover {
+    background-color: rgba(255, 255, 255, 0.981);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  .inner__blog__card h5 {
+    font-size: var(--font-h5);
+    margin-bottom: 1.15rem;
+    text-decoration: dotted underline var(--red);
+  }
+
+  .inner__blog__card p {
+    font-size: 0.8rem;
+  }
+
+  .inner__blog__card a {
+    text-decoration: none;
+  }
+
+  .external__link::after {
+    content: "";
+    display: inline-block;
+    background: url("https://res.cloudinary.com/abualex/image/upload/v1687187904/TablerExternalLink.svg")
+      no-repeat center center;
+    background-size: cover;
+    height: 1.2rem;
+    width: 1.2rem;
+    position: relative;
+    top: 0.2rem;
+  }
+
+  .inner__blog__card img {
+    width: 3rem;
+    border-radius: 0;
+    margin-bottom: 1rem;
+  }
+
+  .circle__outline {
+    border-radius: 50% !important;
+    border: .5px solid var(--black);
+  }
+
+  @media screen and (max-width: 1024px) {
+    .inner__blog__card {
+      flex: 0 1 calc(50% - 1rem); /* deduct margins */
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .inner__blog__card {
+      flex: 0 1 calc(100% - 1rem); /* deduct margins */
+    }
+  }
+
+</style>
+
 <div class="horizontal_email">
   <div id="email__form__container">
   <form id="step-form">
@@ -468,95 +713,15 @@
   });
 </script>
 
-<form action="/.netlify/functions/subscribe" method="post">
-  <div class="header">
-     <h2>Volunteer with the PSCC</h2>
-  </div>
-  <div class="description">
-    <p>Do you want to come to Palestine and engage with our partners on the ground? You are a journalist, a community organizer, an activist, and/or an engaged individual with skills in photography/video, advocacy, research, fundraising, or other? You have creative ideas for community protection and/or community development challenging occupation-related policies and practices? You live in Palestine and want to join our actions on the ground?</p>
-  </div>
-  <div >
-    <input class="input" type="text" id="name" name="name" placeholder="Name">
-    <input class="input" type="text" id="email" name="email" placeholder="Email Address">
-    <textarea type="text" class="button" id="message" name="message" placeholder="Message"></textarea>
-    <input type="submit" class="button" id="submit" value="SIGN UP">
-  </div>
-</form>
-
-<style>
-  .input {
-    height: 2.5rem;
-    width: 70%;
-    font-family: 'montserrat', sans-serif;
-    border: 1px solid var(--black);
-    border-radius: .25vw;
-    font-size: .85rem !important;
-    font-weight: 500;
-    padding: .5rem 1rem;
-    text-transform: none;
-    margin-bottom: 6px;
-  }
-
-  #submit{
-    width: fit-content;
-    height: 2rem;
-    background-color: var(--black);
-    color: var(--white);
-    border: none;
-    cursor: pointer;
-  }
-
-  #message{
-    height: 10rem;
-    width: 70%;
-    border: 1px solid var(--black);
-    border-radius: .25vw;
-    font-family: 'montserrat', sans-serif;
-    font-size: .85rem;
-    font-weight: 500;
-    padding: .5rem 1rem;
-  }
-
-</style>
-
-<script>
-  window.onload = function() {
-    // select the form and attach the submit event listener
-    var form = document.querySelector('form');
-    form.addEventListener('submit', function(event) {
-      // select the input fields
-      var name = document.querySelector('#name');
-      var email = document.querySelector('#email');
-      var message = document.querySelector('#message');
-  
-      // email regex for basic email validation
-      var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-  
-      // check if all fields are filled out
-      if (!name.value || !email.value || !message.value) {
-        alert('Please fill out all fields.');
-        event.preventDefault(); // prevent the form from submitting
-        return;
-      }
-  
-      // check if email is valid
-      if (!emailRegex.test(email.value)) {
-        alert('Please enter a valid email.');
-        event.preventDefault(); // prevent the form from submitting
-        return;
-      }
-    });
-  };
-  </script>
-  
 
 
 
   <div class="main-footer">
  
   <div class="main-footer-one">
-    <h4 id="donation__footer">Join us</h4>
-    <p>Come to Palestine and be in solidarity on the ground.</p>
+    <p><span class="footer-header">Volunteer</span><br>
+    Come to Palestine and be in solidarity on the ground.</p>
+    <button class="button__footer" onclick="window.location.href='/volunteer'">Join Us</button>
  
 
   </div>
@@ -565,31 +730,24 @@
     <p><span class="footer-header">Connect</span>
       <br>info@popular-struggle.org
       <br>Ramallah, Palestine<br>
-      <br><span class="footer-header">Socials</span><br>
-      <a href="https://www.facebook.com/goodshepherdcollective" target="_blank" rel="noopener noreferrer">Facebook</a>&nbsp;&nbsp;&nbsp;
-      <a href="https://www.instagram.com/goodshepherdcollective/" target="_blank" rel="noopener noreferrer">Instagram</a>&nbsp;&nbsp;&nbsp;
-      <a href="https://twitter.com/shepherds4good" target="_blank" rel="noopener noreferrer">Twitter </a><br></p>
+     
   </div>
   
   <div class="main-footer-three">
     <p><span class="footer-header">Projects</span>
       <br><a href="/faz3a">Faz3a</a>
-      <br>Summer camp
-      <br>Technology Development
-      <br>Local Communities
-      <br><a href="/reports">Reports</a>
-      <br>#DefundRacism</p>
+      <br><a href="/reports">Reports & Analysis</a>
+      <br><a href="https://defundracism.org">#DefundRacism</a></p>
   </div>
   
   <div class="main-footer-four"><p>
-    <span class="footer-header">Voices from the Land</span>
-    <br>Communities
-    <br>Maps
-    <br>Videos</p>
+    <span class="footer-header">Socials</span><br>
+    <a href="https://www.facebook.com/goodshepherdcollective" target="_blank" rel="noopener noreferrer">Facebook</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://www.instagram.com/goodshepherdcollective/" target="_blank" rel="noopener noreferrer">Instagram</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://twitter.com/shepherds4good" target="_blank" rel="noopener noreferrer">Twitter </a><br></p>
   </div>
   
   <div class="main-footer-bottom">
-    <img class="footer__logo" src="https://res.cloudinary.com/abualex/image/upload/v1682728654/gsc-logo-white-clear-background-no-mountain.svg" alt="The Good Shepherd Collective Logo">
     <p><span class="copyright" id="copyright">Copyright ©   &nbsp;|&nbsp;  All Rights Reserved | The Popular Struggle Coordination Committee | Powered by <a href="https://goodshepherdcollective.org/">The Collective</a></span> </p>
 
   </div>
@@ -599,16 +757,15 @@
   document.addEventListener('DOMContentLoaded', () => {
     const currentYear = new Date().getFullYear();
     const copyrightElement = document.getElementById('copyright');
-    copyrightElement.innerHTML = `Copyright © 2018 - ${currentYear}  &nbsp;|&nbsp;  Rights Reserved | The Popular Struggle Coordination Committee | <a href="https://goodshepherdcollective.org/">Powered by The Collective</a>`;
+    copyrightElement.innerHTML = `Copyright © 2018 - ${currentYear}  &nbsp;|&nbsp; All Rights Reserved | The Popular Struggle Coordination Committee | <a href="https://goodshepherdcollective.org/">Powered by The Collective</a>`;
   });
 </script>
 
 
 
 <style>
-#donation__footer{
-  text-align: left;
-}
+
+
   .footer__logo{
     text-align: center;
     display: inline;
@@ -677,16 +834,8 @@
     display: grid;
   }
 
-  .main-footer-bottom img{
-    width: 1.2rem;
-    aspect-ratio: 1/1;
-    margin: 0 .7rem;
-    vertical-align: middle;
-   
-  }
-
   .copyright {
-    font-size: .75rem;
+    font-size: .65rem;
     color: var(--black);
   }
 
@@ -771,6 +920,17 @@
   }
 
   }
+
+  .button__footer {
+  background-color: var(--black) !important;
+  width: fit-content;
+  color: var(--white) !important;
+  margin: 0;
+}
+
+.main-footer-one p{
+  margin-bottom: 1rem;
+}
 </style>
 </body>
 </html>

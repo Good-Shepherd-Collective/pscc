@@ -1,6 +1,6 @@
 <div class="three__part__grid">
   <div class="grid__one"><h4>Reports</h4></div>
-  <div class="grid__two"><h4>Photo Gallery</h4></div>
+  <div class="grid__two"><h4>Images of resistance</h4></div>
   <div class="grid__three"><h4>Video Gallery</h4></div>
 </div>
 
@@ -13,24 +13,48 @@
     background-color: var(--white);
   }
 
+  .three__part__grid h4 {
+    backdrop-filter: blur(2px);
+    padding: 4px 18px;
+    display: inline-block;
+  }
+
   .three__part__grid div{
+    aspect-ratio: 5/4;
     padding: 2.5rem 1.5rem;
   }
+
 
   .grid__one {
     grid-area: one;
     border-right: .5px dotted var(--black);
-    
+    background-image: url(https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687174533/pscc/background-1.avif);
+    background-repeat: no-repeat;
+    background-size: cover; 
   }
 
   .grid__two {
     grid-area: two;
     border-right: .5px dotted var(--black);
+    background-image: url(https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687173323/pscc/background.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
     
   }
 
   .grid__three {
     grid-area: three;
+    background-image: url(https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687174886/pscc/background-3.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
     
   }
+
+  @media (max-width: 767.98px) {
+    .three__part__grid {
+    grid-template-areas: "one" "two" "three";
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
 </style>

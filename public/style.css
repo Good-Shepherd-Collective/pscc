@@ -94,6 +94,7 @@ select {
   --blue: #00435d;
   --green: #00573F;
   --dark-grey: #272626;
+  --light-grey: #6f6f6f;
   --mid-grey: #e0e0e0;
 
 --font-h6: clamp(0.64rem, -0.25vw + 0.7rem, 0.5rem);

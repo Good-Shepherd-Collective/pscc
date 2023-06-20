@@ -151,8 +151,9 @@
   <div class="main-footer">
  
   <div class="main-footer-one">
-    <h4 id="donation__footer">Join us</h4>
-    <p>Come to Palestine and be in solidarity on the ground.</p>
+    <p><span class="footer-header">Volunteer</span><br>
+    Come to Palestine and be in solidarity on the ground.</p>
+    <button class="button__footer" onclick="window.location.href='/volunteer'">Join Us</button>
  
 
   </div>
@@ -161,31 +162,24 @@
     <p><span class="footer-header">Connect</span>
       <br>info@popular-struggle.org
       <br>Ramallah, Palestine<br>
-      <br><span class="footer-header">Socials</span><br>
-      <a href="https://www.facebook.com/goodshepherdcollective" target="_blank" rel="noopener noreferrer">Facebook</a>&nbsp;&nbsp;&nbsp;
-      <a href="https://www.instagram.com/goodshepherdcollective/" target="_blank" rel="noopener noreferrer">Instagram</a>&nbsp;&nbsp;&nbsp;
-      <a href="https://twitter.com/shepherds4good" target="_blank" rel="noopener noreferrer">Twitter </a><br></p>
+     
   </div>
   
   <div class="main-footer-three">
     <p><span class="footer-header">Projects</span>
       <br><a href="/faz3a">Faz3a</a>
-      <br>Summer camp
-      <br>Technology Development
-      <br>Local Communities
-      <br><a href="/reports">Reports</a>
-      <br>#DefundRacism</p>
+      <br><a href="/reports">Reports & Analysis</a>
+      <br><a href="https://defundracism.org">#DefundRacism</a></p>
   </div>
   
   <div class="main-footer-four"><p>
-    <span class="footer-header">Voices from the Land</span>
-    <br>Communities
-    <br>Maps
-    <br>Videos</p>
+    <span class="footer-header">Socials</span><br>
+    <a href="https://www.facebook.com/goodshepherdcollective" target="_blank" rel="noopener noreferrer">Facebook</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://www.instagram.com/goodshepherdcollective/" target="_blank" rel="noopener noreferrer">Instagram</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://twitter.com/shepherds4good" target="_blank" rel="noopener noreferrer">Twitter </a><br></p>
   </div>
   
   <div class="main-footer-bottom">
-    <img class="footer__logo" src="https://res.cloudinary.com/abualex/image/upload/v1682728654/gsc-logo-white-clear-background-no-mountain.svg" alt="The Good Shepherd Collective Logo">
     <p><span class="copyright" id="copyright">Copyright ©   &nbsp;|&nbsp;  All Rights Reserved | The Popular Struggle Coordination Committee | Powered by <a href="https://goodshepherdcollective.org/">The Collective</a></span> </p>
 
   </div>
@@ -195,16 +189,15 @@
   document.addEventListener('DOMContentLoaded', () => {
     const currentYear = new Date().getFullYear();
     const copyrightElement = document.getElementById('copyright');
-    copyrightElement.innerHTML = `Copyright © 2018 - ${currentYear}  &nbsp;|&nbsp;  Rights Reserved | The Popular Struggle Coordination Committee | <a href="https://goodshepherdcollective.org/">Powered by The Collective</a>`;
+    copyrightElement.innerHTML = `Copyright © 2018 - ${currentYear}  &nbsp;|&nbsp; All Rights Reserved | The Popular Struggle Coordination Committee | <a href="https://goodshepherdcollective.org/">Powered by The Collective</a>`;
   });
 </script>
 
 
 
 <style>
-#donation__footer{
-  text-align: left;
-}
+
+
   .footer__logo{
     text-align: center;
     display: inline;
@@ -273,16 +266,8 @@
     display: grid;
   }
 
-  .main-footer-bottom img{
-    width: 1.2rem;
-    aspect-ratio: 1/1;
-    margin: 0 .7rem;
-    vertical-align: middle;
-   
-  }
-
   .copyright {
-    font-size: .75rem;
+    font-size: .65rem;
     color: var(--black);
   }
 
@@ -367,6 +352,17 @@
   }
 
   }
+
+  .button__footer {
+  background-color: var(--black) !important;
+  width: fit-content;
+  color: var(--white) !important;
+  margin: 0;
+}
+
+.main-footer-one p{
+  margin-bottom: 1rem;
+}
 </style>
 </body>
 </html>
