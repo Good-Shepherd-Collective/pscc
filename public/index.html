@@ -195,7 +195,7 @@
   }
 
   .hero__center h1 {
-    font-size: clamp(5.5rem, 18vw + 1rem; 9); 
+    font-size: clamp(5.5rem, 18vw + 1rem, 9); 
     line-height: 1.2;
     margin-bottom: 2rem;
   }
@@ -341,10 +341,132 @@
 </style>
 
 
+<div class="faz3a__promotion">
+  <span class="CTA">Call-to-Action</span>
+  <h3>Help resist Israeli <span class="underline">colonialism</span></h3>
+  <p>The <span class="underline"><a href="/faz3a">Faz3a Campaign</a></span> is an urgent call to internationals to join Palestinians in solidarity against indigenous erasure. Join us here on the ground in some of the most vulnerable communities.  </p>
+
+  <form action="/.netlify/functions/subscribe" method="post">
+   
+    <div >
+      <input class="input__faz3a__front" type="text" id="name" name="name" placeholder="Name">
+      <input class="input__faz3a__front" type="text" id="email" name="email" placeholder="Email Address">
+      <input type="hidden" name="form-name" value="faz3a__front" />
+      <input type="submit" class="button__faz3a" id="submit" value="SIGN UP">
+    </div>
+  </form>
+</div>
+
+<style>
+  .faz3a__promotion {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 8rem 4rem;
+  } 
+
+  .faz3a__promotion p{
+    max-width: 850px;
+    text-wrap: balance;
+  }
+
+  .CTA{
+    font-family: 'montserrat', sans-serif;
+    outline: .5px solid var(--red);
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: .65rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+  }
+
+  .underline {
+    text-decoration: underline;
+    text-decoration-color: var(--red);
+    text-underline-offset: 3px;
+  }
+
+.button__faz3a{
+  background-color: var(--red);
+  border: none;
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: fit-content;
+  color: var(--white);
+  height: 2rem;
+  margin-top: 1.5rem;
+  }
+  .button__faz3a:hover{
+    color: var(--white);
+    border: .5px solid var(--white);
+    cursor: pointer;
+  }
+.input__faz3a__front{
+  background-color: var(--black);
+  border: .5px solid var(--white);
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: 100%;
+  max-width: 450px;
+  height: 2rem;
+}
+
+.input__faz3a__front::placeholder{
+  color: var(--white);
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  font-weight: 500;
+}
+.input__faz3a__front:focus::placeholder{
+  color: var(--black);
+}
+.input__faz3a__front:focus{
+  outline: .5px solid var(--red);
+  background-color: var(--white);
+  color: var(--black); 
+}
+</style>
+
+<script>
+  window.onload = function() {
+    // select the form and attach the submit event listener
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+      // select the input fields
+      var name = document.querySelector('#name');
+      var email = document.querySelector('#email');
+      var message = document.querySelector('#message');
+  
+      // email regex for basic email validation
+      var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  
+      // check if all fields are filled out
+      if (!name.value || !email.value ) {
+        alert('Please fill out all fields.');
+        event.preventDefault(); // prevent the form from submitting
+        return;
+      }
+  
+      // check if email is valid
+      if (!emailRegex.test(email.value)) {
+        alert('Please enter a valid email.');
+        event.preventDefault(); // prevent the form from submitting
+        return;
+      }
+    });
+  };
+  </script>
 <div class="three__part__grid">
-  <div class="grid__one"><h4>Reports</h4></div>
-  <div class="grid__two"><h4>Images of resistance</h4></div>
-  <div class="grid__three"><h4>Video Gallery</h4></div>
+  <div class="grid__one">
+    <img src="">
+    <h4><a href="/reports">Reports</a></h4>
+  </div>
+  <div class="grid__two">
+    <h4>Images of resistance</h4>
+  </div>
+  <div class="grid__three">
+    <h4>Video Gallery</h4>
+  </div>
 </div>
 
 <style>
@@ -356,9 +478,13 @@
     background-color: var(--white);
   }
 
+  .three__part__grid div{
+    position: relative;
+  }
+
   .three__part__grid h4 {
     backdrop-filter: blur(2px);
-    padding: 4px 18px;
+    padding: 4px 8px;
     display: inline-block;
   }
 
@@ -412,21 +538,21 @@
 <style>
 
 .marquee__parent{
-  height: 2.5rem;
+  height: 2rem;
   overflow: hidden;
-  background-color: var(--red);
+  background-color: var(--black);
 }
  .marquee-text-small {
   display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    color: var(--white);
-    background-color: var(--red);
-    padding: .5rem;
+    color: var(--grey);
+    background-color: var(--black);
+    padding: .45rem;
     text-transform: uppercase;
     animation: marquee-small 312s linear infinite;
     color: var(--white);
-    font-size: 1rem;
+    font-size: .85rem;
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
     
@@ -459,7 +585,7 @@
 <div class="blog__flex">
   <div class="inner__blog__card">
     <h5 class="organization__name">ISM | Partner Updates</h5>
-    <img src="https://res.cloudinary.com/abualex/image/upload/c_scale,w_50/v1678977354/ism-logo.avif"/>
+    <img src="https://res.cloudinary.com/abualex/image/upload/c_scale,w_50/v1678977354/ism-logo.avif" alt="ISM logo"/>
     
     <h5>Israeli Occupation forces Shoot Children in the Head and Then Arrests Them in Nabi Salah</h5>
     <p>
@@ -471,7 +597,7 @@
 
   <div class="inner__blog__card">
     <h5 class="organization__name">Youth of Sumud | Partner Updates</h5>
-    <img src="https://res.cloudinary.com/abualex/image/upload/v1676121710/yos-all-black.svg"/>
+    <img src="https://res.cloudinary.com/abualex/image/upload/v1676121710/yos-all-black.svg" alt="Youth of Sumud log"/>
     
     <h5>Demolishing our community center won’t destroy our resistance</h5>
     <p>
@@ -483,7 +609,7 @@
   </div>
   <div class="inner__blog__card">
     <h5 class="organization__name">Good Shepherd Collective | Partner Updates</h5>
-    <img src="https://res.cloudinary.com/abualex/image/upload/v1674652841/GSC-LOGO.svg"/>
+    <img src="https://res.cloudinary.com/abualex/image/upload/v1674652841/GSC-LOGO.svg" alt="Good Shepherd Collective Logo"/>
     
     <h5>GSC sets up tech dev programs</h5>
     <p>
@@ -495,7 +621,7 @@
   </div>
   <div class="inner__blog__card">
     <h5 class="organization__name">Assopace Palestina | Partner Updates</h5>
-    <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687251307/assopace.avif"/>
+    <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687251307/assopace.avif" alt="Assopace Palestina Logo"/>
     
     <h5>Israele, i crimini di guerra degli attacchi di maggio contro Gaza</h5>
     <p>
@@ -507,19 +633,19 @@
   </div>
   <div class="inner__blog__card">
     <h5 class="organization__name">AFPS | Partner Updates</h5>
-    <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687253479/Logo-AFPS.avif"/>
+    <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687253479/Logo-AFPS.avif" alt="AFPS Logo"/>
     
-    <h5>En colère contre de nouveaux projets de colonisation, les États-Unis informent Israël que le Forum du Néguev est reporté</h5>
+    <h5>Le 20 juin marque la solidarité internationale avec les réfugié.e.s.</h5>
     <p>
-      <a href="https://www.france-palestine.org/En-colere-contre-de-nouveaux-projets-de-colonisation-les-Etats-Unis-informent">
-        <span class="external__link">Le Forum du Néguev, une rencontre annuelle pour renforcer et normaliser les liens arabo-israéliens,...</span>
+      <a href="https://www.france-palestine.org/Le-20-juin-marque-la-solidarite-internationale-avec-les-refugie-e-s">
+        <span class="external__link">Bien qu'ils partagent avec des millions d'autres réfugié.e.s la dépossession de la terre, la perte...</span>
       </a>
     </p>
     
 </div>
 <div class="inner__blog__card">
   <h5 class="organization__name">Jordan Valley Solidarity | Partner Updates</h5>
-  <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687255564/jordan_valley_solidarity.avif"/>
+  <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687255564/jordan_valley_solidarity.avif" alt="Jordan Valley Solidarity Logo"/>
   
   <h5><a href="https://jordanvalleysolidarity.org/news/may-2023-human-rights-violations-in-the-jordan-valley/">May 2023: Human rights violations in the Jordan Valley</a></h5>
   <p>
@@ -592,16 +718,17 @@
     background: url("https://res.cloudinary.com/abualex/image/upload/v1687187904/TablerExternalLink.svg")
       no-repeat center center;
     background-size: cover;
-    height: 1.2rem;
-    width: 1.2rem;
+    height: .75rem;
+    width: .75rem;
     position: relative;
-    top: 0.2rem;
+    top: 0.1rem;
   }
 
   .inner__blog__card img {
     width: 3rem;
     border-radius: 0;
     margin-bottom: 1rem;
+    aspect-ratio: 1/1;
   }
 
   .circle__outline {

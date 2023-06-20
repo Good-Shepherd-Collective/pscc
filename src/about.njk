@@ -15,8 +15,8 @@ layout: 'base.njk'
 <main class="container">
   
   <h1>Who we are</h1>
-  <h3>The Mission and Vission of the PSCC</h2>
-  <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1685024239/pscc/faz3a_olive_harvest.avif" alt="Palestinian farmers harvesting olives">
+  <h3 class="subtitle">The Mission and Vision of the PSCC</h2>
+  <img class="main__img" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1685024239/pscc/faz3a_olive_harvest.avif" alt="Palestinian farmers harvesting olives">
 
   <h4 id="who_we_are">Who we are</h4>
 
@@ -46,6 +46,10 @@ layout: 'base.njk'
 </main>
 </div>
 <style>
+
+  .main__img{
+    margin-bottom: 1.5rem;
+  }
 
 .button__nav{
   position: sticky;
@@ -191,6 +195,11 @@ h4.active::before {
 }
 
 
+}
+
+.subtitle{
+  font-weight: 400;
+  color: var(--grey);
 }
     
 
