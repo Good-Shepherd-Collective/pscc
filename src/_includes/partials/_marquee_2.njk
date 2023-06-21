@@ -1,0 +1,54 @@
+
+  
+ <div class="marquee__parent">
+  <div class="marquee-text-small">
+    <span>"The Palestinian cause is not a cause for Palestinians only, but a cause for every revolutionary, wherever he is, as a cause of the exploited and oppressed masses in our era." - Ghassan Kanafani</span>
+    <span>"The Palestinian cause is not a cause for Palestinians only, but a cause for every revolutionary, wherever he is, as a cause of the exploited and oppressed masses in our era." - Ghassan Kanafani</span>
+  </div>
+</div>
+<style>
+
+.marquee__parent{
+height: 2rem;
+overflow: hidden;
+background-color: var(--light-grey);
+}
+.marquee-text-small {
+display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--grey);
+  background-color: var(--light-grey);
+  padding: .45rem;
+  text-transform: uppercase;
+  animation: marquee-small 312s linear infinite;
+  color: var(--white);
+  font-size: .85rem;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+
+
+.marquee-text-small span {
+  padding-right: 50px;
+}
+
+ @keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-small {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+</style>

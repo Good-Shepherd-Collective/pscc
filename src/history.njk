@@ -120,7 +120,7 @@ layout: "base.njk"
       </ul>
     </div>
     <div class="village__text">
-    <div id="Bilin">
+    <div id="Bilin" class="inner__village__text">
       <h4>Bil'in</h4>
 
       <p>
@@ -278,20 +278,28 @@ layout: "base.njk"
       </p>
     </div>
     </div>
-    <img id="iconImage" src="https://res.cloudinary.com/abualex/image/upload/v1686241526/question__mark__red.svg">
+    <img id="iconImage" src="https://res.cloudinary.com/abualex/image/upload/v1682778432/info_circle_white.svg">
   </div>
 </div>
 
 <style>
   .map__text{
     position: relative;
-    display: grid;
-    grid-template-areas: "map__nav" "village__text" "icon__image";
-    grid-template-columns: 1fr;
   }
 
   .village__text{
+    display: grid;
+    grid-template-columns: 1fr;
     grid-area: village__text;
+    align-items: start;
+    align-content: start;
+  }
+  .inner__village__text{
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    align-content: start;
+
   }
   .map__grid {
     display: grid;

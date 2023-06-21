@@ -1,4 +1,6 @@
+
 <div class="faz3a__promotion">
+  <div class="container white">
   <span class="CTA">Call-to-Action</span>
   <h3>Help resist Israeli <span class="underline">colonialism</span></h3>
   <p>The <span class="underline"><a href="/faz3a">Faz3a Campaign</a></span> is an urgent call to internationals to join Palestinians in solidarity against indigenous erasure. Join us here on the ground in some of the most vulnerable communities.  </p>
@@ -13,12 +15,20 @@
     </div>
   </form>
 </div>
+</div>
 
 <style>
+  .white{
+    background-color: var(--white);
+    padding: 3rem 2rem;
+  }
   .faz3a__promotion {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--black);
     padding: 8rem 4rem;
+    background-image: url("https://res.cloudinary.com/abualex/image/upload/v1682847300/dot.png");
+      background-repeat: repeat;
+    
   } 
 
   .faz3a__promotion p{
@@ -59,8 +69,8 @@
     cursor: pointer;
   }
 .input__faz3a__front{
-  background-color: var(--black);
-  border: .5px solid var(--white);
+  background-color: var(--white);
+  border: .5px solid var(--black);
   font-family: 'montserrat', sans-serif;
   font-size: .75rem;
   width: 100%;
@@ -69,7 +79,7 @@
 }
 
 .input__faz3a__front::placeholder{
-  color: var(--white);
+  color: var(--black);
   font-family: 'montserrat', sans-serif;
   font-size: .75rem;
   font-weight: 500;
@@ -79,7 +89,7 @@
 }
 .input__faz3a__front:focus{
   outline: .5px solid var(--red);
-  background-color: var(--white);
+  background-color: #fff;
   color: var(--black); 
 }
 </style>

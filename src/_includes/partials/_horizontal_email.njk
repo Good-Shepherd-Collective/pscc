@@ -1,89 +1,119 @@
-<div class="horizontal_email">
-  <div id="email__form__container">
-  <form id="step-form">
-    <h2>Signing up for our newletters matter</h2>
-    <p>When mainstream medial silence critical voices, and social media giants de-platform Palestinian activists and organizations, staying connect with email is essential. Our emails provide in-depth updates directly to your inbox, ensuring you don't miss urgent news or events amidst the noise of social media algorithms.</p>
-    <input data-step="1" type="text" placeholder="email">
-    <input data-step="2" type="text" placeholder="first name" style="display: none;">
-    <input data-step="3" type="text" placeholder="last name" style="display: none;">
-    <button type="button" id="next-button">Next</button>
+<div class="email__container">
+  <div class="container">
+  <span class="CTA">Newsletter</span>
+  <h3>Stay connected when it matters most</h3>
+  <p>With mainstream media silencing critical voices and social media coorporations silencing Palestinian organizers, it's critical to build alternative structures of communication. Joining our email list ensure you stay connected with the most relevant news and analysis from the ground.</p>
+
+  <form action="/.netlify/functions/subscribe" method="post">
+   
+    <div >
+      <input class="input__email__front" type="text" id="name" name="name" placeholder="Name">
+      <input class="input__email__front" type="text" id="email" name="email" placeholder="Email Address">
+      <input type="hidden" name="form-name" value="email_list" />
+      <input type="submit" class="button__email" id="submit" value="SIGN UP">
+    </div>
   </form>
-  </div>
+</div>
 </div>
 
 <style>
-
-  #email__form__container{
+  .email__container {
     background-color: var(--white);
-    padding: 5rem 2rem;
-    max-width: 800px;
-  }
- 
-  .horizontal_email {
-    border-top: .5px dotted var(--black);
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    height: 100%;
-    background-color: var(--white);
-    box-shadow: 0 0 0 100vmax var(--white);
-    clip-path: inset(0 -100vmax);
     color: var(--black);
-    min-height: 60vh;
+    padding: 8rem 4rem;
     width: 100%;
-    padding: 5rem 2rem;
-    background-image: url("https://res.cloudinary.com/abualex/image/upload/v1682847300/dot.png");
-      background-repeat: repeat;
-    
-    
+  } 
+
+  .email__container p{
+    max-width: 850px;
+    text-wrap: balance;
   }
 
-  .horizontal_email input {
-    width: 100%;
-    height: 2.3rem;
-    max-width: 300px;
-    margin-top: 2rem;
+  .CTA{
+    font-family: 'montserrat', sans-serif;
+    outline: .5px solid var(--red);
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: .65rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    background-color: #fff;
   }
 
-  .horizontal_email input:focus {
-    background-color: lightblue;
+  .underline {
+    text-decoration: underline;
+    text-decoration-color: var(--red);
+    text-underline-offset: 3px;
   }
+
+.button__email{
+  background-color: var(--red);
+  border: none;
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: fit-content;
+  color: var(--white);
+  height: 2rem;
+  margin-top: 1.5rem;
+  }
+  .button__email:hover{
+    color: var(--white);
+    border: .5px solid var(--white);
+    cursor: pointer;
+  }
+.input__email__front{
+  background-color: var(--white);
+  border: .5px solid var(--black);
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: 100%;
+  max-width: 450px;
+  height: 2rem;
+}
+
+.input__email__front::placeholder{
+  color: var(--black);
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  font-weight: 500;
+}
+.input__email__front:focus::placeholder{
+  color: var(--black);
+}
+.input__email__front:focus{
+  outline: .5px solid var(--red);
+  background-color: #fff;
+  color: var(--black); 
+}
 </style>
 
 <script>
-  const form = document.querySelector('#step-form');
-  const nextButton = document.querySelector('#next-button');
-  let currentStep = 1;
-
-  function showNextInput() {
-    currentStep++;
-    const currentInput = form.querySelector(`input[data-step="${currentStep - 1}"]`);
-    const nextInput = form.querySelector(`input[data-step="${currentStep}"]`);
-    if (nextInput) {
-      currentInput.style.display = 'none';
-      nextInput.style.display = 'block';
-      nextInput.focus();
-
-      if (currentStep === 3) {
-        nextButton.textContent = 'Submit';
-        nextButton.type = 'submit';
+  window.onload = function() {
+    // select the form and attach the submit event listener
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+      // select the input fields
+      var name = document.querySelector('#name');
+      var email = document.querySelector('#email');
+      var message = document.querySelector('#message');
+  
+      // email regex for basic email validation
+      var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  
+      // check if all fields are filled out
+      if (!name.value || !email.value ) {
+        alert('Please fill out all fields.');
+        event.preventDefault(); // prevent the form from submitting
+        return;
       }
-    }
-  }
-
-  nextButton.addEventListener('click', (event) => {
-    const currentInput = form.querySelector(`input[data-step="${currentStep}"]`);
-    if (currentInput.value) {
-      showNextInput();
-    } else {
-      alert('Please fill in the current field before proceeding.');
-    }
-  });
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted');
-  });
-</script>
+  
+      // check if email is valid
+      if (!emailRegex.test(email.value)) {
+        alert('Please enter a valid email.');
+        event.preventDefault(); // prevent the form from submitting
+        return;
+      }
+    });
+  };
+  </script>
