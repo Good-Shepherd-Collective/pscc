@@ -214,34 +214,133 @@ accompanying the harvesters in the fields threatened by settler violence and res
     <li><strong>Mondoweiss:</strong> ‘It’s my land’: Beita farmers struggle to harvest olives near settler outpost, by Yumna Patel, 12 November 2021, available here: </li>
   </ul>
 </div>
-<div class="container">
-  <h3>Registration Form Faz3a 2023</h3>
-  <h4>We need volunteers for the 2023 Campaign!</h4>
-<p>Whether you would be available for some weekends or for the whole olive harvest period from October to November, you are welcome to join our activities of land defense by accompanying Palestinian farmers to their fields.</p> 
 
-<p>PSCC can support if you are coming from outside Palestine and need help for accommodation during your stay as a Faz3a volunteer.</p>
-<form id="stepForm">
-  <div class="step active" id="step1">
-    <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
-    <button type="button" onclick="nextStep(2)">Next</button>
-  </div>
-  
-  <div class="step" id="step2">
-    <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
-    <button type="button" onclick="nextStep(3)">Next</button>
-  </div>
-  
-  <div class="step" id="step3">
-    <input type="email" id="email" name="email" placeholder="Email" required>
-    <button type="button" onclick="nextStep(4)">Next</button>
-  </div>
-  
-  <div class="step" id="step4">
-    <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
-    <input type="submit" value="Submit">
-  </div>
-</form>
+
+<div class="faz3a__promotion">
+  <div class="container white">
+  <span class="CTA">Call-to-Action</span>
+  <h3>Help resist Israeli <span class="underline">colonialism</span></h3>
+  <p>The <span class="underline"><a href="/faz3a">Faz3a Campaign</a></span> is an urgent call to internationals to join Palestinians in solidarity against indigenous erasure. Join us here on the ground in some of the most vulnerable communities.  </p>
+
+  <form action="/.netlify/functions/subscribe" method="post">
+   
+    <div >
+      <input class="input__faz3a__front" type="text" id="name" name="name" placeholder="Name">
+      <input class="input__faz3a__front" type="text" id="email" name="email" placeholder="Email Address">
+      <input type="hidden" name="form-name" value="faz3a__front" />
+      <input type="submit" class="button__faz3a" id="submit" value="SIGN UP">
+    </div>
+  </form>
 </div>
+</div>
+
+<style>
+  .white{
+    background-color: var(--white);
+    padding: 3rem 2rem;
+  }
+  .faz3a__promotion {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 4rem 4rem;
+    background-image: url("https://res.cloudinary.com/abualex/image/upload/v1682847300/dot.png");
+      background-repeat: repeat;
+    
+  } 
+
+  .faz3a__promotion p{
+    max-width: 850px;
+    text-wrap: balance;
+  }
+
+  .CTA{
+    font-family: 'montserrat', sans-serif;
+    outline: .5px solid var(--red);
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: .65rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+  }
+
+  .underline {
+    text-decoration: underline;
+    text-decoration-color: var(--red);
+    text-underline-offset: 3px;
+  }
+
+.button__faz3a{
+  background-color: var(--red);
+  border: none;
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: fit-content;
+  color: #fff;
+  height: 2rem;
+  margin-top: 1.5rem;
+  }
+  .button__faz3a:hover{
+    color: #fff;
+    border: .5px solid var(--white);
+    cursor: pointer;
+  }
+.input__faz3a__front{
+  background-color: var(--white);
+  border: .5px solid var(--black);
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: 100%;
+  max-width: 450px;
+  height: 2rem;
+}
+
+.input__faz3a__front::placeholder{
+  color: var(--black);
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  font-weight: 500;
+}
+.input__faz3a__front:focus::placeholder{
+  color: var(--black);
+}
+.input__faz3a__front:focus{
+  outline: .5px solid var(--red);
+  background-color: #fff;
+  color: var(--black); 
+}
+</style>
+
+<script>
+  window.onload = function() {
+    // select the form and attach the submit event listener
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+      // select the input fields
+      var name = document.querySelector('#name');
+      var email = document.querySelector('#email');
+      var message = document.querySelector('#message');
+  
+      // email regex for basic email validation
+      var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  
+      // check if all fields are filled out
+      if (!name.value || !email.value ) {
+        alert('Please fill out all fields.');
+        event.preventDefault(); // prevent the form from submitting
+        return;
+      }
+  
+      // check if email is valid
+      if (!emailRegex.test(email.value)) {
+        alert('Please enter a valid email.');
+        event.preventDefault(); // prevent the form from submitting
+        return;
+      }
+    });
+  };
+  </script>
+
 </div>
 
 <style>
@@ -282,7 +381,6 @@ accompanying the harvesters in the fields threatened by settler violence and res
 
 .news__block {
   margin-top: 4rem !important;
-  margin-bottom: 4rem !important;
   background-color: var(--dark-grey);
   max-width: 40rem;
   color: var(--white);
@@ -338,7 +436,7 @@ function nextStep(step) {
   
   <div class="main-footer-two">
     <p><span class="footer-header">Connect</span>
-      <br>info@popular-struggle.org
+      <br>psccramallah@proton.me
       <br>Ramallah, Palestine<br>
      
   </div>
@@ -346,6 +444,7 @@ function nextStep(step) {
   <div class="main-footer-three">
     <p><span class="footer-header">Projects</span>
       <br><a href="/faz3a">Faz3a</a>
+      <br><a href="/dafaa">Dafaa</a>
       <br><a href="/reports">Reports & Analysis</a>
       <br><a href="https://defundracism.org">#DefundRacism</a></p>
   </div>

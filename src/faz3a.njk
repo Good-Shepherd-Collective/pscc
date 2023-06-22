@@ -72,34 +72,9 @@ accompanying the harvesters in the fields threatened by settler violence and res
     <li><strong>Mondoweiss:</strong> ‘It’s my land’: Beita farmers struggle to harvest olives near settler outpost, by Yumna Patel, 12 November 2021, available here: </li>
   </ul>
 </div>
-<div class="container">
-  <h3>Registration Form Faz3a 2023</h3>
-  <h4>We need volunteers for the 2023 Campaign!</h4>
-<p>Whether you would be available for some weekends or for the whole olive harvest period from October to November, you are welcome to join our activities of land defense by accompanying Palestinian farmers to their fields.</p> 
 
-<p>PSCC can support if you are coming from outside Palestine and need help for accommodation during your stay as a Faz3a volunteer.</p>
-<form id="stepForm">
-  <div class="step active" id="step1">
-    <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
-    <button type="button" onclick="nextStep(2)">Next</button>
-  </div>
-  
-  <div class="step" id="step2">
-    <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
-    <button type="button" onclick="nextStep(3)">Next</button>
-  </div>
-  
-  <div class="step" id="step3">
-    <input type="email" id="email" name="email" placeholder="Email" required>
-    <button type="button" onclick="nextStep(4)">Next</button>
-  </div>
-  
-  <div class="step" id="step4">
-    <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
-    <input type="submit" value="Submit">
-  </div>
-</form>
-</div>
+{% include 'partials/_faz3a_promotion.njk' %}
+
 </div>
 
 <style>
@@ -140,7 +115,6 @@ accompanying the harvesters in the fields threatened by settler violence and res
 
 .news__block {
   margin-top: 4rem !important;
-  margin-bottom: 4rem !important;
   background-color: var(--dark-grey);
   max-width: 40rem;
   color: var(--white);
