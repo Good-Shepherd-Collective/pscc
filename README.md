@@ -1,2 +1,2 @@
-# GSC-website
- The official GSC webiste
+# PSCC-website
+ The official GSC website
