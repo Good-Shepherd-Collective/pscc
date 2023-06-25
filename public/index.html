@@ -194,7 +194,7 @@
   }
 
   .hero__center h1 {
-    font-size: clamp(5.5rem, 18vw + 1rem, 9); 
+    font-size: clamp(8.5rem, 28vw + 1rem, 12rem); 
     line-height: 1.2;
     margin-bottom: 2rem;
   }
@@ -260,7 +260,7 @@
     }
 
     .hero__center h1 {
-      font-size: 2rem;
+      
       margin-bottom: 1.5rem;
       text-align: left;
     }
@@ -465,61 +465,8 @@
     });
   };
   </script>
-
-  
- <div class="marquee__parent">
-    <div class="marquee-text-small">
-      <span>"The Palestinian cause is not a cause for Palestinians only, but a cause for every revolutionary, wherever he is, as a cause of the exploited and oppressed masses in our era." - Ghassan Kanafani</span>
-      <span>"The Palestinian cause is not a cause for Palestinians only, but a cause for every revolutionary, wherever he is, as a cause of the exploited and oppressed masses in our era." - Ghassan Kanafani</span>
-    </div>
-  </div>
-<style>
-
-.marquee__parent{
-  height: 2rem;
-  overflow: hidden;
-  background-color: var(--light-grey);
-}
- .marquee-text-small {
-  display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    color: var(--grey);
-    background-color: var(--light-grey);
-    padding: .45rem;
-    text-transform: uppercase;
-    animation: marquee-small 312s linear infinite;
-    color: var(--white);
-    font-size: .85rem;
-    font-weight: 500;
-    font-family: 'Montserrat', sans-serif;
-    
-  }
-
-  
-  .marquee-text-small span {
-    padding-right: 50px;
-  }
-
-   @keyframes marquee {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-
-  @keyframes marquee-small {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-</style>
-
+<div class="four__part__grid__container">
+  <h2>Core programs</h2>
 <div class="three__part__grid">
   <div class="grid__one">
     <img src="">
@@ -531,23 +478,38 @@
   <div class="grid__three">
     <h4><a href="/dafaa/">Dafaa Campaign</a></h4>
   </div>
+  <div class="grid__four">
+    <h4><a href="/dafaa/">Capacity Building</a></h4>
+  </div>
+</div>
 </div>
 
 <style>
+  .four__part__grid__container{
+    background-color: var(--black);
+    color: var(--white);
+    
+  }
+
+  .four__part__grid__container h2{
+    font-family: 'montserrat', sans-serif;
+    font-weight: 400;
+    padding: 2.5rem 2rem;
+  }
     .three__part__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: 
-      "one two three";
-    background-color: var(--black);
+      "one two three four";
+    
     grid-gap: 2rem;
-    padding: 0.5rem 2rem;
+    padding: 2.5rem 2rem;
   }
 
   .three__part__grid > div {
     position: relative;
     aspect-ratio: 5/4;
-    padding: 2.5rem 1.5rem;
+    
     border-radius: 0.5rem;
     border: .5px solid var(--black);
   }
@@ -555,8 +517,11 @@
   .three__part__grid h4 {
     backdrop-filter: blur(2px);
     background-color: var(--white);
+    color: var(--red);
     padding: 4px 8px;
     display: inline-block;
+    font-size: 1rem;
+    border-radius: 0.5rem 0 0 0;
   }
 
   .grid__one {
@@ -582,6 +547,13 @@
     background-size: cover;
   }
 
+  .grid__four {
+    grid-area: four;
+    background-image: url(https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687434455/pscc/dafaa.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   @media (max-width: 767.98px) {
     .three__part__grid {
       grid-template-columns: 1fr;
@@ -596,61 +568,8 @@
     }
   }
 </style>
-
-  
- <div class="marquee__parent">
-  <div class="marquee-text-small">
-    <span>"The Palestinian cause is not a cause for Palestinians only, but a cause for every revolutionary, wherever he is, as a cause of the exploited and oppressed masses in our era." - Ghassan Kanafani</span>
-    <span>"The Palestinian cause is not a cause for Palestinians only, but a cause for every revolutionary, wherever he is, as a cause of the exploited and oppressed masses in our era." - Ghassan Kanafani</span>
-  </div>
-</div>
-<style>
-
-.marquee__parent{
-height: 2rem;
-overflow: hidden;
-background-color: var(--black);
-}
-.marquee-text-small {
-display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  color: var(--grey);
-  background-color: var(--black);
-  padding: .45rem;
-  text-transform: uppercase;
-  animation: marquee-small 312s linear infinite;
-  color: var(--white);
-  font-size: .85rem;
-  font-weight: 500;
-  font-family: 'Montserrat', sans-serif;
-  
-}
-
-
-.marquee-text-small span {
-  padding-right: 50px;
-}
-
- @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes marquee-small {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-</style>
-
+<div class="blog__container">
+  <h2>Partner Updates</h2>
 <div class="blog__flex">
   <div class="inner__blog__card">
     <h5 class="organization__name">ISM | Partner Updates</h5>
@@ -692,10 +611,10 @@ display: inline-block;
     <h5 class="organization__name">Assopace Palestina | Partner Updates</h5>
     <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687251307/assopace.avif" alt="Assopace Palestina Logo"/>
     
-    <h5>Rapporto sulla Protezione dei Civili nei Territori Palestinesi occupati</h5>
+    <h5>Riflessioni sul 75° anniversario di una Nakba che non è mai finita</h5>
     <p>
-      <a href="https://www.assopacepalestina.org/2023/06/22/rapporto-sulla-protezione-dei-civili-nei-territori-palestinesi-occupati-16/">
-        <span class="external__link">Riguardante il periodo: 30 maggio – 12 giugno 2023 1).&nbsp;Un bimbo palestinese di due anni è stato...</span>
+      <a href="https://www.assopacepalestina.org/2023/06/24/riflessioni-sul-75-anniversario-di-una-nakba-che-non-e-mai-finita/">
+        <span class="external__link">di Mohammed El-Kurd, Progressive International, 19 giugno 2023.&nbsp; Nei decenni successivi...</span>
       </a>
     </p>
     
@@ -704,10 +623,10 @@ display: inline-block;
     <h5 class="organization__name">AFPS | Partner Updates</h5>
     <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687253479/Logo-AFPS.avif" alt="AFPS Logo"/>
     
-    <h5>75 ans après : la Nakba continue</h5>
+    <h5>Une responsabilité historique </h5>
     <p>
-      <a href="https://www.france-palestine.org/75-ans-apres-la-Nakba-continue">
-        <span class="external__link">Photo : La clé, symbole du droit au retour des réfugié.e.s palestinien.ne.s Repères historiques /...</span>
+      <a href="https://www.france-palestine.org/Une-responsabilite-historique">
+        <span class="external__link">Alors qu'il commémore les 75 ans de la Nakba, le peuple palestinien doit faire face, de la part...</span>
       </a>
     </p>
     
@@ -727,14 +646,19 @@ display: inline-block;
 
  
 </div>
-
+</div>
 <style>
+    .blog__container h2{
+    font-family: 'montserrat', sans-serif;
+    font-weight: 400;
+    padding: 2.5rem 2rem;
+  }
 
 .blog__flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 8rem 2rem;
+    padding: 0rem 2rem;
   }
 
   .blog__grid {
@@ -823,7 +747,7 @@ display: inline-block;
   <div class="container">
   <span class="CTA">Newsletters</span>
   <h3>Stay connected when it matters most</h3>
-  <p>With mainstream media silencing critical voices and social media coorporations silencing Palestinian organizers, it's critical to build alternative structures of communication. Joining our email list ensure you stay connected with the most relevant news and analysis from the ground.</p>
+  <p>Mainstream media and social media corporations suppress diverse perspectives, including those from Palestinian organizers. It's critical to establish alternate communication channels to organize effectively. By subscribing to our email list, you'll stay connected to the most pertinent news and ground-level analysis.</p>
 
   <form action="/.netlify/functions/subscribe" method="post">
    
