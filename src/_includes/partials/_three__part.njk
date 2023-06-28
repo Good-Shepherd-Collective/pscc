@@ -12,7 +12,7 @@
     <h4><a href="/dafaa/">Dafaa Campaign</a></h4>
   </div>
   <div class="grid__four">
-    <h4><a href="/dafaa/">Capacity Building</a></h4>
+    <h4><a href="/capacity_building/">Capacity Building</a></h4>
   </div>
 </div>
 </div>
@@ -21,40 +21,44 @@
   .four__part__grid__container{
     background-color: var(--black);
     color: var(--white);
+    padding: 2.5rem 2rem;
     
   }
 
   .four__part__grid__container h2{
     font-family: 'montserrat', sans-serif;
     font-weight: 400;
-    padding: 2.5rem 2rem;
+    padding: 2.5rem 0;
+    text-decoration: underline var(--red);
+    margin: 0;
+
   }
     .three__part__grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: 
       "one two three four";
-    
     grid-gap: 2rem;
-    padding: 2.5rem 2rem;
+    margin-bottom: 4rem;
   }
 
   .three__part__grid > div {
     position: relative;
     aspect-ratio: 5/4;
-    
+    width: 100%;
     border-radius: 0.5rem;
     border: .5px solid var(--black);
   }
 
   .three__part__grid h4 {
-    backdrop-filter: blur(2px);
-    background-color: var(--white);
-    color: var(--red);
-    padding: 4px 8px;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0 8px 3px 8px;
     display: inline-block;
     font-size: 1rem;
-    border-radius: 0.5rem 0 0 0;
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 0 0 .5rem 0;
   }
 
   .grid__one {
@@ -68,7 +72,7 @@
   .grid__two {
     grid-area: two;
     border-right: 0.5px dotted var(--black);
-    background-image: url(https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687173323/pscc/background.avif);
+    background-image: url(https://res.cloudinary.com/abualex/image/upload/c_scale,f_auto,q_auto,w_600/v1687928831/pscc/faz3a_front.avif);
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -82,22 +86,32 @@
 
   .grid__four {
     grid-area: four;
-    background-image: url(https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687434455/pscc/dafaa.avif);
+    background-image: url(https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687929056/pscc/capacity_building_front.avif);
     background-repeat: no-repeat;
     background-size: cover;
   }
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 850.98px) {
     .three__part__grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       grid-template-areas: 
-        "one" 
-        "two" 
-        "three";
+        "one two" 
+        "three four";
     }
 
     .grid__one, .grid__two {
       border-right: none;
+    }
+  }
+
+  @media (max-width: 599.98px) {
+    .three__part__grid {
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+        "one"
+        "two" 
+        "three"
+        "four";
     }
   }
 </style>

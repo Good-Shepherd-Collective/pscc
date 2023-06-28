@@ -5,11 +5,7 @@
     <h5 class="organization__name">ISM | Partner Updates</h5>
     <img src="https://res.cloudinary.com/abualex/image/upload/c_scale,w_50/v1678977354/ism-logo.avif" alt="ISM logo"/>
     {% for post in ISM %}
-    <h5>{{ post.title.rendered }}</h5>
-    <p>
-      <a href="{{ post.link }}">
-        <span class="external__link">{{ post.excerpt.rendered | striptags | safe | truncate(100)}}</span></a>
-    </p>
+    <h5><a href="{{ post.link }}">{{ post.title.rendered }}</a></h5>
     {% endfor %}
   </div>
 
@@ -17,48 +13,28 @@
     <h5 class="organization__name">Youth of Sumud | Partner Updates</h5>
     <img src="https://res.cloudinary.com/abualex/image/upload/v1676121710/yos-all-black.svg" alt="Youth of Sumud log"/>
     {% for post in YOS %}
-    <h5>{{ post.title.rendered }}</h5>
-    <p>
-      <a href="{{ post.link }}">
-        <span class="external__link">{{ post.excerpt.rendered | striptags | safe | truncate(100)}}</span>
-      </a>
-    </p>
+    <h5><a href="{{ post.link }}">{{ post.title.rendered }}</a></h5>
     {% endfor %}
   </div>
   <div class="inner__blog__card">
     <h5 class="organization__name">Good Shepherd Collective | Partner Updates</h5>
     <img src="https://res.cloudinary.com/abualex/image/upload/v1674652841/GSC-LOGO.svg" alt="Good Shepherd Collective Logo"/>
     {% for post in GSC %}
-    <h5>{{ post.title.rendered }}</h5>
-    <p>
-      <a href="{{ post.link }}">
-        <span class="external__link">{{ post.excerpt.rendered | striptags | safe | truncate(100)}}</span>
-      </a>
-    </p>
+    <h5><a href="{{ post.link }}">{{ post.title.rendered }}</a></h5>
     {% endfor %}
   </div>
   <div class="inner__blog__card">
     <h5 class="organization__name">Assopace Palestina | Partner Updates</h5>
     <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687251307/assopace.avif" alt="Assopace Palestina Logo"/>
     {% for post in ASO %}
-    <h5>{{ post.title.rendered }}</h5>
-    <p>
-      <a href="{{ post.link }}">
-        <span class="external__link">{{ post.excerpt.rendered | striptags | safe | truncate(100)}}</span>
-      </a>
-    </p>
+    <h5><a href="{{ post.link }}">{{ post.title.rendered }}</a></h5>
     {% endfor %}
   </div>
   <div class="inner__blog__card">
     <h5 class="organization__name">AFPS | Partner Updates</h5>
     <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687253479/Logo-AFPS.avif" alt="AFPS Logo"/>
     {% if AFPS.length > 0 %}
-    <h5>{{ AFPS[0].title }}</h5>
-    <p>
-      <a href="{{ AFPS[0].link }}">
-        <span class="external__link">{{ AFPS[0].contentSnippet | striptags | safe | truncate(100) }}</span>
-      </a>
-    </p>
+    <h5><a href="{{ AFPS[0].link }}">{{ AFPS[0].title }}</a></h5>
     {% else %}
     <p>No posts found</p>
     {% endif %}
@@ -68,11 +44,6 @@
   <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687255564/jordan_valley_solidarity.avif" alt="Jordan Valley Solidarity Logo"/>
   {% for post in JVS %}
   <h5><a href="{{ post.link }}">{{ post.title.rendered }}</a></h5>
-  <p>
-    <a href="{{ post.link }}">
-      <span class="external__link">{{ post.excerpt.rendered | striptags | safe | truncate(100)}}</span>
-    </a>
-  </p>
   {% endfor %}
 </div>
 
@@ -80,17 +51,21 @@
 </div>
 </div>
 <style>
+
+  .blog__container{
+    padding: 2.5rem 2rem;
+  }
     .blog__container h2{
     font-family: 'montserrat', sans-serif;
     font-weight: 400;
-    padding: 2.5rem 2rem;
+    text-decoration: underline var(--red);
+    margin-bottom: 2.5rem;
   }
 
 .blog__flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0rem 2rem;
   }
 
   .blog__grid {
@@ -111,7 +86,7 @@
     flex: 0 1 calc(33.333% - 1rem); /* deduct margins */
     margin: 0.5rem; /* half of the gap */
     border: 0.5px dotted var(--black);
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     border-radius: 0.5rem;
     transition: background-color 0.3s ease;
     background-color: rgba(255, 255, 255, 0.69);

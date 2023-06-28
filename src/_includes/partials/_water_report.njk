@@ -1,0 +1,73 @@
+<div class="water__report">
+  <img class="water__background" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687866968/Jordan-Valley.avif" alt="Jordan Valley" />
+  <img class="dots">
+  <div class="container">
+  <h2>Colonization in the Jordan Valley</h2>
+  <h3>The case of Khirbet Ad Deir</h3>
+  <button class="button__water" href="https://drive.google.com/file/d/1EhQTV-8aXr6k78ekLhyt9gCaKLhSK4th/view?usp=sharing">Download</button>
+</div>
+
+</div>
+
+<style>
+  .water__report{
+    background-image: url();
+  background-size: cover;
+  position: relative;
+  border: .5px solid var(--black);
+  }
+
+  .water__report img{
+    border-radius: 0;
+  }
+  .water__background{
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    filter: brightness(40%);
+  }
+
+  .dots{
+    position: absolute;
+    background-image: url("https://res.cloudinary.com/abualex/image/upload/v1682847300/dot.png");
+      background-repeat: repeat;
+    height: 100%;
+    width: 100%;
+  }
+
+  .water__report h2{
+    font-family: 'montserrat', sans-serif;
+    font-weight: 900;
+    margin-top: 8rem;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    max-width: 20ch;
+  }
+
+  .water__report h3{
+    font-family: 'montserrat', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    color: var(--white);
+    text-decoration: underline var(--red);
+  }
+
+  .button__water{
+  background-color: var(--red);
+  border: none;
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: fit-content;
+  color: #fff;
+  height: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 4rem;
+  }
+  .button__water:hover{
+    color: #fff;
+    border: .5px solid var(--white);
+    cursor: pointer;
+  }
+
+</style>

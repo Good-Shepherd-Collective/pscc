@@ -13,27 +13,20 @@
 <body>
   <nav>
   <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1685965296/pscc/pscc.avif" alt="PSCC Logo" class="logo">
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
   <ul class="nav-links" id="nav-links">
     <li><a href="/">Home</a></li>
     <li><a href="/about/">About</a></li>
+    <li><a href="/history/">History</a></li>
     <li><a href="/faz3a/">Actions</a></li>
-    <li><a href="/reports/">Reports</a></li>
     <li><a href="/volunteer/">Get Involved</a></li>
   </ul>
+  <div class="hamburger" id="hamburger">
+    <img id="open" src="https://res.cloudinary.com/abualex/image/upload/v1677176428/Hamburger_icon.svg">
+    <img id="close" src="https://res.cloudinary.com/abualex/image/upload/v1677176693/icons8-macos-close-30.png">
+  </div>
 </nav>
 
 <style>
-  .logo {
-    height: 3.25em;
-    margin: 0 1rem;
-    padding: 0;
-  }
-
   nav {
     background-color: var(--white);
     display: flex;
@@ -63,7 +56,6 @@
     display: flex;
     align-items: center;
     height: 100%;
-    
   }
 
   nav ul li a {
@@ -74,27 +66,34 @@
   }
 
   .hamburger {
-    display: none;
-    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 9999;
   }
 
-  .hamburger span {
-    display: block;
-    background-color: var(--white);
-    height: 3px;
-    width: 25px;
-    margin: 5px;
+  .hamburger img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: none;
+  }
+
+  .hamburger img#close {
+    display: none;
   }
 
   @media (max-width: 768px) {
-    nav img{
+    .logo{
       display: none;
     }
   }
 
   @media (max-width: 601px) {
+    .hamburger img {
+      display: block;
+    }
     
-
     .nav-links {
       display: none;
       position: fixed;
@@ -102,46 +101,73 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: var(--black);
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      padding-left: 2rem;
-      z-index: 1000;
+      z-index: 2000;
     }
 
     .nav-links li {
       text-align: left;
-      padding: 0.5rem 0;
     }
 
     .nav-links li a {
       display: block;
+      color: var(--black);
     }
-
-    .hamburger {
-      display: block;
-      position: absolute;
-      right: 2rem;
-    }
-  }
 
     .nav-links.active {
-    display: flex;
+      display: flex;
+      background-color: var(--white);
+    }
+
   }
 
+  .logo {
+    height: 3.25em;
+    margin: 0 1rem;
+    padding: 0;
+  }
+  
 </style>
 
 <script>
-  document.getElementById('hamburger').addEventListener('click', function() {
-    document.getElementById('nav-links').classList.toggle('active');
-  });
+var hamburger = document.getElementById('hamburger');
+var navLinks = document.getElementById('nav-links');
+var openIcon = document.getElementById('open');
+var closeIcon = document.getElementById('close');
 
-  document.getElementById('nav-links').addEventListener('click', function() {
-    if (window.innerWidth <= 601) {
-      document.getElementById('nav-links').classList.toggle('active');
-    }
-  });
+window.addEventListener('resize', function() {
+  if (window.innerWidth <= 601) {
+    openIcon.style.display = 'block';
+    closeIcon.style.display = 'none';
+  } else {
+    openIcon.style.display = 'none';
+    closeIcon.style.display = 'none';
+    navLinks.classList.remove('active');
+  }
+});
+
+hamburger.addEventListener('click', function() {
+  navLinks.classList.toggle('active');
+
+  // toggle visibility of the icons
+  if (navLinks.classList.contains('active')) {
+    openIcon.style.display = 'none';
+    closeIcon.style.display = 'block';
+  } else {
+    openIcon.style.display = 'block';
+    closeIcon.style.display = 'none';
+  }
+});
+
+navLinks.addEventListener('click', function() {
+  if (window.innerWidth <= 601) {
+    navLinks.classList.remove('active');
+    openIcon.style.display = 'block';
+    closeIcon.style.display = 'none';
+  }
+});
 </script>
 
   
@@ -279,7 +305,7 @@ function nextStep(step) {
     <p><span class="footer-header">Projects</span>
       <br><a href="/faz3a">Faz3a</a>
       <br><a href="/dafaa">Dafaa</a>
-      <br><a href="/reports">Reports & Analysis</a>
+      <br><a href="/reports">Water</a>
       <br><a href="https://defundracism.org">#DefundRacism</a></p>
   </div>
   

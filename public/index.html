@@ -13,27 +13,20 @@
 <body>
   <nav>
   <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1685965296/pscc/pscc.avif" alt="PSCC Logo" class="logo">
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
   <ul class="nav-links" id="nav-links">
     <li><a href="/">Home</a></li>
     <li><a href="/about/">About</a></li>
+    <li><a href="/history/">History</a></li>
     <li><a href="/faz3a/">Actions</a></li>
-    <li><a href="/reports/">Reports</a></li>
     <li><a href="/volunteer/">Get Involved</a></li>
   </ul>
+  <div class="hamburger" id="hamburger">
+    <img id="open" src="https://res.cloudinary.com/abualex/image/upload/v1677176428/Hamburger_icon.svg">
+    <img id="close" src="https://res.cloudinary.com/abualex/image/upload/v1677176693/icons8-macos-close-30.png">
+  </div>
 </nav>
 
 <style>
-  .logo {
-    height: 3.25em;
-    margin: 0 1rem;
-    padding: 0;
-  }
-
   nav {
     background-color: var(--white);
     display: flex;
@@ -63,7 +56,6 @@
     display: flex;
     align-items: center;
     height: 100%;
-    
   }
 
   nav ul li a {
@@ -74,27 +66,34 @@
   }
 
   .hamburger {
-    display: none;
-    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 9999;
   }
 
-  .hamburger span {
-    display: block;
-    background-color: var(--white);
-    height: 3px;
-    width: 25px;
-    margin: 5px;
+  .hamburger img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: none;
+  }
+
+  .hamburger img#close {
+    display: none;
   }
 
   @media (max-width: 768px) {
-    nav img{
+    .logo{
       display: none;
     }
   }
 
   @media (max-width: 601px) {
+    .hamburger img {
+      display: block;
+    }
     
-
     .nav-links {
       display: none;
       position: fixed;
@@ -102,46 +101,73 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: var(--black);
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      padding-left: 2rem;
-      z-index: 1000;
+      z-index: 2000;
     }
 
     .nav-links li {
       text-align: left;
-      padding: 0.5rem 0;
     }
 
     .nav-links li a {
       display: block;
+      color: var(--black);
     }
-
-    .hamburger {
-      display: block;
-      position: absolute;
-      right: 2rem;
-    }
-  }
 
     .nav-links.active {
-    display: flex;
+      display: flex;
+      background-color: var(--white);
+    }
+
   }
 
+  .logo {
+    height: 3.25em;
+    margin: 0 1rem;
+    padding: 0;
+  }
+  
 </style>
 
 <script>
-  document.getElementById('hamburger').addEventListener('click', function() {
-    document.getElementById('nav-links').classList.toggle('active');
-  });
+var hamburger = document.getElementById('hamburger');
+var navLinks = document.getElementById('nav-links');
+var openIcon = document.getElementById('open');
+var closeIcon = document.getElementById('close');
 
-  document.getElementById('nav-links').addEventListener('click', function() {
-    if (window.innerWidth <= 601) {
-      document.getElementById('nav-links').classList.toggle('active');
-    }
-  });
+window.addEventListener('resize', function() {
+  if (window.innerWidth <= 601) {
+    openIcon.style.display = 'block';
+    closeIcon.style.display = 'none';
+  } else {
+    openIcon.style.display = 'none';
+    closeIcon.style.display = 'none';
+    navLinks.classList.remove('active');
+  }
+});
+
+hamburger.addEventListener('click', function() {
+  navLinks.classList.toggle('active');
+
+  // toggle visibility of the icons
+  if (navLinks.classList.contains('active')) {
+    openIcon.style.display = 'none';
+    closeIcon.style.display = 'block';
+  } else {
+    openIcon.style.display = 'block';
+    closeIcon.style.display = 'none';
+  }
+});
+
+navLinks.addEventListener('click', function() {
+  if (window.innerWidth <= 601) {
+    navLinks.classList.remove('active');
+    openIcon.style.display = 'block';
+    closeIcon.style.display = 'none';
+  }
+});
 </script>
 
   <div class="hero__header">
@@ -155,10 +181,8 @@
   </div>
 </div>
 
-
 <style>
-
-  .hero__small{
+  .hero__small {
     font-size: var(--font-h3);
     line-height: 1.2;
     margin-bottom: 2rem;
@@ -172,8 +196,8 @@
 
   .hero__header {
     display: grid;
-    grid-template-areas: "hero__center hero__center hero__center pscc_history";
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-areas: "hero__center pscc_history";
+    grid-template-columns: 3fr 1fr;
     color: var(--black);
     background-color: var(--white);
     border-top: .5px dotted var(--black);
@@ -183,57 +207,32 @@
     box-sizing: border-box;
   }
 
-   .hero__center {
+  .hero__center {
     grid-area: hero__center;
     border-right: .5px dotted var(--white);
     padding: 8rem 4rem 2rem 4rem;
     align-self: end;
     height: 100%;
-    display: grid;
-    align-items: end;
   }
 
   .hero__center h1 {
-    font-size: clamp(8.5rem, 28vw + 1rem, 12rem); 
+    font-size: clamp(4.5rem, 28vw + 1rem, 12rem);
     line-height: 1.2;
     margin-bottom: 2rem;
   }
 
-  .hero__center img {
-    width: 4.5rem;
-    aspect-ratio: 1/1;
-    height: auto;
-    margin-left: auto;
-    margin-bottom: 3rem;
-  }
-
   .big__heading {
-  font-size: calc(4.5rem + 6.5vw); 
-  display: block !important;
+    font-size: calc(4.5rem + 6.5vw); 
+    display: block !important;
   }
 
   .pscc_history {
     grid-area: pscc_history;
     padding: 2rem;
-    max-width: 400px;
     background-image: url("https://res.cloudinary.com/abualex/image/upload/v1682847300/dot.png");
-      background-repeat: repeat;
-
+    background-repeat: repeat;
   }
 
-  .pscc_history img {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 1.5rem;
-    display: inline-block;
-  }
-  .stats {
-    grid-area: stats;
-    border-right: .5px dotted var(--white);
-    height: 100%;
-    width: 100%;
-    
-  } 
   .underline {
     text-decoration: underline;
     text-decoration-color: var(--red);
@@ -245,101 +244,124 @@
     white-space: nowrap;
   }
 
-    /* Small devices */
-  @media (max-width: 767.98px) {
+  @media (max-width: 830.98px) {
     .hero__header {
-      grid-template-areas:"hero__center hero__center"
-                            "pscc_history pscc_history";
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 0 !important;
+      grid-template-areas:
+        "hero__center"
+        "pscc_history";
+      grid-template-columns: 1fr;
+      grid-row-gap: 1rem;
     }
 
-    .hero__center {
-      text-align: left;
-      outline: .5px dotted var(--white);
+    .hero__center, .pscc_history {
+      padding: 1rem;
     }
 
-    .hero__center h1 {
-      
-      margin-bottom: 1.5rem;
-      text-align: left;
-    }
-
-    .hero__center img {
-      margin-left: 0;
-      margin-bottom: 1.5rem;
+    .pscc_history {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
     .big__heading {
-      font-size: 6rem;
-      text-align: left;
-    }
-
-    .pscc_history{
-      display: grid;
-      justify-items: center;
-      align-items: center;
-      padding: auto;
-      margin: 0;
-      width: 100%;
-    }
-    .stats{
-      width: 100%;
-    }
-    .pscc_history h3 {
-      text-align: center;
-      margin: 0;
-    }
-
-    .pscc_history p {
-      text-align: center;
-    }
-
-    .second__hero__title{
-      text-align: left !important;
+      font-size: 4rem;
     }
   }
 
-   @media (max-width: 601px) {
+  @media (max-width: 601px) {
     .hero__header {
-      grid-template-areas:"hero__center"
-                          "pscc_history";
-      grid-row-gap: 0;
-      grid-template-columns: 1fr;
-      text-align: left;
-      grid-column-gap: 0 !important;
-    }
-    .hero__center {
-      text-align: left;
-      padding: 2rem 1rem;
+      grid-row-gap: 0.5rem;
     }
 
-    
-
-    .pscc_history{
-      border-bottom: 1px dotted var(--white);
-      width: 100% !important;
-      max-width: 100%;
-      border-top: 1px dotted var(--white);
-      text-align: left !important;
-      justify-items: start;
-      padding: 2rem 1rem;
-
+    .hero__center, .pscc_history {
+      padding: 0.5rem;
     }
 
-    .pscc_history h3, p{
-      text-align: left !important;
-      margin: 0;
+    .big__heading {
+      font-size: 2.5rem;
     }
 
-    .pscc_history img {
-      margin-right: auto;
-      text-align: left;
+    .second__hero__title {
+      font-size: 1rem;
     }
   }
+
+
 </style>
 
+<div class="water__report">
+  <img class="water__background" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687866968/Jordan-Valley.avif" alt="Jordan Valley" />
+  <img class="dots">
+  <div class="container">
+  <h2>Colonization in the Jordan Valley</h2>
+  <h3>The case of Khirbet Ad Deir</h3>
+  <button class="button__water" href="https://drive.google.com/file/d/1EhQTV-8aXr6k78ekLhyt9gCaKLhSK4th/view?usp=sharing">Download</button>
+</div>
 
+</div>
+
+<style>
+  .water__report{
+    background-image: url();
+  background-size: cover;
+  position: relative;
+  border: .5px solid var(--black);
+  }
+
+  .water__report img{
+    border-radius: 0;
+  }
+  .water__background{
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    filter: brightness(40%);
+  }
+
+  .dots{
+    position: absolute;
+    background-image: url("https://res.cloudinary.com/abualex/image/upload/v1682847300/dot.png");
+      background-repeat: repeat;
+    height: 100%;
+    width: 100%;
+  }
+
+  .water__report h2{
+    font-family: 'montserrat', sans-serif;
+    font-weight: 900;
+    margin-top: 8rem;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    max-width: 20ch;
+  }
+
+  .water__report h3{
+    font-family: 'montserrat', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    color: var(--white);
+    text-decoration: underline var(--red);
+  }
+
+  .button__water{
+  background-color: var(--red);
+  border: none;
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: fit-content;
+  color: #fff;
+  height: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 4rem;
+  }
+  .button__water:hover{
+    color: #fff;
+    border: .5px solid var(--white);
+    cursor: pointer;
+  }
+
+</style>
 
 <div class="faz3a__promotion">
   <div class="container white">
@@ -352,6 +374,12 @@
     <div >
       <input class="input__faz3a__front" type="text" id="name" name="name" placeholder="Name">
       <input class="input__faz3a__front" type="text" id="email" name="email" placeholder="Email Address">
+      <input class="input__faz3a__front" type="text" id="Phone" name="Phone" placeholder="Phone">
+      <input class="input__faz3a__front" type="text" id="Nationality" name="Nationality" placeholder="Nationality">
+      <input class="input__faz3a__front" type="text" id="dates" name="dates" placeholder="Desired length of stay in Palestine">
+      <input class="input__faz3a__front" type="text" id="accommodations" name="accommodations" placeholder="Do you need help with accommodations">
+      <input class="input__faz3a__front" type="text" id="Involvment" name="Involvment" placeholder="Are you already in contact with the solidarity movement in your country regarding your participation in Faz3a 2023.">
+      <input class="input__faz3a__front" type="text" id="comments" name="comments" placeholder="Please share any comments or concerns">
       <input type="hidden" name="form-name" value="faz3a__front" />
       <input type="submit" class="button__faz3a" id="submit" value="SIGN UP">
     </div>
@@ -479,7 +507,7 @@
     <h4><a href="/dafaa/">Dafaa Campaign</a></h4>
   </div>
   <div class="grid__four">
-    <h4><a href="/dafaa/">Capacity Building</a></h4>
+    <h4><a href="/capacity_building/">Capacity Building</a></h4>
   </div>
 </div>
 </div>
@@ -488,40 +516,44 @@
   .four__part__grid__container{
     background-color: var(--black);
     color: var(--white);
+    padding: 2.5rem 2rem;
     
   }
 
   .four__part__grid__container h2{
     font-family: 'montserrat', sans-serif;
     font-weight: 400;
-    padding: 2.5rem 2rem;
+    padding: 2.5rem 0;
+    text-decoration: underline var(--red);
+    margin: 0;
+
   }
     .three__part__grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: 
       "one two three four";
-    
     grid-gap: 2rem;
-    padding: 2.5rem 2rem;
+    margin-bottom: 4rem;
   }
 
   .three__part__grid > div {
     position: relative;
     aspect-ratio: 5/4;
-    
+    width: 100%;
     border-radius: 0.5rem;
     border: .5px solid var(--black);
   }
 
   .three__part__grid h4 {
-    backdrop-filter: blur(2px);
-    background-color: var(--white);
-    color: var(--red);
-    padding: 4px 8px;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0 8px 3px 8px;
     display: inline-block;
     font-size: 1rem;
-    border-radius: 0.5rem 0 0 0;
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 0 0 .5rem 0;
   }
 
   .grid__one {
@@ -535,7 +567,7 @@
   .grid__two {
     grid-area: two;
     border-right: 0.5px dotted var(--black);
-    background-image: url(https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687173323/pscc/background.avif);
+    background-image: url(https://res.cloudinary.com/abualex/image/upload/c_scale,f_auto,q_auto,w_600/v1687928831/pscc/faz3a_front.avif);
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -549,22 +581,32 @@
 
   .grid__four {
     grid-area: four;
-    background-image: url(https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687434455/pscc/dafaa.avif);
+    background-image: url(https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687929056/pscc/capacity_building_front.avif);
     background-repeat: no-repeat;
     background-size: cover;
   }
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 850.98px) {
     .three__part__grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       grid-template-areas: 
-        "one" 
-        "two" 
-        "three";
+        "one two" 
+        "three four";
     }
 
     .grid__one, .grid__two {
       border-right: none;
+    }
+  }
+
+  @media (max-width: 599.98px) {
+    .three__part__grid {
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+        "one"
+        "two" 
+        "three"
+        "four";
     }
   }
 </style>
@@ -575,11 +617,7 @@
     <h5 class="organization__name">ISM | Partner Updates</h5>
     <img src="https://res.cloudinary.com/abualex/image/upload/c_scale,w_50/v1678977354/ism-logo.avif" alt="ISM logo"/>
     
-    <h5>Israeli Occupation forces Shoot Children in the Head and Then Arrests Them in Nabi Salah</h5>
-    <p>
-      <a href="https://palsolidarity.org/2023/06/israeli-occupation-forces-shoot-children-in-the-head-and-then-arrests-them-in-nabi-salah/">
-        <span class="external__link">6/9/2023 Nabi Salah, Occupied Palestine, In the Aftermath of the Killing of infant Mohammad Tamimi...</span></a>
-    </p>
+    <h5><a href="https://palsolidarity.org/2023/06/israeli-occupation-forces-shoot-children-in-the-head-and-then-arrests-them-in-nabi-salah/">Israeli Occupation forces Shoot Children in the Head and Then Arrests Them in Nabi Salah</a></h5>
     
   </div>
 
@@ -587,48 +625,28 @@
     <h5 class="organization__name">Youth of Sumud | Partner Updates</h5>
     <img src="https://res.cloudinary.com/abualex/image/upload/v1676121710/yos-all-black.svg" alt="Youth of Sumud log"/>
     
-    <h5>Demolishing our community center won’t destroy our resistance</h5>
-    <p>
-      <a href="https://login.youthofsumud.org/demolishing-our-community-center-wont-destroy-our-resistance/">
-        <span class="external__link">In early June, Palestinian residents of villages in the South Hebron Hills, where I was born and...</span>
-      </a>
-    </p>
+    <h5><a href="https://login.youthofsumud.org/demolishing-our-community-center-wont-destroy-our-resistance/">Demolishing our community center won’t destroy our resistance</a></h5>
     
   </div>
   <div class="inner__blog__card">
     <h5 class="organization__name">Good Shepherd Collective | Partner Updates</h5>
     <img src="https://res.cloudinary.com/abualex/image/upload/v1674652841/GSC-LOGO.svg" alt="Good Shepherd Collective Logo"/>
     
-    <h5>GSC sets up tech dev programs</h5>
-    <p>
-      <a href="https://goodshepherdcollective.org/2023/04/gsc-sets-up-tech-dev-programs/">
-        <span class="external__link">The Good Shepherd Collective continues to evolve to meet the needs of the movement for Palestinian...</span>
-      </a>
-    </p>
+    <h5><a href="https://goodshepherdcollective.org/2023/04/gsc-sets-up-tech-dev-programs/">GSC sets up tech dev programs</a></h5>
     
   </div>
   <div class="inner__blog__card">
     <h5 class="organization__name">Assopace Palestina | Partner Updates</h5>
     <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687251307/assopace.avif" alt="Assopace Palestina Logo"/>
     
-    <h5>Riflessioni sul 75° anniversario di una Nakba che non è mai finita</h5>
-    <p>
-      <a href="https://www.assopacepalestina.org/2023/06/24/riflessioni-sul-75-anniversario-di-una-nakba-che-non-e-mai-finita/">
-        <span class="external__link">di Mohammed El-Kurd, Progressive International, 19 giugno 2023.&nbsp; Nei decenni successivi...</span>
-      </a>
-    </p>
+    <h5><a href="https://www.assopacepalestina.org/2023/06/26/come-israele-dipinge-di-verde-la-sua-colonizzazione-delle-alture-del-golan/">Come Israele dipinge di verde la sua colonizzazione delle Alture del Golan</a></h5>
     
   </div>
   <div class="inner__blog__card">
     <h5 class="organization__name">AFPS | Partner Updates</h5>
     <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687253479/Logo-AFPS.avif" alt="AFPS Logo"/>
     
-    <h5>Une responsabilité historique </h5>
-    <p>
-      <a href="https://www.france-palestine.org/Une-responsabilite-historique">
-        <span class="external__link">Alors qu'il commémore les 75 ans de la Nakba, le peuple palestinien doit faire face, de la part...</span>
-      </a>
-    </p>
+    <h5><a href="https://www.france-palestine.org/En-Cisjordanie-Israel-blesse-deux-Palestiniens-et-en-place-six-autres-en">En Cisjordanie, Israël blesse deux Palestiniens et en place six autres en détention, dont un journaliste</a></h5>
     
 </div>
 <div class="inner__blog__card">
@@ -636,11 +654,6 @@
   <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687255564/jordan_valley_solidarity.avif" alt="Jordan Valley Solidarity Logo"/>
   
   <h5><a href="https://jordanvalleysolidarity.org/news/may-2023-human-rights-violations-in-the-jordan-valley/">May 2023: Human rights violations in the Jordan Valley</a></h5>
-  <p>
-    <a href="https://jordanvalleysolidarity.org/news/may-2023-human-rights-violations-in-the-jordan-valley/">
-      <span class="external__link">1st May: Occupation Forces raided Aqbat Jaber refugee camp in the early morning. 17-year-old Jibril...</span>
-    </a>
-  </p>
   
 </div>
 
@@ -648,17 +661,21 @@
 </div>
 </div>
 <style>
+
+  .blog__container{
+    padding: 2.5rem 2rem;
+  }
     .blog__container h2{
     font-family: 'montserrat', sans-serif;
     font-weight: 400;
-    padding: 2.5rem 2rem;
+    text-decoration: underline var(--red);
+    margin-bottom: 2.5rem;
   }
 
 .blog__flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0rem 2rem;
   }
 
   .blog__grid {
@@ -679,7 +696,7 @@
     flex: 0 1 calc(33.333% - 1rem); /* deduct margins */
     margin: 0.5rem; /* half of the gap */
     border: 0.5px dotted var(--black);
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     border-radius: 0.5rem;
     transition: background-color 0.3s ease;
     background-color: rgba(255, 255, 255, 0.69);
@@ -885,7 +902,7 @@
     <p><span class="footer-header">Projects</span>
       <br><a href="/faz3a">Faz3a</a>
       <br><a href="/dafaa">Dafaa</a>
-      <br><a href="/reports">Reports & Analysis</a>
+      <br><a href="/reports">Water</a>
       <br><a href="https://defundracism.org">#DefundRacism</a></p>
   </div>
   

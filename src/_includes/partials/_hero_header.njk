@@ -9,10 +9,8 @@
   </div>
 </div>
 
-
 <style>
-
-  .hero__small{
+  .hero__small {
     font-size: var(--font-h3);
     line-height: 1.2;
     margin-bottom: 2rem;
@@ -26,8 +24,8 @@
 
   .hero__header {
     display: grid;
-    grid-template-areas: "hero__center hero__center hero__center pscc_history";
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-areas: "hero__center pscc_history";
+    grid-template-columns: 3fr 1fr;
     color: var(--black);
     background-color: var(--white);
     border-top: .5px dotted var(--black);
@@ -37,57 +35,32 @@
     box-sizing: border-box;
   }
 
-   .hero__center {
+  .hero__center {
     grid-area: hero__center;
     border-right: .5px dotted var(--white);
     padding: 8rem 4rem 2rem 4rem;
     align-self: end;
     height: 100%;
-    display: grid;
-    align-items: end;
   }
 
   .hero__center h1 {
-    font-size: clamp(8.5rem, 28vw + 1rem, 12rem); 
+    font-size: clamp(4.5rem, 28vw + 1rem, 12rem);
     line-height: 1.2;
     margin-bottom: 2rem;
   }
 
-  .hero__center img {
-    width: 4.5rem;
-    aspect-ratio: 1/1;
-    height: auto;
-    margin-left: auto;
-    margin-bottom: 3rem;
-  }
-
   .big__heading {
-  font-size: calc(4.5rem + 6.5vw); 
-  display: block !important;
+    font-size: calc(4.5rem + 6.5vw); 
+    display: block !important;
   }
 
   .pscc_history {
     grid-area: pscc_history;
     padding: 2rem;
-    max-width: 400px;
     background-image: url("https://res.cloudinary.com/abualex/image/upload/v1682847300/dot.png");
-      background-repeat: repeat;
-
+    background-repeat: repeat;
   }
 
-  .pscc_history img {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 1.5rem;
-    display: inline-block;
-  }
-  .stats {
-    grid-area: stats;
-    border-right: .5px dotted var(--white);
-    height: 100%;
-    width: 100%;
-    
-  } 
   .underline {
     text-decoration: underline;
     text-decoration-color: var(--red);
@@ -99,97 +72,47 @@
     white-space: nowrap;
   }
 
-    /* Small devices */
-  @media (max-width: 767.98px) {
+  @media (max-width: 830.98px) {
     .hero__header {
-      grid-template-areas:"hero__center hero__center"
-                            "pscc_history pscc_history";
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 0 !important;
+      grid-template-areas:
+        "hero__center"
+        "pscc_history";
+      grid-template-columns: 1fr;
+      grid-row-gap: 1rem;
     }
 
-    .hero__center {
-      text-align: left;
-      outline: .5px dotted var(--white);
+    .hero__center, .pscc_history {
+      padding: 1rem;
     }
 
-    .hero__center h1 {
-      
-      margin-bottom: 1.5rem;
-      text-align: left;
-    }
-
-    .hero__center img {
-      margin-left: 0;
-      margin-bottom: 1.5rem;
+    .pscc_history {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
     .big__heading {
-      font-size: 6rem;
-      text-align: left;
-    }
-
-    .pscc_history{
-      display: grid;
-      justify-items: center;
-      align-items: center;
-      padding: auto;
-      margin: 0;
-      width: 100%;
-    }
-    .stats{
-      width: 100%;
-    }
-    .pscc_history h3 {
-      text-align: center;
-      margin: 0;
-    }
-
-    .pscc_history p {
-      text-align: center;
-    }
-
-    .second__hero__title{
-      text-align: left !important;
+      font-size: 4rem;
     }
   }
 
-   @media (max-width: 601px) {
+  @media (max-width: 601px) {
     .hero__header {
-      grid-template-areas:"hero__center"
-                          "pscc_history";
-      grid-row-gap: 0;
-      grid-template-columns: 1fr;
-      text-align: left;
-      grid-column-gap: 0 !important;
-    }
-    .hero__center {
-      text-align: left;
-      padding: 2rem 1rem;
+      grid-row-gap: 0.5rem;
     }
 
-    
-
-    .pscc_history{
-      border-bottom: 1px dotted var(--white);
-      width: 100% !important;
-      max-width: 100%;
-      border-top: 1px dotted var(--white);
-      text-align: left !important;
-      justify-items: start;
-      padding: 2rem 1rem;
-
+    .hero__center, .pscc_history {
+      padding: 0.5rem;
     }
 
-    .pscc_history h3, p{
-      text-align: left !important;
-      margin: 0;
+    .big__heading {
+      font-size: 2.5rem;
     }
 
-    .pscc_history img {
-      margin-right: auto;
-      text-align: left;
+    .second__hero__title {
+      font-size: 1rem;
     }
   }
-</style>
 
+
+</style>
