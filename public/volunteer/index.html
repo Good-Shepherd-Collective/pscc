@@ -11,13 +11,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Numans&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>
+  
+<nav>
   <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1685965296/pscc/pscc.avif" alt="PSCC Logo" class="logo">
   <ul class="nav-links" id="nav-links">
     <li><a href="/">Home</a></li>
-    <li><a href="/about/">About</a></li>
-    <li><a href="/history/">History</a></li>
-    <li><a href="/faz3a/">Actions</a></li>
+    <li><a>About</a>
+      <ul class="sub-menu">
+        <li><a href="/about/">Who we are</a></li>
+        <li><a href="/committes/">The committees today</a></li>
+      </ul>
+      </li>
+    <li><a href="/history/">History</a>
+      
+    </li>
+    <li><a href="">Actions</a>
+    <ul class="sub-menu">
+      <li><a href="/faz3a">Faz3a</a></li>
+      <li><a href="/capacity_building/">Capacity Building</a></li>
+      <li><a href="/dafaa">Dafaa</a></li>
+    </ul>
+  </li>
     <li><a href="/volunteer/">Get Involved</a></li>
   </ul>
   <div class="hamburger" id="hamburger">
@@ -25,19 +39,19 @@
     <img id="close" src="https://res.cloudinary.com/abualex/image/upload/v1677176693/icons8-macos-close-30.png">
   </div>
 </nav>
-
 <style>
+
   nav {
     background-color: var(--white);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
     width: 100%;
     box-sizing: border-box;
     color: var(--black);
     border-bottom: 1px dotted var(--black);
-    position: fixed;
+    position: sticky;
+    top: 0;
     z-index: 9999;
   }
 
@@ -58,6 +72,7 @@
     display: flex;
     align-items: center;
     height: 100%;
+    position: relative;
   }
 
   nav ul li a {
@@ -66,6 +81,53 @@
     font-size: .8rem;
     font-weight: 600;
   }
+
+  .sub-menu {
+  display: none;
+  position: absolute;
+  top: 95%;
+  left: 0;
+  background-color: #dddddd;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 200px; /* Adjust width as necessary */
+  box-sizing: border-box;
+  height: auto;
+  border: none;
+  border-radius: 0 0 5px 5px;
+}
+
+
+.nav-links li:hover .sub-menu {
+  display: block;
+}
+
+.sub-menu li {
+  margin: 0;
+  padding: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  border: .5px solid var(--black);
+  transition: all 0.3s ease;
+  border-radius: .25rem;
+}
+
+.sub-menu li:hover {
+  background-color: var(--white);
+}
+
+.sub-menu li:hover::before {
+  content: "•";
+}
+
+.sub-menu li a {
+  color: var(--black);
+  text-decoration: none;
+  font-size: .75rem;
+  font-weight: 400;
+  
+}
+
 
   .hamburger {
     position: absolute;
@@ -121,6 +183,10 @@
     .nav-links.active {
       display: flex;
       background-color: var(--white);
+    }
+
+    nav{
+      height: 60px;
     }
 
   }

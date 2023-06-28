@@ -11,13 +11,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Numans&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>
+  
+<nav>
   <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1685965296/pscc/pscc.avif" alt="PSCC Logo" class="logo">
   <ul class="nav-links" id="nav-links">
     <li><a href="/">Home</a></li>
-    <li><a href="/about/">About</a></li>
-    <li><a href="/history/">History</a></li>
-    <li><a href="/faz3a/">Actions</a></li>
+    <li><a>About</a>
+      <ul class="sub-menu">
+        <li><a href="/about/">Who we are</a></li>
+        <li><a href="/committes/">The committees today</a></li>
+      </ul>
+      </li>
+    <li><a href="/history/">History</a>
+      
+    </li>
+    <li><a href="">Actions</a>
+    <ul class="sub-menu">
+      <li><a href="/faz3a">Faz3a</a></li>
+      <li><a href="/capacity_building/">Capacity Building</a></li>
+      <li><a href="/dafaa">Dafaa</a></li>
+    </ul>
+  </li>
     <li><a href="/volunteer/">Get Involved</a></li>
   </ul>
   <div class="hamburger" id="hamburger">
@@ -25,19 +39,19 @@
     <img id="close" src="https://res.cloudinary.com/abualex/image/upload/v1677176693/icons8-macos-close-30.png">
   </div>
 </nav>
-
 <style>
+
   nav {
     background-color: var(--white);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
     width: 100%;
     box-sizing: border-box;
     color: var(--black);
     border-bottom: 1px dotted var(--black);
-    position: fixed;
+    position: sticky;
+    top: 0;
     z-index: 9999;
   }
 
@@ -58,6 +72,7 @@
     display: flex;
     align-items: center;
     height: 100%;
+    position: relative;
   }
 
   nav ul li a {
@@ -66,6 +81,53 @@
     font-size: .8rem;
     font-weight: 600;
   }
+
+  .sub-menu {
+  display: none;
+  position: absolute;
+  top: 95%;
+  left: 0;
+  background-color: #dddddd;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 200px; /* Adjust width as necessary */
+  box-sizing: border-box;
+  height: auto;
+  border: none;
+  border-radius: 0 0 5px 5px;
+}
+
+
+.nav-links li:hover .sub-menu {
+  display: block;
+}
+
+.sub-menu li {
+  margin: 0;
+  padding: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  border: .5px solid var(--black);
+  transition: all 0.3s ease;
+  border-radius: .25rem;
+}
+
+.sub-menu li:hover {
+  background-color: var(--white);
+}
+
+.sub-menu li:hover::before {
+  content: "•";
+}
+
+.sub-menu li a {
+  color: var(--black);
+  text-decoration: none;
+  font-size: .75rem;
+  font-weight: 400;
+  
+}
+
 
   .hamburger {
     position: absolute;
@@ -123,6 +185,10 @@
       background-color: var(--white);
     }
 
+    nav{
+      height: 60px;
+    }
+
   }
 
   .logo {
@@ -177,10 +243,7 @@ navLinks.addEventListener('click', function() {
   <main class="container">
     <h1>A history of the PSCC</h1>
     <h4>How local committees have coordinated indigenous resistance</h4>
-    <img
-      src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1686573094/pscc/pscc__map.avif"
-      alt="Map of the PSCC locations"
-    />
+    <iframe src="https://www.google.com/maps/d/embed?mid=1kcFBQOgr9hHCMmyBSEDJDCPRzl7MRBM&hl=fr&ehbc=2E312F" width="640" height="480"></iframe>
 
     <h4 id="Intro">Intro</h4>
 
@@ -450,6 +513,13 @@ navLinks.addEventListener('click', function() {
     </div>
     <img id="iconImage" src="https://res.cloudinary.com/abualex/image/upload/v1682778432/info_circle_white.svg">
   </div>
+</div>
+<div class="container">
+  <h4>Direct Actions</h4>
+  <p>A number of direct actions have been organized, including the blocking of Apartheid Road 443 and other roads, an action protest in Rami Levi supermarket in line with the call to Boycott products that support the Occupation, and cutting off apartheid separation fence in several locations. These actions aim to reclaim the right to use settler-only roads, challenge Occupation and segregation policies and disrupt the lives of settlers.</p><p>
+    
+    The PSCC has been instrumental in organizing the establishment of the village of Bab Al Shams in January 2013 on land coveted by Ma’ale Adummim settlers, in the area threatened by the illegal Israeli annexation plan of the ‘E1’ corridor, where the Israeli state had planned to erect more than 35000 housing units. Erected in less than two nights, the popular resistance encampment housed more than 250 Palestinians and foreign activists. While the village was destroyed by the Israeli Occupation Forces and dozens were arrested, the move received great attention from international media, raising awareness about Palestinian dispossesion, and also appeared as an example of proactive spatial resistance aiming to disrupt and weaken the spatial aspects of the continued Israeli colonization of Palestine. The movement launched by the Bab Al Shams initiative inspired numerous follow-up events across the West Bank, including in the Jordan Valley with the reclamation and restoration of the ethnically cleansed village of Ein Hijleh in 2014. 
+    </p>
 </div>
 
 <style>

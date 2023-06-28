@@ -11,13 +11,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Numans&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>
+  
+<nav>
   <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1685965296/pscc/pscc.avif" alt="PSCC Logo" class="logo">
   <ul class="nav-links" id="nav-links">
     <li><a href="/">Home</a></li>
-    <li><a href="/about/">About</a></li>
-    <li><a href="/history/">History</a></li>
-    <li><a href="/faz3a/">Actions</a></li>
+    <li><a>About</a>
+      <ul class="sub-menu">
+        <li><a href="/about/">Who we are</a></li>
+        <li><a href="/committes/">The committees today</a></li>
+      </ul>
+      </li>
+    <li><a href="/history/">History</a>
+      
+    </li>
+    <li><a href="">Actions</a>
+    <ul class="sub-menu">
+      <li><a href="/faz3a">Faz3a</a></li>
+      <li><a href="/capacity_building/">Capacity Building</a></li>
+      <li><a href="/dafaa">Dafaa</a></li>
+    </ul>
+  </li>
     <li><a href="/volunteer/">Get Involved</a></li>
   </ul>
   <div class="hamburger" id="hamburger">
@@ -25,19 +39,19 @@
     <img id="close" src="https://res.cloudinary.com/abualex/image/upload/v1677176693/icons8-macos-close-30.png">
   </div>
 </nav>
-
 <style>
+
   nav {
     background-color: var(--white);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
     width: 100%;
     box-sizing: border-box;
     color: var(--black);
     border-bottom: 1px dotted var(--black);
-    position: fixed;
+    position: sticky;
+    top: 0;
     z-index: 9999;
   }
 
@@ -58,6 +72,7 @@
     display: flex;
     align-items: center;
     height: 100%;
+    position: relative;
   }
 
   nav ul li a {
@@ -66,6 +81,53 @@
     font-size: .8rem;
     font-weight: 600;
   }
+
+  .sub-menu {
+  display: none;
+  position: absolute;
+  top: 95%;
+  left: 0;
+  background-color: #dddddd;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 200px; /* Adjust width as necessary */
+  box-sizing: border-box;
+  height: auto;
+  border: none;
+  border-radius: 0 0 5px 5px;
+}
+
+
+.nav-links li:hover .sub-menu {
+  display: block;
+}
+
+.sub-menu li {
+  margin: 0;
+  padding: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  border: .5px solid var(--black);
+  transition: all 0.3s ease;
+  border-radius: .25rem;
+}
+
+.sub-menu li:hover {
+  background-color: var(--white);
+}
+
+.sub-menu li:hover::before {
+  content: "•";
+}
+
+.sub-menu li a {
+  color: var(--black);
+  text-decoration: none;
+  font-size: .75rem;
+  font-weight: 400;
+  
+}
+
 
   .hamburger {
     position: absolute;
@@ -123,6 +185,10 @@
       background-color: var(--white);
     }
 
+    nav{
+      height: 60px;
+    }
+
   }
 
   .logo {
@@ -178,32 +244,81 @@ navLinks.addEventListener('click', function() {
 <p>Whether you would be available for some weekends or for the whole olive harvest period from October to November, you are welcome to join our activities of land defense by accompanying Palestinian farmers to their fields. </p>
 <p>PSCC can support you if you are coming from outside Palestine and need help for accommodation during your stay as a Faz3a volunteer.</p>
 </p>
-  
-<div class="faz3a__promotion">
+  <div class="faz3a__promotion">
   <div class="container white">
-  <span class="CTA">Call-to-Action</span>
-  <h3>Help resist Israeli <span class="underline">colonialism</span></h3>
-  <p>The <span class="underline"><a href="/faz3a">Faz3a Campaign</a></span> is an urgent call to internationals to join Palestinians in solidarity against indigenous erasure. Join us here on the ground in some of the most vulnerable communities.  </p>
+    <span class="CTA">Call-to-Action</span>
+    <h3>Help resist Israeli <span class="underline">colonialism</span></h3>
+    <p>The <span class="underline"><a href="/faz3a">Faz3a Campaigns</a></span> is an urgent call to internationals to join Palestinians in solidarity against indigenous erasure. Join us here on the ground in some of the most vulnerable communities.</p>
 
-  <form action="/.netlify/functions/subscribe" method="post">
-   
-    <div >
-      <input class="input__faz3a__front" type="text" id="name" name="name" placeholder="Name">
-      <input class="input__faz3a__front" type="text" id="email" name="email" placeholder="Email Address">
-      <input class="input__faz3a__front" type="text" id="Phone" name="Phone" placeholder="Phone">
-      <input class="input__faz3a__front" type="text" id="Nationality" name="Nationality" placeholder="Nationality">
-      <input class="input__faz3a__front" type="text" id="dates" name="dates" placeholder="Desired length of stay in Palestine">
-      <input class="input__faz3a__front" type="text" id="accommodations" name="accommodations" placeholder="Do you need help with accommodations">
-      <input class="input__faz3a__front" type="text" id="Involvment" name="Involvment" placeholder="Are you already in contact with the solidarity movement in your country regarding your participation in Faz3a 2023.">
-      <input class="input__faz3a__front" type="text" id="comments" name="comments" placeholder="Please share any comments or concerns">
-      <input type="hidden" name="form-name" value="faz3a__front" />
-      <input type="submit" class="button__faz3a" id="submit" value="SIGN UP">
-    </div>
-  </form>
+    <form action="/.netlify/functions/subscribe" method="post" id="multistepForm">
+
+      <fieldset id="step1">
+        <input class="input__faz3a__front" type="text" id="name" name="name" placeholder="Name" aria-required="true" required>
+        <input class="input__faz3a__front" type="text" id="email" name="email" placeholder="Email Address" aria-required="true" required>
+        <input class="input__faz3a__front" type="number" id="Phone" name="Phone" placeholder="Phone" aria-required="true" required>
+        <button type="button" id="next1" class="next-action-button">Next</button>
+      </fieldset>
+
+      <fieldset id="step2">
+        <input class="input__faz3a__front" type="text" id="Nationality" name="Nationality" placeholder="Nationality" aria-required="true" required>
+        <input class="input__faz3a__front" type="text" id="dates" name="dates" placeholder="Desired length of stay in Palestine" aria-required="true" required>
+        <button type="button" id="back1" class="prev-action-button">Back</button>
+        <button type="button" id="next2" class="next-action-button">Next</button>
+      </fieldset>
+
+      <fieldset id="step3">
+        <div>
+          <label style="display: block;">Do you need help with accommodations?</label>
+          <label>
+            <input class="radio" type="radio" name="accommodations-radio" id="accommodations-yes" required>
+            Yes
+          </label>
+          <label>
+            <input class="radio" style="margin-bottom: 1.5rem;" type="radio" name="accommodations-radio" id="accommodations-no" required>
+            No
+          </label>
+        </div>
+        <div>
+          <label style="display: block;">Are you already in contact with the solidarity movement in your country regarding your participation in Faz3a 2023.</label>
+          <label>
+            <input class="radio" type="radio" name="contact-radio" id="contact-yes" required>
+            Yes
+          </label>
+          <label>
+            <input class="radio" style="margin-bottom: 1.5rem;"  type="radio" name="contact-radio" id="contact-no" required>
+            No
+          </label>
+        </div>
+        <button type="button" id="back2" class="prev-action-button">Back</button>
+        <button type="button" id="next3" class="next-action-button">Next</button>
+      </fieldset>
+
+      <fieldset id="step4">
+        <textarea class="input__faz3a__front" id="comments" name="comments" placeholder="Please share any comments or concerns">Please share any comments or concerns</textarea>
+        <input type="hidden" name="form-name" value="faz3a__front" />
+        <button type="button" id="back3" class="prev-action-button">Back</button>
+        <input type="submit" class="button__faz3a" id="submit" value="SIGN UP">
+      </fieldset>
+      
+
+    </form>
+  </div>
 </div>
-</div>
+
+
+
 
 <style>
+ 
+  textarea{
+    min-width: 100%;
+    font-family: 'montserrat', sans-serif;
+    min-height: 10rem;
+    padding: 1rem;
+  }
+  .radio{
+    display: inline-block;
+  }
   .white{
     background-color: var(--white);
     padding: 3rem 2rem;
@@ -248,6 +363,7 @@ navLinks.addEventListener('click', function() {
   color: #fff;
   height: 2rem;
   margin-top: 1.5rem;
+  display: inline-block;
   }
   .button__faz3a:hover{
     color: #fff;
@@ -278,37 +394,125 @@ navLinks.addEventListener('click', function() {
   background-color: #fff;
   color: var(--black); 
 }
+
+fieldset {
+  display: none;
+  border: none;
+  font-family: 'montserrat', sans-serif;
+  padding: 0;
+  
+}
+
+fieldset#step1 {
+  display: block;
+  border: none;
+  padding: 0;
+}
+
+.next-action-button, .prev-action-button {
+  /* you can customize the appearance of the next and back buttons here */
+  background-color: var(--red);
+  border: none;
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: fit-content;
+  color: #fff;
+  height: 2rem;
+  margin-top: 1.5rem;
+}
+.next-action-button, .prev-action-button:hover {
+color: #fff;
+    border: .5px solid var(--white);
+    cursor: pointer;
+    }
 </style>
 
 <script>
-  window.onload = function() {
-    // select the form and attach the submit event listener
+  console.log('Script is being loaded and executed');
+
+  window.addEventListener('load', function() {
+    console.log('Window onload function is being executed');
+    var currentFieldset = 1;
+
+    document.getElementById('next1').addEventListener('click', function() { navigate(1); });
+    document.getElementById('back1').addEventListener('click', function() { navigate(-1); });
+    document.getElementById('next2').addEventListener('click', function() { navigate(1); });
+    document.getElementById('back2').addEventListener('click', function() { navigate(-1); });
+    document.getElementById('next3').addEventListener('click', function() { navigate(1); });
+    document.getElementById('back3').addEventListener('click', function() { navigate(-1); });
+
+    function isRadioChecked(radioGroup) {
+      for (var i = 0; i < radioGroup.length; i++) {
+        if (radioGroup[i].checked) {
+          console.log('Radio group has a selected item');
+          return true;
+        }
+      }
+      console.log('Radio group does not have a selected item');
+      return false;
+    }
+
+    function navigate(direction) {
+      var currentFieldsetId = 'step' + currentFieldset;
+      var nextFieldsetId = 'step' + (currentFieldset + direction);
+
+      // If moving forward, validate current fieldset
+      if (direction > 0 && !validateForm(currentFieldsetId)) {
+        console.log('Validation failed, not navigating');
+        return;
+      }
+
+      console.log('Navigating to the next fieldset');
+
+      // Hide current fieldset
+      document.getElementById(currentFieldsetId).style.display = 'none';
+      // Show next fieldset
+      document.getElementById(nextFieldsetId).style.display = 'block';
+      currentFieldset += direction;
+    }
+
     var form = document.querySelector('form');
     form.addEventListener('submit', function(event) {
-      // select the input fields
-      var name = document.querySelector('#name');
-      var email = document.querySelector('#email');
-      var message = document.querySelector('#message');
-  
-      // email regex for basic email validation
-      var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-  
-      // check if all fields are filled out
-      if (!name.value || !email.value ) {
-        alert('Please fill out all fields.');
+      var currentFieldsetId = 'step' + currentFieldset;
+      if (!validateForm(currentFieldsetId)) {
         event.preventDefault(); // prevent the form from submitting
-        return;
-      }
-  
-      // check if email is valid
-      if (!emailRegex.test(email.value)) {
-        alert('Please enter a valid email.');
-        event.preventDefault(); // prevent the form from submitting
-        return;
       }
     });
-  };
-  </script>
+
+    function validateForm(fieldsetId) {
+      var inputs = document.querySelectorAll(`#${fieldsetId} input[required]:not(.radio), #${fieldsetId} textarea[required]`);
+      var isValid = true;
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].value.trim() === '') {
+          console.log(`Input ${inputs[i].id} is empty.`);
+          alert('Please fill out all fields.');
+          isValid = false;
+          break;
+        }
+      }
+
+      if(isValid && fieldsetId === "step3") {
+        var radioGroups = [document.querySelectorAll(`#${fieldsetId} input[name="accommodations-radio"]`), document.querySelectorAll(`#${fieldsetId} input[name="contact-radio"]`)];
+        for (var j = 0; j < radioGroups.length; j++) {
+          if (!isRadioChecked(radioGroups[j])) {
+            alert('Please select an option.');
+            isValid = false;
+            break;
+          }
+        }
+      }
+
+      return isValid;
+    }
+  });
+</script>
+
+
+
+
+
+
+
 </main>
   <div class="main-footer">
  
