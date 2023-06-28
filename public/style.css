@@ -394,3 +394,25 @@ h4{
   text-underline-offset: 3px;
 }
 
+.red__button {
+  background-color: var(--red);
+  border: none;
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: fit-content;
+  color: #fff;
+  height: 2rem;
+  margin-top: 1.5rem;
+}
+.red__button:hover {
+color: #fff;
+    border: .5px solid var(--white);
+    cursor: pointer;
+    }
+
+.underline{
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  font-weight: 800;
+  font-family: 'montserrat', sans-serif;
+}
