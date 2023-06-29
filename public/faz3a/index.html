@@ -324,16 +324,7 @@ As olive cultivation is at the root of Palestinian economy and social fabric, Pa
 
 <p>Launched in 2019, the Faz3a campaign acts as a peaceful protection mechanism for Palestinian local harvesters. Meaning ‘reinforcement’ in Arabic, Faz3a empowers, mobilizes and equips groups of Palestinian volunteers to accompany farmer families to their fields in the face of Israeli violence during the harvest. The campaign is conceived as a means of non-violent resistance and creative solidarity in the struggle against the ongoing Israeli occupation and settler colonial enterprise.</p>
 
-<p>Each year, the PSCC undertakes the mobilization of hundreds of Palestinian volunteers coming from all over Palestine. Faz3a volunteers are trained in conflict de-escalation and receive a legal briefing. For the duration of the harvest season, hundreds of volunteers are spread among rural communities all over the West Bank, <span class="sidenote">
-  <input aria-label="Show sidenote" type="checkbox" id="sidenote__checkbox2" class="sidenote__checkbox">
-  <label tabindex="0" title="" aria-describedby="sidenote" for="sidenote__checkbox2" class="sidenote__button">sidenote label</label>
-  <small id="sidenote" class="sidenote__content">
-      <span class="sidenote__content-parenthesis"> (sidenote: </span>
-      This is the sidenote. accompanying the harvesters in the fields threatened by settler violence and responding to emergency situations.
-      <span class="sidenote__content-parenthesis">)</span>
-  </small>
-</span>
-accompanying the harvesters in the fields threatened by settler violence and responding to emergency situations.</p>
+<p>Each year, the PSCC undertakes the mobilization of hundreds of Palestinian volunteers coming from all over Palestine. Faz3a volunteers are trained in conflict de-escalation and receive a legal briefing. For the duration of the harvest season, hundreds of volunteers are spread among rural communities all over the West Bank, accompanying the harvesters in the fields threatened by settler violence and responding to emergency situations.</p>
 
 <p>While accompanying farmer families to provide protection, Faz3a volunteers are also participating in olive picking.  In general, the important number of Faz3a volunteers can be deterrent enough to prevent settlers from entering Palestinian fields and undertaking mob violence. On the other hand, if settlers or soldiers decide to interrupt the harvest,  the presence of volunteers is critical in mitigating colonial harassment. Indeed, Faz3a volunteers are interposing to protect the farmer families against settler violence. In addition, they act as a further deterrent for settlers to perform harassment as they are engaging in active documentation of cases of violence. To that end, the campaign provides a number of volunteers with cameras and encourages them to thoroughly report any human right violation they witness on the ground.</p>
 
@@ -353,9 +344,9 @@ accompanying the harvesters in the fields threatened by settler violence and res
 <div class="news__block">
   <h3>Faz3a in the news</h3>
   <ul>
-    <li><strong>Haaretz:</strong> Palestinian volunteers help olive harvesters in ways the Palestinian Authority can’t, by Amira Hass, 23 October 2020, available here: </li>
-    <li><strong>New Arab:</strong> Fazaa: Protecting Palestine’s olive harvest from Israeli settler violence, by Sally Ibrahim, 18 October 2021, available here: </li>
-    <li><strong>Mondoweiss:</strong> ‘It’s my land’: Beita farmers struggle to harvest olives near settler outpost, by Yumna Patel, 12 November 2021, available here: </li>
+    <li><strong>Haaretz:</strong> Palestinian volunteers help olive harvesters in ways the Palestinian Authority can’t, by Amira Hass, 23 October 2020, <a href="https://www.haaretz.com/israel-news/2020-10-23/ty-article/.premium/palestinian-volunteers-help-olive-harvesters-in-ways-the-palestinian-authority-cant/0000017f-e72a-dea7-adff-f7fb6c900000">available here:</a></li>
+    <li><strong>New Arab:</strong> Fazaa: Protecting Palestine’s olive harvest from Israeli settler violence, by Sally Ibrahim, 18 October 2021, <a href="https://www.newarab.com/analysis/protecting-palestines-olive-harvest-settler-violence">available here:</a> </li>
+    <li><strong>Mondoweiss:</strong> ‘It’s my land’: Beita farmers struggle to harvest olives near settler outpost, by Yumna Patel, 12 November 2021, <a href="https://mondoweiss.net/2021/11/its-my-land-beita-farmers-struggle-to-harvest-olives-near-settler-outpost/">available here:</a> </li>
   </ul>
 </div>
 
@@ -449,7 +440,6 @@ accompanying the harvesters in the fields threatened by settler violence and res
 
   .faz3a__promotion p{
     max-width: 850px;
-    text-wrap: balance;
   }
 
   .CTA{
@@ -673,11 +663,15 @@ color: #fff;
   max-width: 40rem;
   color: var(--white);
   font-family: 'Montserrat', sans-serif;
-  padding: 2rem .25rem;
+  padding: 2rem 1rem;
   margin: 0 auto;
   box-shadow: 0 0 0 100vmax var(--dark-grey);
   clip-path: inset( 0 -100vmax);
+}
 
+.news__block a{
+  text-decoration: underline;
+  text-decoration-color: var(--red);
 }
 
 .news__block li{
@@ -696,20 +690,6 @@ color: #fff;
 
 </style>
 
-<script>
-function nextStep(step) {
-    var currentStep = document.getElementById("step" + (step - 1));
-    var nextStep = document.getElementById("step" + step);
-    
-    // simple validation
-    if (currentStep.querySelector('input').checkValidity()) {
-      currentStep.classList.remove("active");
-      nextStep.classList.add("active");
-    } else {
-      alert("Please fill out this field.");
-    }
-  }
-</script>
 
 
   <div class="main-footer">
@@ -733,7 +713,7 @@ function nextStep(step) {
     <p><span class="footer-header">Projects</span>
       <br><a href="/faz3a">Faz3a</a>
       <br><a href="/dafaa">Dafaa</a>
-      <br><a href="/reports">Water</a>
+      <br><a href="/water_report">Water Report</a>
       <br><a href="https://defundracism.org">#DefundRacism</a></p>
   </div>
   
@@ -938,14 +918,16 @@ function nextStep(step) {
   }
 
   .button__footer {
-  background-color: var(--black) !important;
+  background-color: var(--red) !important;
   width: fit-content;
   color: var(--white) !important;
   margin: 0;
+  font-size: .55rem;
+  border: none;
 }
 
 .main-footer-one p{
-  margin-bottom: 1rem;
+  margin-bottom: .35rem;
 }
 </style>
 </body>
