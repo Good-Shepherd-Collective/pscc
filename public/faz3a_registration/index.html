@@ -301,63 +301,50 @@ navLinks.addEventListener('click', function() {
   <div class="faz3a__promotion">
   <div class="container white">
     <span class="CTA">Call-to-Action</span>
+    <H2>Join the Faz3a Campaign</H2>
     <h3>Help resist Israeli <span class="underline">colonialism</span></h3>
     <p>The <span class="underline"><a href="/faz3a">Faz3a Campaign</a></span> is an urgent call to internationals to join Palestinians in solidarity against indigenous erasure. Join us here on the ground from October to November in some of the most vulnerable communities.</p>
 
-    <form action="/.netlify/functions/subscribe" method="post" id="multistepForm">
+    <form action="/.netlify/functions/subscribe" method="post" id="singleStepForm">
 
-      <fieldset id="step1">
         <input class="input__faz3a__front" type="text" id="name" name="name" placeholder="Name" aria-required="true" required>
         <input class="input__faz3a__front" type="text" id="email" name="email" placeholder="Email Address" aria-required="true" required>
-        <input class="input__faz3a__front" type="number" id="Phone" name="Phone" placeholder="Phone" aria-required="true" required>
-        <button type="button" id="next1" class="next-action-button">Next</button>
-      </fieldset>
+        <input class="input__faz3a__front" type="number" id="Phone" name="Phone" placeholder="Phone" aria-required="false">
 
-      <fieldset id="step2">
         <input class="input__faz3a__front" type="text" id="Nationality" name="Nationality" placeholder="Nationality" aria-required="true" required>
         <input class="input__faz3a__front" type="text" id="dates" name="dates" placeholder="Desired length of stay in Palestine" aria-required="true" required>
-        <button type="button" id="back1" class="prev-action-button">Back</button>
-        <button type="button" id="next2" class="next-action-button">Next</button>
-      </fieldset>
 
-      <fieldset id="step3">
         <div>
-          <label style="display: block;">Do you need help with accommodations?</label>
+          <label id="top__margin" class="radio" style="display: block;">Do you need help with accommodations?</label>
           <label>
             <input class="radio" type="radio" name="accommodations-radio" id="accommodations-yes" value="yes" required>
-            Yes
+            <span class="radio">Yes</span>
           </label>
           <label>
             <input class="radio" style="margin-bottom: 1.5rem;" type="radio" name="accommodations-radio" id="accommodations-no" value="no" required>
-            No
+            <span class="radio">No</span>
           </label>
         </div>
         <div>
-          <label style="display: block;">Are you already in contact with the solidarity movement in your country regarding your participation in Faz3a 2023.</label>
+          <label class="radio" style="display: block;">Are you already in contact with the solidarity movement in your country regarding your participation in Faz3a 2023.</label>
           <label>
             <input class="radio" type="radio" name="contact-radio" id="contact-yes" value="yes" required>
-            Yes
+            <span class="radio">Yes</span>
           </label>
           <label>
             <input class="radio" style="margin-bottom: 1.5rem;"  type="radio" name="contact-radio" id="contact-no" value="no" required>
-            No
+            <span class="radio">No</span>
           </label>
         </div>
-        <button type="button" id="back2" class="prev-action-button">Back</button>
-        <button type="button" id="next3" class="next-action-button">Next</button>
-      </fieldset>
 
-      <fieldset id="step4">
         <textarea class="input__faz3a__front" id="comments" name="comments" placeholder="Please share any comments or concerns">Please share any comments or concerns</textarea>
         <input type="hidden" name="form-name" value="faz3a__front" />
-        <button type="button" id="back3" class="prev-action-button">Back</button>
-        <input type="submit" class="button__faz3a" id="submit" value="SIGN UP">
-      </fieldset>
-      
 
+        <input type="submit" class="button__faz3a" id="submit" value="SIGN UP">
     </form>
   </div>
 </div>
+
 
 
 
@@ -369,9 +356,18 @@ navLinks.addEventListener('click', function() {
     font-family: 'montserrat', sans-serif;
     min-height: 10rem;
     padding: 1rem;
+    border-radius: .5rem;
+  }
+  #top__margin{
+    margin-top: 1.5rem;
   }
   .radio{
     display: inline-block;
+    font-family: 'montserrat', sans-serif;
+    font-size: .75rem;
+    font-weight: 500;
+    margin-top: .5rem;
+    text-transform: uppercase;
   }
   .white{
     background-color: var(--white);
@@ -430,7 +426,6 @@ navLinks.addEventListener('click', function() {
   font-family: 'montserrat', sans-serif;
   font-size: .75rem;
   width: 100%;
-  max-width: 450px;
   height: 2rem;
 }
 
@@ -482,83 +477,45 @@ color: #fff;
 </style>
 
 <script>
-  console.log('Script is being loaded and executed');
-
   window.addEventListener('load', function() {
-    console.log('Window onload function is being executed');
-    var currentFieldset = 1;
 
-    document.getElementById('next1').addEventListener('click', function() { navigate(1); });
-    document.getElementById('back1').addEventListener('click', function() { navigate(-1); });
-    document.getElementById('next2').addEventListener('click', function() { navigate(1); });
-    document.getElementById('back2').addEventListener('click', function() { navigate(-1); });
-    document.getElementById('next3').addEventListener('click', function() { navigate(1); });
-    document.getElementById('back3').addEventListener('click', function() { navigate(-1); });
-
-    function isRadioChecked(radioGroup) {
-      for (var i = 0; i < radioGroup.length; i++) {
-        if (radioGroup[i].checked) {
-          console.log('Radio group has a selected item');
-          return true;
-        }
-      }
-      console.log('Radio group does not have a selected item');
-      return false;
+function isRadioChecked(radioGroup) {
+  for (var i = 0; i < radioGroup.length; i++) {
+    if (radioGroup[i].checked) {
+      return true;
     }
+  }
+  return false;
+}
 
-    function navigate(direction) {
-      var currentFieldsetId = 'step' + currentFieldset;
-      var nextFieldsetId = 'step' + (currentFieldset + direction);
+var form = document.querySelector('form');
+form.addEventListener('submit', function(event) {
+  var isValid = true;
+  var inputs = document.querySelectorAll('input[required]:not(.radio), textarea[required]');
 
-      // If moving forward, validate current fieldset
-      if (direction > 0 && !validateForm(currentFieldsetId)) {
-        console.log('Validation failed, not navigating');
-        return;
-      }
-
-      console.log('Navigating to the next fieldset');
-
-      // Hide current fieldset
-      document.getElementById(currentFieldsetId).style.display = 'none';
-      // Show next fieldset
-      document.getElementById(nextFieldsetId).style.display = 'block';
-      currentFieldset += direction;
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].value.trim() === '') {
+      alert('Please fill out all fields.');
+      isValid = false;
+      break;
     }
+  }
 
-    var form = document.querySelector('form');
-    form.addEventListener('submit', function(event) {
-      var currentFieldsetId = 'step' + currentFieldset;
-      if (!validateForm(currentFieldsetId)) {
-        event.preventDefault(); // prevent the form from submitting
-      }
-    });
-
-    function validateForm(fieldsetId) {
-      var inputs = document.querySelectorAll(`#${fieldsetId} input[required]:not(.radio), #${fieldsetId} textarea[required]`);
-      var isValid = true;
-      for (var i = 0; i < inputs.length; i++) {
-        if (inputs[i].value.trim() === '') {
-          console.log(`Input ${inputs[i].id} is empty.`);
-          alert('Please fill out all fields.');
-          isValid = false;
-          break;
-        }
-      }
-
-      if(isValid && fieldsetId === "step3") {
-        var radioGroups = [document.querySelectorAll(`#${fieldsetId} input[name="accommodations-radio"]`), document.querySelectorAll(`#${fieldsetId} input[name="contact-radio"]`)];
-        for (var j = 0; j < radioGroups.length; j++) {
-          if (!isRadioChecked(radioGroups[j])) {
-            alert('Please select an option.');
-            isValid = false;
-            break;
-          }
-        }
-      }
-
-      return isValid;
+  var radioGroups = [document.querySelectorAll('input[name="accommodations-radio"]'), document.querySelectorAll('input[name="contact-radio"]')];
+  for (var j = 0; j < radioGroups.length; j++) {
+    if (!isRadioChecked(radioGroups[j])) {
+      alert('Please select an option.');
+      isValid = false;
+      break;
     }
-  });
+  }
+
+  if (!isValid) {
+    event.preventDefault(); // prevent the form from submitting
+  }
+});
+});
+
 </script>
 
 

@@ -1,0 +1,225 @@
+<div class="faz3a__promotion">
+  <div class="container white">
+    <span class="CTA">Call-to-Action</span>
+    <H2>Join the Faz3a Campaign</H2>
+    <h3>Help resist Israeli <span class="underline">colonialism</span></h3>
+    <p>The <span class="underline"><a href="/faz3a">Faz3a Campaign</a></span> is an urgent call to internationals to join Palestinians in solidarity against indigenous erasure. Join us here on the ground from October to November in some of the most vulnerable communities.</p>
+
+    <form action="/.netlify/functions/subscribe" method="post" id="singleStepForm">
+
+        <input class="input__faz3a__front" type="text" id="name" name="name" placeholder="Name" aria-required="true" required>
+        <input class="input__faz3a__front" type="text" id="email" name="email" placeholder="Email Address" aria-required="true" required>
+        <input class="input__faz3a__front" type="number" id="Phone" name="Phone" placeholder="Phone" aria-required="false">
+
+        <input class="input__faz3a__front" type="text" id="Nationality" name="Nationality" placeholder="Nationality" aria-required="true" required>
+        <input class="input__faz3a__front" type="text" id="dates" name="dates" placeholder="Desired length of stay in Palestine" aria-required="true" required>
+
+        <div>
+          <label id="top__margin" class="radio" style="display: block;">Do you need help with accommodations?</label>
+          <label>
+            <input class="radio" type="radio" name="accommodations-radio" id="accommodations-yes" value="yes" required>
+            <span class="radio">Yes</span>
+          </label>
+          <label>
+            <input class="radio" style="margin-bottom: 1.5rem;" type="radio" name="accommodations-radio" id="accommodations-no" value="no" required>
+            <span class="radio">No</span>
+          </label>
+        </div>
+        <div>
+          <label class="radio" style="display: block;">Are you already in contact with the solidarity movement in your country regarding your participation in Faz3a 2023.</label>
+          <label>
+            <input class="radio" type="radio" name="contact-radio" id="contact-yes" value="yes" required>
+            <span class="radio">Yes</span>
+          </label>
+          <label>
+            <input class="radio" style="margin-bottom: 1.5rem;"  type="radio" name="contact-radio" id="contact-no" value="no" required>
+            <span class="radio">No</span>
+          </label>
+        </div>
+
+        <textarea class="input__faz3a__front" id="comments" name="comments" placeholder="Please share any comments or concerns">Please share any comments or concerns</textarea>
+        <input type="hidden" name="form-name" value="faz3a__front" />
+
+        <input type="submit" class="button__faz3a" id="submit" value="SIGN UP">
+    </form>
+  </div>
+</div>
+
+
+
+
+
+<style>
+ 
+  textarea{
+    min-width: 100%;
+    font-family: 'montserrat', sans-serif;
+    min-height: 10rem;
+    padding: 1rem;
+    border-radius: .5rem;
+  }
+  #top__margin{
+    margin-top: 1.5rem;
+  }
+  .radio{
+    display: inline-block;
+    font-family: 'montserrat', sans-serif;
+    font-size: .75rem;
+    font-weight: 500;
+    margin-top: .5rem;
+    text-transform: uppercase;
+  }
+  .white{
+    background-color: var(--white);
+    padding: 3rem 2rem;
+  }
+  .faz3a__promotion {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 4rem 1rem;
+    background-image: url("https://res.cloudinary.com/abualex/image/upload/v1682847300/dot.png");
+      background-repeat: repeat;
+    
+  } 
+
+  .faz3a__promotion p{
+    max-width: 850px;
+  }
+
+  .CTA{
+    font-family: 'montserrat', sans-serif;
+    border: 1px solid var(--red);
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: .65rem;
+    font-weight: 700 !important;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    color: var(--red);
+  }
+
+  .underline {
+    text-decoration: underline;
+    text-decoration-color: var(--red);
+    text-underline-offset: 3px;
+  }
+
+.button__faz3a{
+  background-color: var(--red);
+  border: none;
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: fit-content;
+  color: #fff;
+  height: 2rem;
+  margin-top: 1.5rem;
+  display: inline-block;
+  }
+  .button__faz3a:hover{
+    color: #fff;
+    border: .5px solid var(--white);
+    cursor: pointer;
+  }
+.input__faz3a__front{
+  background-color: var(--white);
+  border: .5px solid var(--black);
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: 100%;
+  height: 2rem;
+}
+
+.input__faz3a__front::placeholder{
+  color: var(--black);
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  font-weight: 500;
+}
+.input__faz3a__front:focus::placeholder{
+  color: var(--black);
+}
+.input__faz3a__front:focus{
+  outline: .5px solid var(--red);
+  background-color: #fff;
+  color: var(--black); 
+}
+
+fieldset {
+  display: none;
+  border: none;
+  font-family: 'montserrat', sans-serif;
+  padding: 0;
+  
+}
+
+fieldset#step1 {
+  display: block;
+  border: none;
+  padding: 0;
+}
+
+.next-action-button, .prev-action-button {
+  /* you can customize the appearance of the next and back buttons here */
+  background-color: var(--red);
+  border: none;
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: fit-content;
+  color: #fff;
+  height: 2rem;
+  margin-top: 1.5rem;
+}
+.next-action-button, .prev-action-button:hover {
+color: #fff;
+    border: .5px solid var(--white);
+    cursor: pointer;
+    }
+</style>
+
+<script>
+  window.addEventListener('load', function() {
+
+function isRadioChecked(radioGroup) {
+  for (var i = 0; i < radioGroup.length; i++) {
+    if (radioGroup[i].checked) {
+      return true;
+    }
+  }
+  return false;
+}
+
+var form = document.querySelector('form');
+form.addEventListener('submit', function(event) {
+  var isValid = true;
+  var inputs = document.querySelectorAll('input[required]:not(.radio), textarea[required]');
+
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].value.trim() === '') {
+      alert('Please fill out all fields.');
+      isValid = false;
+      break;
+    }
+  }
+
+  var radioGroups = [document.querySelectorAll('input[name="accommodations-radio"]'), document.querySelectorAll('input[name="contact-radio"]')];
+  for (var j = 0; j < radioGroups.length; j++) {
+    if (!isRadioChecked(radioGroups[j])) {
+      alert('Please select an option.');
+      isValid = false;
+      break;
+    }
+  }
+
+  if (!isValid) {
+    event.preventDefault(); // prevent the form from submitting
+  }
+});
+});
+
+</script>
+
+
+
+
+
+
