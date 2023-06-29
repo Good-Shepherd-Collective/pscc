@@ -349,6 +349,17 @@ navLinks.addEventListener('click', function() {
     padding: 2rem;
     background-image: url("https://res.cloudinary.com/abualex/image/upload/v1682847300/dot.png");
     background-repeat: repeat;
+    
+  }
+
+  .pscc_history h3{
+    font-weight: 900;
+    font-family: 'montserrat', sans-serif;
+  }
+
+  .pscc_history p{
+    font-weight: 700;
+    font-family: 'montserrat', sans-serif;
   }
 
   .underline {
@@ -378,7 +389,7 @@ navLinks.addEventListener('click', function() {
     .pscc_history {
       justify-content: center;
       align-items: center;
-      text-align: center;
+      text-align: left;
     }
 
     .big__heading {
@@ -401,6 +412,10 @@ navLinks.addEventListener('click', function() {
 
     .second__hero__title {
       font-size: 1rem;
+    }
+
+    .pscc_history{
+      text-align: left;
     }
   }
 
@@ -562,7 +577,7 @@ navLinks.addEventListener('click', function() {
   .faz3a__promotion {
     background-color: var(--white);
     color: var(--black);
-    padding: 4rem 4rem;
+    padding: 4rem 1rem;
     background-image: url("https://res.cloudinary.com/abualex/image/upload/v1682847300/dot.png");
       background-repeat: repeat;
     
@@ -856,6 +871,9 @@ color: #fff;
   }
 
   @media (max-width: 599.98px) {
+    .four__part__grid__container{
+      padding: 2.5rem 1rem;
+    }
     .three__part__grid {
       grid-template-columns: 1fr;
       grid-template-areas: 
@@ -1009,6 +1027,13 @@ color: #fff;
   }
 
   @media screen and (max-width: 600px) {
+    .blog__container{
+      padding: 2.5rem .5rem;
+    }
+
+    .blog__container h2{
+      padding: 0rem .5rem;
+    }
     .inner__blog__card {
       flex: 0 1 calc(100% - 1rem); /* deduct margins */
     }
@@ -1038,7 +1063,7 @@ color: #fff;
   .email__container {
     background-color: var(--white);
     color: var(--black);
-    padding: 8rem 4rem;
+    padding: 2rem 0rem;
     width: 100%;
   } 
 
