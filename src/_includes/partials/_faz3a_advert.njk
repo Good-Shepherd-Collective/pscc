@@ -1,0 +1,220 @@
+<div class="faz3a__promotion">
+  <div class="container white">
+    <span class="CTA">Call-to-Action</span>
+    <h2>Join Faz3a 2023</h2>
+    <h3>Help resist Israeli <span class="underline">colonialism</span></h3>
+    <p>The <span class="underline"><a href="/faz3a">Faz3a Campaign</a></span> is an urgent call to internationals to join Palestinians in solidarity against indigenous erasure. Join us here on the ground from October to November in some of the most vulnerable communities.</p>
+    <button type="button" id="Join" class="button__faz3a"><a href="/faz3a_registration">Join</a></button>    
+  </div>
+</div>
+
+
+
+
+<style>
+  #Join{
+    margin-top: .5rem;
+  }
+
+  textarea{
+    min-width: 100%;
+    font-family: 'montserrat', sans-serif;
+    min-height: 10rem;
+    padding: 1rem;
+  }
+  .radio{
+    display: inline-block;
+  }
+  .white{
+    background-color: var(--white);
+    padding: 3rem 2rem;
+  }
+  .faz3a__promotion {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 4rem 1rem;
+    background-image: url("https://res.cloudinary.com/abualex/image/upload/v1682847300/dot.png");
+      background-repeat: repeat;
+    
+  } 
+
+  .faz3a__promotion p{
+    max-width: 850px;
+  }
+
+  .CTA{
+    font-family: 'montserrat', sans-serif;
+    border: 1px solid var(--red);
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: .65rem;
+    font-weight: 700 !important;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    color: var(--red);
+  }
+
+  .underline {
+    text-decoration: underline;
+    text-decoration-color: var(--red);
+    text-underline-offset: 3px;
+  }
+
+.button__faz3a{
+  background-color: var(--red);
+  border: none;
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: fit-content;
+  color: #fff;
+  height: 2rem;
+  margin-top: 1.5rem;
+  display: inline-block;
+  }
+  .button__faz3a:hover{
+    color: #fff;
+    border: .5px solid var(--white);
+    cursor: pointer;
+  }
+.input__faz3a__front{
+  background-color: var(--white);
+  border: .5px solid var(--black);
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: 100%;
+  max-width: 450px;
+  height: 2rem;
+}
+
+.input__faz3a__front::placeholder{
+  color: var(--black);
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  font-weight: 500;
+}
+.input__faz3a__front:focus::placeholder{
+  color: var(--black);
+}
+.input__faz3a__front:focus{
+  outline: .5px solid var(--red);
+  background-color: #fff;
+  color: var(--black); 
+}
+
+fieldset {
+  display: none;
+  border: none;
+  font-family: 'montserrat', sans-serif;
+  padding: 0;
+  
+}
+
+fieldset#step1 {
+  display: block;
+  border: none;
+  padding: 0;
+}
+
+.next-action-button, .prev-action-button {
+  /* you can customize the appearance of the next and back buttons here */
+  background-color: var(--red);
+  border: none;
+  font-family: 'montserrat', sans-serif;
+  font-size: .75rem;
+  width: fit-content;
+  color: #fff;
+  height: 2rem;
+  margin-top: 1.5rem;
+}
+.next-action-button, .prev-action-button:hover {
+color: #fff;
+    border: .5px solid var(--white);
+    cursor: pointer;
+    }
+</style>
+
+<script>
+  console.log('Script is being loaded and executed');
+
+  window.addEventListener('load', function() {
+    console.log('Window onload function is being executed');
+    var currentFieldset = 1;
+
+    document.getElementById('next1').addEventListener('click', function() { navigate(1); });
+    document.getElementById('back1').addEventListener('click', function() { navigate(-1); });
+    document.getElementById('next2').addEventListener('click', function() { navigate(1); });
+    document.getElementById('back2').addEventListener('click', function() { navigate(-1); });
+    document.getElementById('next3').addEventListener('click', function() { navigate(1); });
+    document.getElementById('back3').addEventListener('click', function() { navigate(-1); });
+
+    function isRadioChecked(radioGroup) {
+      for (var i = 0; i < radioGroup.length; i++) {
+        if (radioGroup[i].checked) {
+          console.log('Radio group has a selected item');
+          return true;
+        }
+      }
+      console.log('Radio group does not have a selected item');
+      return false;
+    }
+
+    function navigate(direction) {
+      var currentFieldsetId = 'step' + currentFieldset;
+      var nextFieldsetId = 'step' + (currentFieldset + direction);
+
+      // If moving forward, validate current fieldset
+      if (direction > 0 && !validateForm(currentFieldsetId)) {
+        console.log('Validation failed, not navigating');
+        return;
+      }
+
+      console.log('Navigating to the next fieldset');
+
+      // Hide current fieldset
+      document.getElementById(currentFieldsetId).style.display = 'none';
+      // Show next fieldset
+      document.getElementById(nextFieldsetId).style.display = 'block';
+      currentFieldset += direction;
+    }
+
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+      var currentFieldsetId = 'step' + currentFieldset;
+      if (!validateForm(currentFieldsetId)) {
+        event.preventDefault(); // prevent the form from submitting
+      }
+    });
+
+    function validateForm(fieldsetId) {
+      var inputs = document.querySelectorAll(`#${fieldsetId} input[required]:not(.radio), #${fieldsetId} textarea[required]`);
+      var isValid = true;
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].value.trim() === '') {
+          console.log(`Input ${inputs[i].id} is empty.`);
+          alert('Please fill out all fields.');
+          isValid = false;
+          break;
+        }
+      }
+
+      if(isValid && fieldsetId === "step3") {
+        var radioGroups = [document.querySelectorAll(`#${fieldsetId} input[name="accommodations-radio"]`), document.querySelectorAll(`#${fieldsetId} input[name="contact-radio"]`)];
+        for (var j = 0; j < radioGroups.length; j++) {
+          if (!isRadioChecked(radioGroups[j])) {
+            alert('Please select an option.');
+            isValid = false;
+            break;
+          }
+        }
+      }
+
+      return isValid;
+    }
+  });
+</script>
+
+
+
+
+
+
