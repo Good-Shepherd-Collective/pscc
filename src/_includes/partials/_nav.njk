@@ -2,7 +2,7 @@
 <nav>
   <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1685965296/pscc/pscc.avif" alt="PSCC Logo" class="logo">
   <ul class="nav-links" id="nav-links">
-    <li><a href="/">Home</a></li>
+    <li class="border__top"><a href="/">Home</a></li>
     <li><a>About</a>
       <ul class="sub-menu">
         <li><a href="/about/">Who we are</a></li>
@@ -217,6 +217,10 @@
       background-color: #dddddd;
       border-bottom: .75px dotted var(--black);
       height: fit-content;
+    }
+
+    .border__top{
+      border-top: .75px dotted var(--black);
     }
 
     .sub-menu {
