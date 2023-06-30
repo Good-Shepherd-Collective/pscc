@@ -5,10 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Popular Struggle Coordination Committee</title>
+  <meta name="description" content="">
   <link rel="stylesheet" href="/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Numans&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1685965296/pscc/pscc.ico">
+
 </head>
 <body>
   
@@ -124,12 +126,13 @@
   padding: 0.5rem;
   font-family: 'Montserrat', sans-serif;
   border: .5px solid var(--black);
-  transition: all 0.3s ease;
+  font-weight: 500;
   border-radius: .25rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   height: auto;
   background-color: #dddddd;
   z-index: 999999 !important;
+  transition: all 0.3s ease;
 }
 
 .sub-menu li:hover {
@@ -142,7 +145,12 @@
   text-decoration: none;
   font-size: .75rem;
   font-weight: 400;
+  transition: all 0.2s ease;
   
+}
+
+.sub-menu li a:hover {  
+  font-weight: 600;
 }
 
 
@@ -506,6 +514,128 @@ navLinks.addEventListener('click', function() {
   }
 
 </style>
+<div class="blog__container">
+  <h2>News from the ground</h2>
+<div class="blog__flex">
+  <div class="inner__blog__card">
+    <h5 class="organization__name">June 5, 2023</h5>
+    <img class="news__img" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1688096860/june_7_pscc.avif" alt="Activists bringing food items and a message of solidarity to Ras Al Tin community  © PSCC, 5th June 2023."/>
+    <h5><a href="/june_5_2023/">Counter the Ongoing Nakba of the Palestinian Bedouin Communities East of Ramallah</a></h5>
+  </div>
+
+  <div class="inner__blog__card">
+    <h5 class="organization__name">June 19, 2023</h5>
+    <img class="news__img" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1688098157/saffa_featured_image.avif" alt="Protesters approaching the construction site of the Israeli settler industrial zone located on the lands of Saffa, Ramallah Governorate, West Bank, Palestine - 16th June 2023
+    "/>
+    <h5><a href="/june_19_2023/">Saffa village mobilizes against new Israeli industrial zone
+    </a></h5>
+  </div>
+  <div class="inner__blog__card">
+    <h5 class="organization__name">June 22, 2023</h5>
+    <img class="news__img" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1688100016/Um-qassa-school.avif" alt="Good Shepherd Collective Logo"/>
+    <h5><a href="/june_22_2023/">#Save Um Qussa School</a></h5>
+  </div>
+</div>
+</div>
+<style>
+  
+  .blog__container{
+    padding: 2.5rem 2rem;
+  }
+    .blog__container h2{
+    font-family: 'montserrat', sans-serif;
+    font-weight: 400;
+    text-decoration: underline var(--red);
+    margin-bottom: 2.5rem;
+  }
+
+.blog__flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .blog__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    margin: 1.5rem 1rem;
+    
+  }
+
+  .organization__name{
+    text-decoration: none !important;
+    font-weight: 500;
+  }
+
+  .inner__blog__card {
+    flex: 0 1 calc(33.333% - 1rem); /* deduct margins */
+    margin: 0.5rem; /* half of the gap */
+    border: 0.5px dotted var(--black);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.69);
+    box-sizing: border-box; /* include padding and border in element's total width and height */
+  }
+
+  .inner__blog__card:hover {
+    background-color: rgba(255, 255, 255, 0.981);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  .inner__blog__card h5 {
+    font-size: var(--font-h5);
+    margin-bottom: 1.15rem;
+    text-decoration: dotted underline var(--red);
+  }
+
+  .inner__blog__card p {
+    font-size: 0.8rem;
+  }
+
+  .inner__blog__card a {
+    text-decoration: none;
+  }
+
+  
+
+ .news__img {
+    width: 100% !important;
+    height: auto;
+    aspect-ratio: 3/2 !important;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    border-radius: .5rem !important;
+  }
+
+  .circle__outline {
+    border-radius: 50% !important;
+    border: .5px solid var(--black);
+  }
+
+  @media screen and (max-width: 1024px) {
+    .inner__blog__card {
+      flex: 0 1 calc(50% - 1rem); /* deduct margins */
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .blog__container{
+      padding: 2.5rem .5rem;
+    }
+
+    .blog__container h2{
+      padding: 0rem .5rem;
+    }
+    .inner__blog__card {
+      flex: 0 1 calc(100% - 1rem); /* deduct margins */
+    }
+  }
+
+</style>
+
 <div class="faz3a__promotion">
   <div class="container white">
     <span class="CTA">Call-to-Action</span>
@@ -876,14 +1006,14 @@ color: #fff;
     <h5 class="organization__name">Assopace Palestina | Partner Updates</h5>
     <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687251307/assopace.avif" alt="Assopace Palestina Logo"/>
     
-    <h5><a href="https://www.assopacepalestina.org/2023/06/28/il-sionismo-nelle-sue-forme-razziste-e-colonialiste-e-tuttora-vivo-intervista-a-nicola-perugini/">«Il sionismo nelle sue forme razziste e colonialiste è tuttora vivo», intervista a Nicola Perugini</a></h5>
+    <h5><a href="https://www.assopacepalestina.org/2023/06/29/israele-lamaro-bilancio-del-militante-hagai-el-ad-paria-nel-suo-paese/">Israele: l’amaro bilancio del militante Hagai El-Ad, paria nel suo paese</a></h5>
     
   </div>
   <div class="inner__blog__card">
     <h5 class="organization__name">AFPS | Partner Updates</h5>
     <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687253479/Logo-AFPS.avif" alt="AFPS Logo"/>
     
-    <h5><a href="https://www.france-palestine.org/Des-responsables-israeliens-et-palestiniens-evoquent-les-violences-en">Des responsables israéliens et palestiniens évoquent les violences en Cisjordanie</a></h5>
+    <h5><a href="https://www.france-palestine.org/Quatre-Israeliens-places-en-detention-administrative">Quatre Israéliens placés en détention administrative</a></h5>
     
 </div>
 <div class="inner__blog__card">

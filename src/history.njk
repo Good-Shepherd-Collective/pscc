@@ -1,5 +1,6 @@
 ---
-title: The Popular Struggle Coordination Committee
+title: The Popular Struggle Coordination Committee | A history of the PSCC
+description: A detailed history of the Popular Struggle Coordination Committee and its impact.
 layout: "base.njk"
 ---
 
@@ -7,7 +8,7 @@ layout: "base.njk"
   <main class="container">
     <h1>A history of the PSCC</h1>
     <h4>How local committees have coordinated indigenous resistance</h4>
-    <iframe src="https://www.google.com/maps/d/embed?mid=1kcFBQOgr9hHCMmyBSEDJDCPRzl7MRBM&hl=fr&ehbc=2E312F" width="100%" height="480"></iframe>
+    <iframe src="https://www.google.com/maps/d/embed?mid=1kcFBQOgr9hHCMmyBSEDJDCPRzl7MRBM&hl=fr&ehbc=2E312F" width="100%" height="480" alt="Google map of PSCC locations"></iframe>
 
     <h4 id="Intro">Intro</h4>
 
@@ -42,7 +43,7 @@ layout: "base.njk"
     <img
       data-id="AlMaasara"
       id="AlMaasara"
-      src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1686571733/pscc/almaasra.avif"
+      src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1688095160/Jordan_Valley_protest.avif"
       alt="Al-Ma'asara"
       class="map__image hide"
     />
@@ -82,7 +83,7 @@ layout: "base.njk"
     <img
       data-id="JordanValley"
       id="JordanValley"
-      src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1686571910/pscc/jordan__valley.avif"
+      src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1688095160/Jordan_Valley_protest.avif"
       alt="JordanValley"
       class="map__image hide"
     />
@@ -95,12 +96,6 @@ layout: "base.njk"
       class="map__image hide"
     />
 
-    
-
-    <div id="map__modal" class="map__modal">
-      <span class="close" id="close">&times;</span>
-      <img class="modal-content" id="img01" url="https://res.cloudinary.com/abualex/image/upload/v1686234522/pscc/legend.jpg">
-    </div>
   </div>
 
   <div class="map__text">
@@ -275,7 +270,7 @@ layout: "base.njk"
       </p>
     </div>
     </div>
-    <img id="iconImage" src="https://res.cloudinary.com/abualex/image/upload/v1682778432/info_circle_white.svg">
+
   </div>
 </div>
 <div class="container">
@@ -458,30 +453,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  let modal = document.getElementById('map__modal');
-  let img = document.getElementById('iconImage');
-  let modalImg = document.getElementById("img01");
-
-  if (img) {
-    img.addEventListener('click', function() {
-        console.log('Image clicked!');
-        modal.style.visibility = "visible";
-        modalImg.src = "https://res.cloudinary.com/abualex/image/upload/v1686234522/pscc/legend.jpg";
-    });
-  } else {
-    console.error('Element with id "iconImage" not found');
-  }
-
-  let closeModal = document.getElementById('close');
-
-  if (closeModal) {
-    closeModal.addEventListener('click', function(e) {
-        e.stopPropagation(); // stop the event from propagating up to the modal
-        modal.style.visibility = "hidden";
-    });
-  } else {
-    console.error('Element with id "close" not found');
-  }
+ 
 });
 
 
