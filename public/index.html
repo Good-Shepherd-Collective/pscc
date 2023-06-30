@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Popular Struggle Coordination Committee</title>
-  <meta name="description" content="">
+  <meta name="description" content="Discover community-based resistance strategies with the Popular Struggle Coordination Committee (PSCC). We champion the power of popular struggle, facilitating strikes, protests, collective actions, and legal campaigns. We also actively support the global Boycott, Divestment, and Sanctions movement.">
   <link rel="stylesheet" href="/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
   <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1685965296/pscc/pscc.avif" alt="PSCC Logo" class="logo">
   <ul class="nav-links" id="nav-links">
     <li class="border__top"><a href="/">Home</a></li>
-    <li><a>About</a>
+    <li><p>About</p>
       <ul class="sub-menu">
         <li><a href="/about/">Who we are</a></li>
         <li><a href="/the_committees_today/">The committees today</a></li>
@@ -29,7 +29,7 @@
     <li><a href="/history/">History</a>
       
     </li>
-    <li><a href="">Actions</a>
+    <li><p>Actions</p>
     <ul class="sub-menu">
       <li><a href="/faz3a">Faz3a</a></li>
       <li><a href="/capacity_building/">Capacity Building</a></li>
@@ -42,8 +42,8 @@
     <li class="border__right"><a href="/volunteer/">Get Involved</a></li>
   </ul>
   <div class="hamburger" id="hamburger">
-    <img id="open" src="https://res.cloudinary.com/abualex/image/upload/v1677176428/Hamburger_icon.svg">
-    <img id="close" src="https://res.cloudinary.com/abualex/image/upload/v1677176693/icons8-macos-close-30.png">
+    <img id="open" src="https://res.cloudinary.com/abualex/image/upload/v1677176428/Hamburger_icon.svg" alt="open icon" role="presentation">
+    <img id="close" src="https://res.cloudinary.com/abualex/image/upload/v1677176693/icons8-macos-close-30.png" alt="closed icon" role="presentation">
   </div>
 </nav>
 <style>
@@ -86,6 +86,15 @@
     align-items: center;
     height: 100%;
     position: relative;
+  }
+
+  nav ul li p {
+    color: var(--black);
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    font-family: 'montserrat', sans-serif;
   }
 
   nav ul li a {
@@ -306,7 +315,7 @@ navLinks.addEventListener('click', function() {
     <p class="second__hero__title">The <span class="underline">Popular Struggle Coordination Committee</span> is a grassroots formation coordinating nonviolent resistance across Palestine.</p>
   </div>
   <div class="pscc_history">
-    <h3><a href="/history">A History of the PSCC</a></h3>
+    <p class="pscc_history_header"><a href="/history">A History of the PSCC</a></p>
     <p><a href="/history">How generations of grassroots organizers have kept the Palestinian dream alive.</a></p>
   </div>
 </div>
@@ -364,7 +373,8 @@ navLinks.addEventListener('click', function() {
     
   }
 
-  .pscc_history h3{
+  .pscc_history_header{
+    font-size: var(--font-h3);
     font-weight: 900;
     font-family: 'montserrat', sans-serif;
   }
@@ -409,7 +419,7 @@ navLinks.addEventListener('click', function() {
       font-size: 4rem;
     }
 
-    .pscc_history h3{
+    .pscc_history_header {
       margin-bottom: .5rem;
     }
   }
@@ -443,14 +453,14 @@ navLinks.addEventListener('click', function() {
 
 <div class="water__report">
   <img class="water__background" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687866968/Jordan-Valley.avif" alt="Jordan Valley" />
-  <img class="dots">
-  <div class="container">
+  <div class="container" style="z-index: 4;">
   <h2>Report: Spring colonization in the Jordan Valley</h2>
   <h3>The urgent case of Khirbet Ad Deir</h3>
   <button class="button__water"><a href="/water_report/">Learn More</a></button>
 </div>
 
 </div>
+
 
 <style>
   .water__report{
@@ -463,6 +473,18 @@ navLinks.addEventListener('click', function() {
   .water__report img{
     border-radius: 0;
   }
+
+  .water__report::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("https://res.cloudinary.com/abualex/image/upload/v1682847300/dot.png");
+  background-repeat: repeat;
+  z-index: 1;
+}
   .water__background{
     position: absolute;
     object-fit: cover;
@@ -518,27 +540,27 @@ navLinks.addEventListener('click', function() {
   <h2>News from the ground</h2>
 <div class="blog__flex">
   <div class="inner__blog__card">
-    <h5 class="organization__name">June 5, 2023</h5>
+    <p class="organization__name">June 5, 2023</p>
     <img class="news__img" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1688096860/june_7_pscc.avif" alt="Activists bringing food items and a message of solidarity to Ras Al Tin community  © PSCC, 5th June 2023."/>
     <h5><a href="/june_5_2023/">Counter the Ongoing Nakba of the Palestinian Bedouin Communities East of Ramallah</a></h5>
   </div>
 
   <div class="inner__blog__card">
-    <h5 class="organization__name">June 19, 2023</h5>
+    <p class="organization__name">June 19, 2023</p>
     <img class="news__img" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1688098157/saffa_featured_image.avif" alt="Protesters approaching the construction site of the Israeli settler industrial zone located on the lands of Saffa, Ramallah Governorate, West Bank, Palestine - 16th June 2023
     "/>
     <h5><a href="/june_19_2023/">Saffa village mobilizes against new Israeli industrial zone
     </a></h5>
   </div>
   <div class="inner__blog__card">
-    <h5 class="organization__name">June 22, 2023</h5>
+    <p class="organization__name">June 22, 2023</p>
     <img class="news__img" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1688100016/Um-qassa-school.avif" alt="Good Shepherd Collective Logo"/>
     <h5><a href="/june_22_2023/">#Save Um Qussa School</a></h5>
   </div>
 </div>
 </div>
 <style>
-  
+
   .blog__container{
     padding: 2.5rem 2rem;
   }
@@ -567,6 +589,9 @@ navLinks.addEventListener('click', function() {
   .organization__name{
     text-decoration: none !important;
     font-weight: 500;
+    font-size: var(--font-h5);
+    font-family: 'montserrat', sans-serif;
+    margin-top: 1rem;
   }
 
   .inner__blog__card {
@@ -861,7 +886,6 @@ color: #fff;
   <h2>Core programs</h2>
 <div class="three__part__grid">
   <div class="grid__one">
-    <img src="">
     <h4><a href="/water_report/">Water Report</a></h4>
   </div>
   <div class="grid__two">
@@ -981,7 +1005,7 @@ color: #fff;
   <h2>Partner Updates</h2>
 <div class="blog__flex">
   <div class="inner__blog__card">
-    <h5 class="organization__name">ISM | Partner Updates</h5>
+    <p class="organization__name">ISM | Partner Updates</p>
     <img src="https://res.cloudinary.com/abualex/image/upload/c_scale,w_50/v1678977354/ism-logo.avif" alt="ISM logo"/>
     
     <h5><a href="https://palsolidarity.org/2023/06/israeli-occupation-forces-shoot-children-in-the-head-and-then-arrests-them-in-nabi-salah/">Israeli Occupation forces Shoot Children in the Head and Then Arrests Them in Nabi Salah</a></h5>
@@ -989,35 +1013,35 @@ color: #fff;
   </div>
 
   <div class="inner__blog__card">
-    <h5 class="organization__name">Youth of Sumud | Partner Updates</h5>
+    <p class="organization__name">Youth of Sumud | Partner Updates</p>
     <img src="https://res.cloudinary.com/abualex/image/upload/v1676121710/yos-all-black.svg" alt="Youth of Sumud log"/>
     
     <h5><a href="https://login.youthofsumud.org/demolishing-our-community-center-wont-destroy-our-resistance/">Demolishing our community center won’t destroy our resistance</a></h5>
     
   </div>
   <div class="inner__blog__card">
-    <h5 class="organization__name">Good Shepherd Collective | Partner Updates</h5>
+    <p class="organization__name">Good Shepherd Collective | Partner Updates</p>
     <img src="https://res.cloudinary.com/abualex/image/upload/v1674652841/GSC-LOGO.svg" alt="Good Shepherd Collective Logo"/>
     
     <h5><a href="https://goodshepherdcollective.org/2023/04/gsc-sets-up-tech-dev-programs/">GSC sets up tech dev programs</a></h5>
     
   </div>
   <div class="inner__blog__card">
-    <h5 class="organization__name">Assopace Palestina | Partner Updates</h5>
+    <p class="organization__name">Assopace Palestina | Partner Updates</p>
     <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687251307/assopace.avif" alt="Assopace Palestina Logo"/>
     
     <h5><a href="https://www.assopacepalestina.org/2023/06/29/israele-lamaro-bilancio-del-militante-hagai-el-ad-paria-nel-suo-paese/">Israele: l’amaro bilancio del militante Hagai El-Ad, paria nel suo paese</a></h5>
     
   </div>
   <div class="inner__blog__card">
-    <h5 class="organization__name">AFPS | Partner Updates</h5>
+    <p class="organization__name">AFPS | Partner Updates</p>
     <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687253479/Logo-AFPS.avif" alt="AFPS Logo"/>
     
     <h5><a href="https://www.france-palestine.org/Quatre-Israeliens-places-en-detention-administrative">Quatre Israéliens placés en détention administrative</a></h5>
     
 </div>
 <div class="inner__blog__card">
-  <h5 class="organization__name">Jordan Valley Solidarity | Partner Updates</h5>
+  <p class="organization__name">Jordan Valley Solidarity | Partner Updates</p>
   <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687255564/jordan_valley_solidarity.avif" alt="Jordan Valley Solidarity Logo"/>
   
   <h5><a href="https://jordanvalleysolidarity.org/news/may-2023-human-rights-violations-in-the-jordan-valley/">May 2023: Human rights violations in the Jordan Valley</a></h5>
@@ -1057,6 +1081,9 @@ color: #fff;
   .organization__name{
     text-decoration: none !important;
     font-weight: 500;
+    font-size: var(--font-h5);
+    font-family: 'montserrat', sans-serif;
+    margin-top: 1rem;
   }
 
   .inner__blog__card {

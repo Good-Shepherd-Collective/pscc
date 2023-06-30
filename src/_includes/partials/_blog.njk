@@ -2,7 +2,7 @@
   <h2>Partner Updates</h2>
 <div class="blog__flex">
   <div class="inner__blog__card">
-    <h5 class="organization__name">ISM | Partner Updates</h5>
+    <p class="organization__name">ISM | Partner Updates</p>
     <img src="https://res.cloudinary.com/abualex/image/upload/c_scale,w_50/v1678977354/ism-logo.avif" alt="ISM logo"/>
     {% for post in ISM %}
     <h5><a href="{{ post.link }}">{{ post.title.rendered }}</a></h5>
@@ -10,28 +10,28 @@
   </div>
 
   <div class="inner__blog__card">
-    <h5 class="organization__name">Youth of Sumud | Partner Updates</h5>
+    <p class="organization__name">Youth of Sumud | Partner Updates</p>
     <img src="https://res.cloudinary.com/abualex/image/upload/v1676121710/yos-all-black.svg" alt="Youth of Sumud log"/>
     {% for post in YOS %}
     <h5><a href="{{ post.link }}">{{ post.title.rendered }}</a></h5>
     {% endfor %}
   </div>
   <div class="inner__blog__card">
-    <h5 class="organization__name">Good Shepherd Collective | Partner Updates</h5>
+    <p class="organization__name">Good Shepherd Collective | Partner Updates</p>
     <img src="https://res.cloudinary.com/abualex/image/upload/v1674652841/GSC-LOGO.svg" alt="Good Shepherd Collective Logo"/>
     {% for post in GSC %}
     <h5><a href="{{ post.link }}">{{ post.title.rendered }}</a></h5>
     {% endfor %}
   </div>
   <div class="inner__blog__card">
-    <h5 class="organization__name">Assopace Palestina | Partner Updates</h5>
+    <p class="organization__name">Assopace Palestina | Partner Updates</p>
     <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687251307/assopace.avif" alt="Assopace Palestina Logo"/>
     {% for post in ASO %}
     <h5><a href="{{ post.link }}">{{ post.title.rendered }}</a></h5>
     {% endfor %}
   </div>
   <div class="inner__blog__card">
-    <h5 class="organization__name">AFPS | Partner Updates</h5>
+    <p class="organization__name">AFPS | Partner Updates</p>
     <img class="circle__outline" src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687253479/Logo-AFPS.avif" alt="AFPS Logo"/>
     {% if AFPS.length > 0 %}
     <h5><a href="{{ AFPS[0].link }}">{{ AFPS[0].title }}</a></h5>
@@ -40,7 +40,7 @@
     {% endif %}
 </div>
 <div class="inner__blog__card">
-  <h5 class="organization__name">Jordan Valley Solidarity | Partner Updates</h5>
+  <p class="organization__name">Jordan Valley Solidarity | Partner Updates</p>
   <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1687255564/jordan_valley_solidarity.avif" alt="Jordan Valley Solidarity Logo"/>
   {% for post in JVS %}
   <h5><a href="{{ post.link }}">{{ post.title.rendered }}</a></h5>
@@ -80,6 +80,9 @@
   .organization__name{
     text-decoration: none !important;
     font-weight: 500;
+    font-size: var(--font-h5);
+    font-family: 'montserrat', sans-serif;
+    margin-top: 1rem;
   }
 
   .inner__blog__card {

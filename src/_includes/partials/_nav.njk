@@ -3,7 +3,7 @@
   <img src="https://res.cloudinary.com/abualex/image/upload/f_auto,q_auto/v1685965296/pscc/pscc.avif" alt="PSCC Logo" class="logo">
   <ul class="nav-links" id="nav-links">
     <li class="border__top"><a href="/">Home</a></li>
-    <li><a>About</a>
+    <li><p>About</p>
       <ul class="sub-menu">
         <li><a href="/about/">Who we are</a></li>
         <li><a href="/the_committees_today/">The committees today</a></li>
@@ -14,7 +14,7 @@
     <li><a href="/history/">History</a>
       
     </li>
-    <li><a href="">Actions</a>
+    <li><p>Actions</p>
     <ul class="sub-menu">
       <li><a href="/faz3a">Faz3a</a></li>
       <li><a href="/capacity_building/">Capacity Building</a></li>
@@ -27,8 +27,8 @@
     <li class="border__right"><a href="/volunteer/">Get Involved</a></li>
   </ul>
   <div class="hamburger" id="hamburger">
-    <img id="open" src="https://res.cloudinary.com/abualex/image/upload/v1677176428/Hamburger_icon.svg">
-    <img id="close" src="https://res.cloudinary.com/abualex/image/upload/v1677176693/icons8-macos-close-30.png">
+    <img id="open" src="https://res.cloudinary.com/abualex/image/upload/v1677176428/Hamburger_icon.svg" alt="open icon" role="presentation">
+    <img id="close" src="https://res.cloudinary.com/abualex/image/upload/v1677176693/icons8-macos-close-30.png" alt="closed icon" role="presentation">
   </div>
 </nav>
 <style>
@@ -71,6 +71,15 @@
     align-items: center;
     height: 100%;
     position: relative;
+  }
+
+  nav ul li p {
+    color: var(--black);
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    font-family: 'montserrat', sans-serif;
   }
 
   nav ul li a {
